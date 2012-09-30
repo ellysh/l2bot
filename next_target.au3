@@ -13,11 +13,16 @@ Func _Exit()
 EndFunc
 
 Func Attack()
-	Send ("{F1}") ;Атака
-	
-	while IsTargetExist()
-		Sleep(100)
+	while IsTargetAlive()
+		Send ("{F1}") ;Атака
+		Sleep(1000)
 	wend
+	
+	NextTarget()
+	
+	if IsTargetExist() then
+		Attack()
+	endif
 	
 	Send ("{F4}") ;Собрать дроп
 	Sleep(4000)
@@ -26,7 +31,7 @@ EndFunc
 Func Walk()
 
 	while 1
-		Send ("{F3}") ;Следующая цель
+		NextTarget()
 		Sleep(1000)
 
 		if IsTargetExist() then
@@ -46,11 +51,22 @@ Func Walk()
 EndFunc
 
 Func IsTargetExist()
+	; Check target info window existance
 	Local $coord = PixelSearch(548, 26, 735, 75, 0x282319)
 	If Not @error Then
 		;MouseClick("left", $coord[0], $coord[1])
 		;$gIsTargetFind = true
 		;wMsgBox(0, "X and Y are:", $coord[0] & "," & $coord[1])
+		return true
+	Else
+		return false
+	EndIf
+EndFunc
+
+Func IsTargetAlive()
+	; Check to red color in target info
+	Local $coord = PixelSearch(548, 26, 735, 75, 0x871D18)
+	If Not @error Then
 		return true
 	Else
 		return false
@@ -68,3 +84,7 @@ Func TurnLeft()
 	Sleep(Random(100, 2000, 1))
 	Send("{A up}")
 EndFunc
+
+func NextTarget()
+	Send ("{F3}")
+endfunc
