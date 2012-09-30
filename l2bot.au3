@@ -1,3 +1,5 @@
+global $gLogFile = "debug.log"
+
 Sleep (3000)
 HotKeySet ( "{ESC}" ,"_Exit")
 
@@ -11,20 +13,20 @@ Func _Exit()
 EndFunc
 
 Func Attack()
-	ConsoleWrite("Start attack")
+	LogWrite("Start attack")
 	
 	while IsTargetAlive()
 		Send ("{F1}") ;Атака
-		Sleep(1000)
+		Sleep(500)
 	wend
 	
 	NextTarget()
 	
-	if IsTargetExist() then
+	if IsTargetExist() and IsTargetAlive() then
 		Attack()
 	endif
 	
-	ConsoleWrite("Get drop")
+	LogWrite("Get drop")
 	
 	Send ("{F4}") ;Собрать дроп
 	Sleep(4000)
@@ -60,10 +62,10 @@ Func IsTargetExist()
 	If Not @error Then
 		;MouseClick("left", $coord[0], $coord[1])
 		;MsgBox(0, "X and Y are:", $coord[0] & "," & $coord[1])
-		ConsoleWrite("Target exist")
+		LogWrite("Target exist")
 		return true
 	Else
-		ConsoleWrite("Target not exist")
+		LogWrite("Target not exist")
 		return false
 	EndIf
 EndFunc
@@ -72,23 +74,23 @@ Func IsTargetAlive()
 	; Check to red color in target info
 	Local $coord = PixelSearch(548, 26, 735, 75, 0x871D18)
 	If Not @error Then
-		ConsoleWrite("Target alive")
+		LogWrite("Target alive")
 		return true
 	Else
-		ConsoleWrite("Target not alive")
+		LogWrite("Target not alive")
 		return false
 	EndIf
 EndFunc
 
 Func TurnRight()
 	Send("{D down}")
-	Sleep(Random(500, 3000, 1))
+	Sleep(Random(200, 3000, 1))
 	Send("{D up}")
 EndFunc
 
 Func TurnLeft()
 	Send("{A down}")
-	Sleep(Random(500, 3000, 1))
+	Sleep(Random(200, 3000, 1))
 	Send("{A up}")
 EndFunc
 
@@ -105,6 +107,10 @@ Func WalkBackward()
 EndFunc
 
 func NextTarget()
-	ConsoleWrite("Next target")
+	LogWrite("Next target")
 	Send ("{F3}")
+endfunc
+
+func LogWrite($data)
+	FileWrite($gLogFile, $data & chr(10))
 endfunc
