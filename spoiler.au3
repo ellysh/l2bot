@@ -1,20 +1,17 @@
 #include "conf/hotbar.au3"
 #include "conf/interface.au3"
 #include "source/motion.au3"
+#include "source/hooks.au3"
 
 global $gLogFile = "debug.log"
 
 Sleep (3000)
-HotKeySet ( "{ESC}" ,"_Exit")
 
+; Main Loop
 while 1
 	Walk()
 	Attack()
 wend
-
-func _Exit()
-    exit
-endfunc
 
 func Attack()
 	LogWrite("Start attack")
