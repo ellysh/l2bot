@@ -1,4 +1,4 @@
-; Panel keys configuration
-global $gAttackKey = "{F1}"
-global $gNextTargetKey = "{F3}"
-global $gPickDropKey = "{F4}"
+; Hotbar keys configuration
+global const $gAttackKey = "{F1}"
+global const $gNextTargetKey = "{F3}"
+global const $gPickDropKey = "{F4}"

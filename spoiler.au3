@@ -1,21 +1,22 @@
+#include "conf/hotbar.au3"
+#include "conf/interface.au3"
 #include "source/motion.au3"
-#include "conf/keys.au3"
 
 global $gLogFile = "debug.log"
 
 Sleep (3000)
 HotKeySet ( "{ESC}" ,"_Exit")
 
-While 1
+while 1
 	Walk()
 	Attack()
-WEnd
+wend
 
-Func _Exit()
-    Exit
-EndFunc
+func _Exit()
+    exit
+endfunc
 
-Func Attack()
+func Attack()
 	LogWrite("Start attack")
 	
 	while IsTargetAlive()
@@ -33,19 +34,19 @@ Func Attack()
 	
 	Send ($gPickDropKey)
 	Sleep(4000)
-EndFunc
+endfunc
 
-Func IsTargetAlive()
+func IsTargetAlive()
 	; Check to red color in target info
-	Local $coord = PixelSearch(548, 26, 735, 75, 0x871D18)
-	If Not @error Then
+	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gHealthColor)
+	if not @error then
 		LogWrite("Target alive")
 		return true
-	Else
+	else
 		LogWrite("Target not alive")
 		return false
-	EndIf
-EndFunc
+	endif
+endfunc
 
 func NextTarget()
 	LogWrite("Next target")

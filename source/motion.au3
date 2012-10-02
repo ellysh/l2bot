@@ -1,5 +1,4 @@
-Func Walk()
-
+func Walk()
 	while 1
 		NextTarget()
 		Sleep(1000)
@@ -20,40 +19,40 @@ Func Walk()
 			TurnLeft()
 		endif
 	wend
-EndFunc
+endfunc
 
-Func IsTargetExist()
+func IsTargetExist()
 	; Check target info window existance
-	Local $coord = PixelSearch(548, 26, 735, 75, 0x282319)
-	If Not @error Then
+	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gTargetWindowColor)
+	if not @error then
 		LogWrite("Target exist")
 		return true
-	Else
+	else
 		LogWrite("Target not exist")
 		return false
-	EndIf
-EndFunc
+	endif
+endfunc
 
-Func TurnRight()
+func TurnRight()
 	Send("{D down}")
 	Sleep(Random(200, 3000, 1))
 	Send("{D up}")
-EndFunc
+endfunc
 
-Func TurnLeft()
+func TurnLeft()
 	Send("{A down}")
 	Sleep(Random(200, 3000, 1))
 	Send("{A up}")
-EndFunc
+endfunc
 
-Func WalkForward()
+func WalkForward()
 	Send("{W down}")
 	Sleep(Random(2000, 8000, 1))
 	Send("{W up}")
-EndFunc
+endfunc
 
-Func WalkBackward()
+func WalkBackward()
 	Send("{S down}")
 	Sleep(Random(2000, 8000, 1))
 	Send("{S up}")
-EndFunc
+endfunc
