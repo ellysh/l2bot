@@ -21,18 +21,6 @@ func Walk()
 	wend
 endfunc
 
-func IsTargetExist()
-	; Check target info window existance
-	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gTargetWindowColor)
-	if not @error then
-		LogWrite("Target exist")
-		return true
-	else
-		LogWrite("Target not exist")
-		return false
-	endif
-endfunc
-
 func TurnRight()
 	Send("{D down}")
 	Sleep(Random(200, 3000, 1))

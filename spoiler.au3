@@ -2,8 +2,8 @@
 #include "conf/interface.au3"
 #include "source/motion.au3"
 #include "source/hooks.au3"
-
-global $gLogFile = "debug.log"
+#include "source/analysis.au3"
+#include "source/debug.au3"
 
 Sleep (3000)
 
@@ -33,23 +33,7 @@ func Attack()
 	Sleep(4000)
 endfunc
 
-func IsTargetAlive()
-	; Check to red color in target info
-	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gHealthColor)
-	if not @error then
-		LogWrite("Target alive")
-		return true
-	else
-		LogWrite("Target not alive")
-		return false
-	endif
-endfunc
-
 func NextTarget()
 	LogWrite("Next target")
 	Send ($gNextTargetKey)
-endfunc
-
-func LogWrite($data)
-	FileWrite($gLogFile, $data & chr(10))
 endfunc
