@@ -1,4 +1,5 @@
 #include "source/motion.au3"
+#include "conf/keys.au3"
 
 global $gLogFile = "debug.log"
 
@@ -18,7 +19,7 @@ Func Attack()
 	LogWrite("Start attack")
 	
 	while IsTargetAlive()
-		Send ("{F1}") ;Атака
+		Send ($gAttackKey)
 		Sleep(500)
 	wend
 	
@@ -30,7 +31,7 @@ Func Attack()
 	
 	LogWrite("Get drop")
 	
-	Send ("{F4}") ;Собрать дроп
+	Send ($gPickDropKey)
 	Sleep(4000)
 EndFunc
 
@@ -48,7 +49,7 @@ EndFunc
 
 func NextTarget()
 	LogWrite("Next target")
-	Send ("{F3}")
+	Send ($gNextTargetKey)
 endfunc
 
 func LogWrite($data)
