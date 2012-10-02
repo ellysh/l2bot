@@ -1,4 +1,4 @@
-#include "motion.au3"
+#include "source/motion.au3"
 
 global $gLogFile = "debug.log"
 
