@@ -1,3 +1,6 @@
+global $gXCenter = 650
+global $gYCenter = 450
+
 func Walk()
 	while 1
 		NextTarget()
@@ -22,15 +25,19 @@ func Walk()
 endfunc
 
 func TurnRight()
-	Send("{D down}")
-	Sleep(Random(200, 3000, 1))
-	Send("{D up}")
+	MouseMove($gXCenter, $gYCenter)
+	MouseDown("right")
+	MouseMove($gXCenter + Random(1, 10), $gYCenter)
+	Sleep(100)	
+	MouseUp("right")
 endfunc
 
 func TurnLeft()
-	Send("{A down}")
-	Sleep(Random(200, 3000, 1))
-	Send("{A up}")
+	MouseMove($gXCenter, $gYCenter)
+	MouseDown("right")
+	MouseMove($gXCenter - Random(1, 10), $gYCenter)
+	Sleep(100)	
+	MouseUp("right")
 endfunc
 
 func WalkForward()
