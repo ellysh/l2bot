@@ -5,9 +5,17 @@ func Attack()
 		return
 	endif
 	
+	local $timeout = 0
 	while IsTargetAlive()
 		Send($gAttackKey)
 		Sleep(500)
+		$timeout = $timeout + 1
+		
+		if $timeout = 360 then
+			LogWrite("Attack timeout")
+			Send($gCancelTarget)
+			WalkBack(6000)
+		endif
 	wend
 
 	LogWrite("Get drop")
@@ -23,7 +31,7 @@ endfunc
 func NextTarget()
 	LogWrite("Next target")
 	Send($gNextTargetKey)
-	Sleep(500)
+	Sleep(200)
 endfunc
 
 func PickDrop($count)

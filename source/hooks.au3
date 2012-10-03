@@ -1,5 +1,5 @@
 ; Global hooks
-HotKeySet ( "{ESC}" ,"_Exit")
+HotKeySet ( "{F5}" ,"_Exit")
 
 func _Exit()
     exit

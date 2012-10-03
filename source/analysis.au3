@@ -25,6 +25,12 @@ endfunc
 func SearchTarget()
 	LogWrite("Search target")
 	
+	NextTarget()
+	
+	if IsTargetExist() and IsTargetAlive() then
+		Attack()
+	endif
+	
 	Send($gSitKey)
 	Sleep(2000)
 	
@@ -35,7 +41,7 @@ func SearchTarget()
 			exitloop
 		endif
 		
-		TurnRight(3)
+		TurnRight(5)
 	next
 	
 	Send($gSitKey)

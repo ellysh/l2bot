@@ -11,9 +11,9 @@ func Walk()
 		endif
 
 		if Random(0, 1, 1) = 1 then
-			WalkForward()
+			WalkFront()
 		else
-			WalkBackward()
+			WalkBack()
 		endif
 		
 		if Random(0, 1, 1) = 1 then
@@ -40,14 +40,14 @@ func TurnLeft($offset)
 	MouseUp("right")
 endfunc
 
-func WalkForward()
-	Send("{W down}")
-	Sleep(Random(2000, 8000, 1))
-	Send("{W up}")
+func WalkFront($delay)
+	Send("{" & $gWalkFrontKey & " down}")
+	Sleep($delay)
+	Send("{" & $gWalkFrontKey & " up}")
 endfunc
 
-func WalkBackward()
-	Send("{S down}")
-	Sleep(Random(2000, 8000, 1))
-	Send("{S up}")
+func WalkBack($delay)
+	Send("{" & $gWalkBackKey & " down}")
+	Sleep($delay)
+	Send("{" & $gWalkBackKey & " up}")
 endfunc
