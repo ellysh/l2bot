@@ -11,21 +11,21 @@ func Attack()
 		Sleep(500)
 		$timeout = $timeout + 1
 		
-		if $timeout = 360 then
+		if $timeout = 60 then
 			LogWrite("Attack timeout")
 			Send($gCancelTarget)
-			WalkBack(6000)
+			WalkBack(4000)
 		endif
 	wend
 
-	LogWrite("Get drop")
-	PickDrop(4)
-	
 	NextTarget()
 	
 	if IsTargetExist() and IsTargetAlive() then
 		Attack()
 	endif
+	
+	LogWrite("Get drop")
+	PickDrop(5)
 endfunc
 
 func NextTarget()
@@ -37,6 +37,6 @@ endfunc
 func PickDrop($count)
 	for $i = 0 to $count step 1
 		Send($gPickDropKey)
-		Sleep(300)
+		Sleep(500)
 	next
 endfunc
