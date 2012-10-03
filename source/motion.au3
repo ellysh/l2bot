@@ -24,19 +24,19 @@ func Walk()
 	wend
 endfunc
 
-func TurnRight()
+func TurnRight($offset)
 	MouseMove($gXCenter, $gYCenter)
 	MouseDown("right")
-	MouseMove($gXCenter + Random(1, 10), $gYCenter)
-	Sleep(100)	
+	MouseMove($gXCenter + $offset, $gYCenter)
+	Sleep(400)	
 	MouseUp("right")
 endfunc
 
-func TurnLeft()
+func TurnLeft($offset)
 	MouseMove($gXCenter, $gYCenter)
 	MouseDown("right")
-	MouseMove($gXCenter - Random(1, 10), $gYCenter)
-	Sleep(100)	
+	MouseMove($gXCenter - $offset, $gYCenter)	
+	Sleep(400)	
 	MouseUp("right")
 endfunc
 
