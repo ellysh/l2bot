@@ -7,6 +7,9 @@
 #include "source/debug.au3"
 #include "source/attack.au3"
 
+; This is needed for Windows Vista and above
+#requireadmin
+
 Sleep (3000)
 
 ; Main Loop
