@@ -52,7 +52,7 @@ To start L2Bot work perform next actions:
 1. Launch your Lineage 2 client in window mode (press Alt+Enter to do it)
 and enter in game with your character.
 2. Go to locations with mobs
-3. Minimize Linegae 2 client window
+3. Minimize Lineage 2 client window
 4. Start spoiler.au3 script from the L2Bot directory
 5. Switch and restore the Linegae 2 client window
 
