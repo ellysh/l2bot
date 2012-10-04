@@ -18,11 +18,7 @@ func Attack()
 		endif
 	wend
 
-	NextTarget()
-	
-	if IsTargetExist() and IsTargetAlive() then
-		Attack()
-	endif
+	AttackNextTarget()
 	
 	LogWrite("Get drop")
 	PickDrop(5)
@@ -32,6 +28,14 @@ func NextTarget()
 	LogWrite("Next target")
 	Send($gNextTargetKey)
 	Sleep(200)
+endfunc
+
+func AttackNextTarget()
+	NextTarget()
+	
+	if IsTargetExist() and IsTargetAlive() then
+		Attack()
+	endif
 endfunc
 
 func PickDrop($count)
