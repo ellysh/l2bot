@@ -49,7 +49,7 @@ endfunc
 func IsTargetInArea()
 	local $x
 	local $y
-	local $step = 30
+	local $step = 25
 	
 	for $y  = $gSearchTargetArea[3] to $gSearchTargetArea[1] step -$step
 		for $x = $gSearchTargetArea[0] to $gSearchTargetArea[2] step $step

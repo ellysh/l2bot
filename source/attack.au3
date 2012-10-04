@@ -9,7 +9,12 @@ func Attack()
 	while IsTargetAlive()
 		Send($gAttackKey)
 		Sleep(500)
+		
 		$timeout = $timeout + 1
+		
+		if $timeout = 6 then
+			Send($gSpoilKey)
+		endif
 		
 		if $timeout = 60 then
 			LogWrite("Attack timeout")
@@ -21,6 +26,8 @@ func Attack()
 	AttackNextTarget()
 	
 	LogWrite("Get drop")
+	Send($gSweeperKey)
+	Sleep(1000);
 	PickDrop(5)
 endfunc
 
