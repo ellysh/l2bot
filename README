@@ -1,0 +1,59 @@
+# L2Bot 0.1 pre-alpha version README
+
+## INTRODUCTION
+
+This is package of AutoIt scripts to implement Lineage 2 simple bot.
+The base bot functionality only have been implemented because the software
+is under development.
+
+## INSTALLATION
+
+To launch L2Bot you need to download AutoIt interpreter from official website:
+http://www.autoitscript.com/site/autoit/downloads
+
+The x64 interpreter version must be selected for users with x64 Windows
+version.
+
+Then download archive with L2Bot scripts and extract it.
+
+## CONFIGURATION
+
+You must modify configuration files to adapt L2Bot for your Lineage 2 client.
+
+This is list of configuration files from 'conf' directory:
+
+hotbar.au3 - content of your hotbar is described there
+interface.au3 - position of interface windows and trigger colors are described there
+control.au3 - specific keys to control player character is described there
+
+Specify this information in hotbar.au3 file:
+1. $gAttackKey - key to attack action in your hotbar (by default F1)
+2. $gNextTargetKey - key to next target action in your hotbar (by default F3)
+3. $gPickDropKey - key to pickup drop action in your hotbar (by default F4)
+3. $gSitKey - key to sit/stand action in your hotbar (by default F9)
+
+You can use the CoolPix.exe utility from 'tools' directory to get next interface
+inforamtion.
+
+Specify this information in interface.au3 file:
+1. $gTargetWindowPos[x1, y1, x2, y2] - this is left up point (x1 and y1) and
+bottom down point (x2, y2) area coordinates array of the target window
+2. $gTargetWindowColor - color of target window to detect if it exists in the
+specified location
+3. $gHealthColor - color of health bar in the target window to detect if
+current target is alive
+4. $gSearchTargetArea[x1, y1, x2, y2] - this is coordinates array of the
+searching target area to 'find' target by mouse clicking actions
+
+## LAUNCHING
+
+To start L2Bot work perform next actions:
+
+1. Launch your Lineage 2 client in window mode (press Alt+Enter to do it)
+and enter in game with your character.
+2. Go to locations with mobs
+3. Minimize Linegae 2 client window
+4. Start spoiler.au3 script from the L2Bot directory
+5. Switch and restore the Linegae 2 client window
+
+To stop L2Bot work press F5 key.
