@@ -6,6 +6,7 @@
 #include "source/analysis.au3"
 #include "source/debug.au3"
 #include "source/attack.au3"
+#include "source/items.au3"
 
 ; This is needed for Windows Vista and above
 #requireadmin
