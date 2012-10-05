@@ -1,4 +1,4 @@
-# L2Bot 0.1 pre-alpha version README
+# L2Bot 0.2 version README
 
 ## INTRODUCTION
 
@@ -44,6 +44,9 @@ specified location
 current target is alive
 4. $gSearchTargetArea[x1, y1, x2, y2] - this is coordinates array of the
 searching target area to 'find' target by mouse clicking actions
+5. $gSelfHealthPos[x, y] - coordinates of the player health bar point. The
+health potion will be used if HP have been less than this value
+6. $gSelfHealthColor - color of the empty player HP bar
 
 ## LAUNCHING
 
