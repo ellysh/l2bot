@@ -12,7 +12,7 @@ endfunc
 
 func IsTargetAlive()
 	; Check to red color in target info
-	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gHealthColor)
+	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gTargetHealthColor)
 	if not @error then
 		LogWrite("Target alive")
 		return true
@@ -31,9 +31,9 @@ func SearchTarget()
 	Send($gSitKey)
 	Sleep(2000)
 	
-	local $offset
-	
-	for $offset = 0 to 10 step 1
+	for $i = 0 to 10 step 1
+		PotionHealing()
+
 		if IsTargetInArea() then
 			exitloop
 		endif
@@ -62,4 +62,15 @@ func IsTargetInArea()
 		NextTarget()
 	next
 	return false
+endfunc
+
+func IsHealthCritical()
+	local $color = PixelGetColor($gSelfHealthPos[0], $gSelfHealthPos[1])
+	if $color <= $gSelfHealthColor then
+		LogWrite("Health is critical, color = " & hex($color, 6))
+		return true
+	else
+		LogWrite("Health is ok, color = " & hex($color, 6))
+		return false
+	endif
 endfunc

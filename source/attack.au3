@@ -7,9 +7,11 @@ func Attack()
 	
 	local $timeout = 0
 	while IsTargetAlive()
+		PotionHealing()
+			
 		Send($gAttackKey)
 		Sleep(500)
-		
+
 		$timeout = $timeout + 1
 		
 		if $timeout = 6 then
@@ -50,4 +52,11 @@ func PickDrop($count)
 		Send($gPickDropKey)
 		Sleep(500)
 	next
+endfunc
+
+func PotionHealing()
+	if IsHealthCritical() then
+		Send($gHeathPoitionKey)
+		Sleep(500)
+	endif
 endfunc
