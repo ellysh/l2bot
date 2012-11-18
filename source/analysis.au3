@@ -22,6 +22,18 @@ func IsTargetAlive()
 	endif
 endfunc
 
+func IsTargetPet()
+	; Check to blue color in target info
+	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gTargetManaColor)
+	if not @error then
+		LogWrite("Target is pet")
+		return true
+	else
+		LogWrite("Target is not pet")
+		return false
+	endif
+endfunc
+
 func SearchTarget()
 	LogWrite("Search target")
 	
@@ -54,7 +66,7 @@ func IsTargetInArea()
 	for $y  = $gSearchTargetArea[3] to $gSearchTargetArea[1] step -$step
 		for $x = $gSearchTargetArea[0] to $gSearchTargetArea[2] step $step
 			MouseClick("left", $x, $y, 1, 1)
-			if IsTargetExist() and IsTargetAlive() then
+			if IsTargetExist() and IsTargetAlive() and not IsTargetPet() then
 				return true
 			endif
 		next

@@ -12,3 +12,6 @@ global const $gSweeperKey = "2"
 
 ; Items
 global const $gHeathPoitionKey = "{F5}"
+
+; Pet
+global const $gPetAttackKey = "{F2}"

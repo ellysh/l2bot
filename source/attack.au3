@@ -1,7 +1,7 @@
 func Attack()
 	LogWrite("Start attack")
 	
-	if not IsTargetExist() then
+	if not IsTargetExist() or IsTargetPet() then
 		return
 	endif
 	
@@ -11,6 +11,7 @@ func Attack()
 			
 		Send($gAttackKey)
 		Sleep(500)
+		Send($gPetAttackKey)
 
 		$timeout = $timeout + 1
 		
