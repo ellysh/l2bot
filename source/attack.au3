@@ -11,33 +11,34 @@ func Attack()
 			
 		Send($gAttackKey)
 		Sleep(500)
-		Send($gPetAttackKey)
 
 		$timeout = $timeout + 1
 		
 		if $timeout = 6 then
 			Send($gSpoilKey)
+			Send($gPetAttackKey)			
 		endif
 		
-		if $timeout = 60 then
+		if $timeout = 100 then
 			LogWrite("Attack timeout")
 			Send($gCancelTarget)
-			WalkBack(4000)
+			ChangePosition()
 		endif
 	wend
+
+	Send($gSweeperKey)
+	Sleep(1000);
 
 	AttackNextTarget()
 	
 	LogWrite("Get drop")
-	Send($gSweeperKey)
-	Sleep(1000);
 	PickDrop(5)
 endfunc
 
 func NextTarget()
 	LogWrite("Next target")
 	Send($gNextTargetKey)
-	Sleep(200)
+	Sleep(800)
 endfunc
 
 func AttackNextTarget()

@@ -53,6 +53,8 @@ func SearchTarget()
 		TurnRight(5)
 	next
 	
+	ChangePosition()
+	
 	LogWrite("Stand")
 	Send($gSitKey)
 	Sleep(2000)

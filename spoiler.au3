@@ -15,8 +15,6 @@ Sleep (3000)
 
 ; Main Loop
 while 1
-	;Walk()
-
 	Attack()
 
 	SearchTarget()

@@ -51,3 +51,8 @@ func WalkBack($delay)
 	Sleep($delay)
 	Send("{" & $gWalkBackKey & " up}")
 endfunc
+
+func ChangePosition()
+	WalkBack(4000)
+	TurnRight(5)
+endfunc

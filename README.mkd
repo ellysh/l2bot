@@ -1,4 +1,4 @@
-# L2Bot 0.2 version README
+# L2Bot 0.3 version README
 
 ## INTRODUCTION
 
