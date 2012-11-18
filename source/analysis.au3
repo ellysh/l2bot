@@ -53,7 +53,9 @@ func SearchTarget()
 		TurnRight(5)
 	next
 	
-	ChangePosition()
+	if not IsTargetForAttack() then
+		ChangePosition()
+	endif
 	
 	LogWrite("Stand")
 	Send($gSitKey)
@@ -68,7 +70,8 @@ func IsTargetInArea()
 	for $y  = $gSearchTargetArea[3] to $gSearchTargetArea[1] step -$step
 		for $x = $gSearchTargetArea[0] to $gSearchTargetArea[2] step $step
 			MouseClick("left", $x, $y, 1, 1)
-			if IsTargetExist() and IsTargetAlive() and not IsTargetPet() then
+			Sleep(20)
+			if IsTargetForAttack() then
 				return true
 			endif
 		next
@@ -85,6 +88,14 @@ func IsHealthCritical()
 		return true
 	else
 		LogWrite("Health is ok, color = " & hex($color, 6))
+		return false
+	endif
+endfunc
+
+func IsTargetForAttack()
+	if IsTargetExist() and IsTargetAlive() and not IsTargetPet() then
+		return true
+	else
 		return false
 	endif
 endfunc

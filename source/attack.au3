@@ -1,7 +1,7 @@
 func Attack()
 	LogWrite("Start attack")
 	
-	if not IsTargetExist() or IsTargetPet() then
+	if not IsTargetForAttack() then
 		return
 	endif
 	
@@ -44,7 +44,7 @@ endfunc
 func AttackNextTarget()
 	NextTarget()
 	
-	if IsTargetExist() and IsTargetAlive() then
+	if IsTargetForAttack() then
 		Attack()
 	endif
 endfunc
