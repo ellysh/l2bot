@@ -1,7 +1,6 @@
 func IsTargetExist()
 	; Check target info window existance
-	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gTargetWindowColor)
-	if not @error then
+	if IsPixelExistClient($gTargetWindowPos, $gTargetWindowColor) then
 		LogWrite("Target exist")
 		return true
 	else
@@ -12,8 +11,7 @@ endfunc
 
 func IsTargetAlive()
 	; Check to red color in target info
-	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gTargetHealthColor)
-	if not @error then
+	if IsPixelExistClient($gTargetWindowPos, $gTargetHealthColor) then
 		LogWrite("Target alive")
 		return true
 	else
@@ -24,8 +22,7 @@ endfunc
 
 func IsTargetPet()
 	; Check to blue color in target info
-	local $coord = PixelSearch($gTargetWindowPos[0], $gTargetWindowPos[1], $gTargetWindowPos[2], $gTargetWindowPos[3], $gTargetManaColor)
-	if not @error then
+	if IsPixelExistClient($gTargetWindowPos, $gTargetManaColor) then
 		LogWrite("Target is pet")
 		return true
 	else
@@ -40,7 +37,7 @@ func SearchTarget()
 	AttackNextTarget()
 	
 	LogWrite("Sit")
-	Send($gSitKey)
+	SendClient($gSitKey)
 	Sleep(2000)
 	
 	for $i = 0 to 10 step 1
@@ -58,7 +55,7 @@ func SearchTarget()
 	endif
 	
 	LogWrite("Stand")
-	Send($gSitKey)
+	SendClient($gSitKey)
 	Sleep(2000)
 endfunc
 
@@ -69,7 +66,7 @@ func IsTargetInArea()
 	
 	for $y  = $gSearchTargetArea[3] to $gSearchTargetArea[1] step -$step
 		for $x = $gSearchTargetArea[0] to $gSearchTargetArea[2] step $step
-			MouseClick("left", $x, $y, 1, 1)
+			MouseClickClient("left", $x, $y)
 			Sleep(20)
 			if IsTargetForAttack() then
 				return true
@@ -82,7 +79,7 @@ func IsTargetInArea()
 endfunc
 
 func IsHealthCritical()
-	local $color = PixelGetColor($gSelfHealthPos[0], $gSelfHealthPos[1])
+	local $color = PixelPixelGetColorClient($gSelfHealthPos)
 	if $color <= $gSelfHealthColor then
 		LogWrite("Health is critical, color = " & hex($color, 6))
 		return true

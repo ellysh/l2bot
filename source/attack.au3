@@ -9,24 +9,24 @@ func Attack()
 	while IsTargetAlive()
 		PotionHealing()
 			
-		Send($gAttackKey)
+		SendClient($gAttackKey)
 		Sleep(500)
 
 		$timeout = $timeout + 1
 		
 		if $timeout = 6 then
-			Send($gSpoilKey)
-			Send($gPetAttackKey)			
+			SendClient($gSpoilKey)
+			SendClient($gPetAttackKey)			
 		endif
 		
 		if $timeout = 100 then
 			LogWrite("Attack timeout")
-			Send($gCancelTarget)
+			SendClient($gCancelTarget)
 			ChangePosition()
 		endif
 	wend
 
-	Send($gSweeperKey)
+	SendClient($gSweeperKey)
 	Sleep(1000);
 
 	AttackNextTarget()
@@ -37,7 +37,7 @@ endfunc
 
 func NextTarget()
 	LogWrite("Next target")
-	Send($gNextTargetKey)
+	SendClient($gNextTargetKey)
 	Sleep(800)
 endfunc
 
