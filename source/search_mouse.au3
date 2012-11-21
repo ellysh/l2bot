@@ -1,7 +1,7 @@
 #include "analysis.au3"
 
 func SearchTarget()
-	LogWrite("Search target mouse")
+	LogWrite("SearchTarget() - mouse")
 	
 	AttackNextTarget()
 	

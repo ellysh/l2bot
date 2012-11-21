@@ -8,4 +8,4 @@ global const $gSearchTargetArea[4] = [10, 205, 1270, 600]
 
 ; Position of trigger self health pixel
 global const $gSelfHealthPos[2] = [146, 68]
-global const $gSelfHealthColor = 0x3E2825		; dark red
+global const $gSelfHealthColor = 0x45FFFF		; dark red

@@ -1,3 +1,6 @@
+; Common keys
+global const $kEnterKey = "{ENTER}"
+
 ; Hotbar keys configuration
 
 ; Actions

@@ -4,10 +4,13 @@
 #include "source/functions.au3"
 #include "source/motion.au3"
 #include "source/hooks.au3"
-#include "source/search_mouse.au3"
+#include "source/search_command.au3"
 #include "source/debug.au3"
 #include "source/attack.au3"
 #include "source/items.au3"
+
+global const $gTargetsCount = $gPustoshCount
+global const $gLocation = $gPustoshLocation
 
 ; This is needed for Windows Vista and above
 #requireadmin
