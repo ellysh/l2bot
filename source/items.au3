@@ -6,8 +6,9 @@ func PickDrop($count)
 endfunc
 
 func PotionHealing()
-	LogWrite("PotionHealing")
+	LogWrite("PotionHealing()")
 	if IsHealthCritical() then
+		LogWrite("	- use health")
 		SendClient($gHeathPoitionKey)
 		Sleep(500)
 	endif

@@ -4,7 +4,7 @@
 #include "source/functions.au3"
 #include "source/motion.au3"
 #include "source/hooks.au3"
-#include "source/analysis.au3"
+#include "source/search_mouse.au3"
 #include "source/debug.au3"
 #include "source/attack.au3"
 #include "source/items.au3"
