@@ -11,10 +11,11 @@ func SearchTarget()
 		PotionHealing()		
 
 		SendClient($kEnterKey)
-		Sleep(500)
-		SendClient("/target " & $gLocation[$i])
+		Sleep(1000)
+		SendTextClient("/target " & $gLocation[$i])
+		Sleep(1000)
 		SendClient($kEnterKey)
-		Sleep(500)
+		Sleep(1000)
 		
 		if IsTargetForAttack() then
 			exitloop

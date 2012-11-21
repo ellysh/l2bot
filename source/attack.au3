@@ -1,11 +1,12 @@
 func Attack()
-	LogWrite("Start attack")
+	LogWrite("Attack()")
 	
 	if not IsTargetForAttack() then
 		return
 	endif
 	
 	local $timeout = 0
+	local $is_spoiled = false
 	while IsTargetAlive()
 		PotionHealing()
 			
@@ -14,9 +15,14 @@ func Attack()
 
 		$timeout = $timeout + 1
 		
-		if $timeout = 6 then
+		;if Mod($timeout, 10) and not IsTargetDamaged() then
+		;	AttackNextTarget()
+		;endif
+		
+		if IsTargetDamaged() and not $is_spoiled then
 			SendClient($gSpoilKey)
 			SendClient($gPetAttackKey)			
+			$is_spoiled = true
 		endif
 		
 		if $timeout = 100 and not IsTargetDamaged() then
@@ -36,12 +42,13 @@ func Attack()
 endfunc
 
 func NextTarget()
-	LogWrite("Next target")
+	LogWrite("NextTarget()")
 	SendClient($gNextTargetKey)
 	Sleep(800)
 endfunc
 
 func AttackNextTarget()
+	LogWrite("AttackNextTarget()")
 	NextTarget()
 	
 	if IsTargetForAttack() then

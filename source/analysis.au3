@@ -33,7 +33,7 @@ endfunc
 
 func IsHealthCritical()
 	local $color = PixelPixelGetColorClient($gSelfHealthPos)
-	if $color <= $gSelfHealthColor then
+	if $color <= $gSelfDamagedHealthColor then
 		LogWrite("Health is critical, color = " & hex($color, 6))
 		return true
 	else
@@ -52,11 +52,12 @@ endfunc
 
 func IsTargetDamaged()
 	; Check to red color in target info
-	if IsPixelExistClient($gTargetWindowPos, $gTargetDamagedHealthColor) then
-		LogWrite("Target damaged")
+	local $color = PixelPixelGetColorClient($gTargetHealthPos)
+	if $color <= $gTargetDamagedHealthColor then
+		LogWrite("Target damaged, color = " & hex($color, 6))
 		return true
 	else
-		LogWrite("Target not damaged")
+		LogWrite("Target not damaged, color = " & hex($color, 6))
 		return false
 	endif
 endfunc
