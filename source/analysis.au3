@@ -49,3 +49,14 @@ func IsTargetForAttack()
 		return false
 	endif
 endfunc
+
+func IsTargetDamaged()
+	; Check to red color in target info
+	if IsPixelExistClient($gTargetWindowPos, $gTargetDamagedHealthColor) then
+		LogWrite("Target damaged")
+		return true
+	else
+		LogWrite("Target not damaged")
+		return false
+	endif
+endfunc

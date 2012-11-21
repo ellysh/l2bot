@@ -19,7 +19,7 @@ func Attack()
 			SendClient($gPetAttackKey)			
 		endif
 		
-		if $timeout = 100 then
+		if $timeout = 100 and not IsTargetDamaged() then
 			LogWrite("Attack timeout")
 			SendClient($gCancelTarget)
 			ChangePosition()
