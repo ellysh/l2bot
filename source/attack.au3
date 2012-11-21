@@ -15,10 +15,6 @@ func Attack()
 
 		$timeout = $timeout + 1
 		
-		;if Mod($timeout, 10) and not IsTargetDamaged() then
-		;	AttackNextTarget()
-		;endif
-		
 		if IsTargetDamaged() and not $is_spoiled then
 			SendClient($gSpoilKey)
 			SendClient($gPetAttackKey)			

@@ -1,21 +1,21 @@
 #include "analysis.au3"
-#include "../conf/locations_ru.au3"
+#include "../conf/targets_ru.au3"
 
 func SearchTarget()
 	LogWrite("SearchTarget() - command")
 	
 	AttackNextTarget()
 	
-	for $i = 0 to $gTargetsCount step 1
+	for $i = 0 to $gTargetCount step 1
 		NextTarget()
 		PotionHealing()		
 
 		SendClient($kEnterKey)
-		Sleep(1000)
-		SendTextClient("/target " & $gLocation[$i])
-		Sleep(1000)
+		Sleep(500)
+		SendTextClient("/target " & $gTargetNames[$i])
+		Sleep(500)
 		SendClient($kEnterKey)
-		Sleep(1000)
+		Sleep(500)
 		
 		if IsTargetForAttack() then
 			exitloop

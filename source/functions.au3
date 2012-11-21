@@ -10,7 +10,7 @@ func SendTextClient($text)
 
 	for $i = 1 to $key_array[0] step 1
 		ControlSend($gWindowHandle, "", "", $key_array[$i])
-		Sleep(200)
+		Sleep(50)
 	next
 endfunc
 

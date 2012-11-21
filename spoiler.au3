@@ -9,9 +9,6 @@
 #include "source/attack.au3"
 #include "source/items.au3"
 
-global const $gTargetsCount = $gPustoshCount
-global const $gLocation = $gPustoshLocation
-
 ; This is needed for Windows Vista and above
 #requireadmin
 
