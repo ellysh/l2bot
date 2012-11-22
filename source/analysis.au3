@@ -51,6 +51,10 @@ func IsTargetForAttack()
 endfunc
 
 func IsTargetDamaged()
+	if not IsTargetExist() then
+		return false
+	endif
+
 	; Check to red color in target info
 	local $color = PixelPixelGetColorClient($kTargetHealthPos)
 	if $color <= $kTargetDamagedHealthColor then

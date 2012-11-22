@@ -21,7 +21,7 @@ func Attack()
 			$is_spoiled = true
 		endif
 
-		if $timeout = 100 and not IsTargetDamaged() then
+		if $timeout = 20 and not IsTargetDamaged() then
 			LogWrite("Attack timeout")
 			SendClient($kCancelTarget)
 			ChangePosition()
