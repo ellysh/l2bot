@@ -7,19 +7,19 @@ func Walk()
 		Sleep(1000)
 
 		if IsTargetExist() then
-			exitloop 
+			exitloop
 		endif
 
 		if Random(0, 1, 1) = 1 then
-			WalkFront()
+			WalkFront(4000)
 		else
-			WalkBack()
+			WalkBack(4000)
 		endif
-		
+
 		if Random(0, 1, 1) = 1 then
-			TurnRight()
+			TurnRight(5)
 		else
-			TurnLeft()
+			TurnLeft(5)
 		endif
 	wend
 endfunc
@@ -28,15 +28,15 @@ func TurnRight($offset)
 	MouseMove($gXCenter, $gYCenter)
 	MouseDown("right")
 	MouseMove($gXCenter + $offset, $gYCenter)
-	Sleep(400)	
+	Sleep(400)
 	MouseUp("right")
 endfunc
 
 func TurnLeft($offset)
 	MouseMove($gXCenter, $gYCenter)
 	MouseDown("right")
-	MouseMove($gXCenter - $offset, $gYCenter)	
-	Sleep(400)	
+	MouseMove($gXCenter - $offset, $gYCenter)
+	Sleep(400)
 	MouseUp("right")
 endfunc
 

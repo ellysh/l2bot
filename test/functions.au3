@@ -1,4 +1,4 @@
-global const $gWindowHandle = WinGetHandle("[CLASS:l2UnrealWWindowsViewportWindow]")
+global const $gWindowHandle = WinGetHandle("[CLASS:Notepad]")
 
 func SendClient($key)
 	;Send($key)
