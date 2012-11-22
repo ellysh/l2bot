@@ -12,7 +12,7 @@
 ; This is needed for Windows Vista and above
 #requireadmin
 
-LogWrite("Window handle = " + $gWindowHandle)
+LogWrite("Window handle = " + $kWindowHandle)
 
 Sleep (3000)
 

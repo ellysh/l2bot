@@ -1,21 +1,21 @@
-global const $gWindowHandle = WinGetHandle("[CLASS:Notepad]")
+global const $kWindowHandle = WinGetHandle("[CLASS:Notepad]")
 
 func SendClient($key)
 	;Send($key)
-	ControlSend($gWindowHandle, "", "", $Key)
+	ControlSend($kWindowHandle, "", "", $Key)
 endfunc
 
 func SendTextClient($text)
 	$key_array = StringSplit($text, "")
 
 	for $i = 1 to $key_array[0] step 1
-		ControlSend($gWindowHandle, "", "", $key_array[$i])
+		ControlSend($kWindowHandle, "", "", $key_array[$i])
 		Sleep(50)
 	next
 endfunc
 
 func IsPixelExistClient($window_pos, $color)
-	local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 0, 1, $gWindowHandle)
+	local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 0, 1, $kWindowHandle)
 	if not @error then
 		return true
 	else
@@ -24,7 +24,7 @@ func IsPixelExistClient($window_pos, $color)
 endfunc
 
 func PixelPixelGetColorClient($point)
-	return PixelGetColor($point[0], $point[1], $gWindowHandle)
+	return PixelGetColor($point[0], $point[1], $kWindowHandle)
 endfunc
 
 func MouseClickClient($botton, $x, $y)

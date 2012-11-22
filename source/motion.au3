@@ -1,5 +1,5 @@
-global $gXCenter = 650
-global $gYCenter = 450
+global $kXCenter = 650
+global $kYCenter = 450
 
 func Walk()
 	while 1
@@ -25,31 +25,31 @@ func Walk()
 endfunc
 
 func TurnRight($offset)
-	MouseMove($gXCenter, $gYCenter)
+	MouseMove($kXCenter, $kYCenter)
 	MouseDown("right")
-	MouseMove($gXCenter + $offset, $gYCenter)
+	MouseMove($kXCenter + $offset, $kYCenter)
 	Sleep(400)
 	MouseUp("right")
 endfunc
 
 func TurnLeft($offset)
-	MouseMove($gXCenter, $gYCenter)
+	MouseMove($kXCenter, $kYCenter)
 	MouseDown("right")
-	MouseMove($gXCenter - $offset, $gYCenter)
+	MouseMove($kXCenter - $offset, $kYCenter)
 	Sleep(400)
 	MouseUp("right")
 endfunc
 
 func WalkFront($delay)
-	SendClient("{" & $gWalkFrontKey & " down}")
+	SendClient("{" & $kWalkFrontKey & " down}")
 	Sleep($delay)
-	SendClient("{" & $gWalkFrontKey & " up}")
+	SendClient("{" & $kWalkFrontKey & " up}")
 endfunc
 
 func WalkBack($delay)
-	SendClient("{" & $gWalkBackKey & " down}")
+	SendClient("{" & $kWalkBackKey & " down}")
 	Sleep($delay)
-	SendClient("{" & $gWalkBackKey & " up}")
+	SendClient("{" & $kWalkBackKey & " up}")
 endfunc
 
 func ChangePosition()

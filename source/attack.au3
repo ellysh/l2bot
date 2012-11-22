@@ -1,52 +1,52 @@
 func Attack()
 	LogWrite("Attack()")
-	
+
 	if not IsTargetForAttack() then
 		return
 	endif
-	
+
 	local $timeout = 0
 	local $is_spoiled = false
 	while IsTargetAlive()
 		PotionHealing()
-			
-		SendClient($gAttackKey)
+
+		SendClient($kAttackKey)
 		Sleep(500)
 
 		$timeout = $timeout + 1
-		
+
 		if IsTargetDamaged() and not $is_spoiled then
-			SendClient($gSpoilKey)
-			SendClient($gPetAttackKey)			
+			SendClient($kSpoilKey)
+			SendClient($kPetAttackKey)
 			$is_spoiled = true
 		endif
-		
+
 		if $timeout = 100 and not IsTargetDamaged() then
 			LogWrite("Attack timeout")
-			SendClient($gCancelTarget)
+			SendClient($kCancelTarget)
 			ChangePosition()
 		endif
 	wend
 
-	SendClient($gSweeperKey)
+	SendClient($kSweeperKey)
 	Sleep(1000);
 
 	AttackNextTarget()
-	
+
 	LogWrite("Get drop")
 	PickDrop(5)
 endfunc
 
 func NextTarget()
 	LogWrite("NextTarget()")
-	SendClient($gNextTargetKey)
+	SendClient($kNextTargetKey)
 	Sleep(800)
 endfunc
 
 func AttackNextTarget()
 	LogWrite("AttackNextTarget()")
 	NextTarget()
-	
+
 	if IsTargetForAttack() then
 		Attack()
 	endif

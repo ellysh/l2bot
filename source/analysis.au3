@@ -1,6 +1,6 @@
 func IsTargetExist()
 	; Check target info window existance
-	if IsPixelExistClient($gTargetWindowPos, $gTargetWindowColor) then
+	if IsPixelExistClient($kTargetWindowPos, $kTargetWindowColor) then
 		LogWrite("Target exist")
 		return true
 	else
@@ -11,7 +11,7 @@ endfunc
 
 func IsTargetAlive()
 	; Check to red color in target info
-	if IsPixelExistClient($gTargetWindowPos, $gTargetHealthColor) then
+	if IsPixelExistClient($kTargetWindowPos, $kTargetHealthColor) then
 		LogWrite("Target alive")
 		return true
 	else
@@ -22,7 +22,7 @@ endfunc
 
 func IsTargetPet()
 	; Check to blue color in target info
-	if IsPixelExistClient($gTargetWindowPos, $gTargetManaColor) then
+	if IsPixelExistClient($kTargetWindowPos, $kTargetManaColor) then
 		LogWrite("Target is pet")
 		return true
 	else
@@ -32,8 +32,8 @@ func IsTargetPet()
 endfunc
 
 func IsHealthCritical()
-	local $color = PixelPixelGetColorClient($gSelfHealthPos)
-	if $color <= $gSelfDamagedHealthColor then
+	local $color = PixelPixelGetColorClient($kSelfHealthPos)
+	if $color <= $kSelfDamagedHealthColor then
 		LogWrite("Health is critical, color = " & hex($color, 6))
 		return true
 	else
@@ -52,8 +52,8 @@ endfunc
 
 func IsTargetDamaged()
 	; Check to red color in target info
-	local $color = PixelPixelGetColorClient($gTargetHealthPos)
-	if $color <= $gTargetDamagedHealthColor then
+	local $color = PixelPixelGetColorClient($kTargetHealthPos)
+	if $color <= $kTargetDamagedHealthColor then
 		LogWrite("Target damaged, color = " & hex($color, 6))
 		return true
 	else

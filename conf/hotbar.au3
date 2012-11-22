@@ -4,17 +4,17 @@ global const $kEnterKey = "{ENTER}"
 ; Hotbar keys configuration
 
 ; Actions
-global const $gAttackKey = "{F1}"
-global const $gNextTargetKey = "{F3}"
-global const $gPickDropKey = "{F4}"
-global const $gSitKey = "{F9}"
+global const $kAttackKey = "{F1}"
+global const $kNextTargetKey = "{F3}"
+global const $kPickDropKey = "{F4}"
+global const $kSitKey = "{F9}"
 
 ; Skills
-global const $gSpoilKey = "1"
-global const $gSweeperKey = "2"
+global const $kSpoilKey = "1"
+global const $kSweeperKey = "2"
 
 ; Items
-global const $gHeathPoitionKey = "{F5}"
+global const $kHeathPoitionKey = "{F5}"
 
 ; Pet
-global const $gPetAttackKey = "{F2}"
+global const $kPetAttackKey = "{F2}"

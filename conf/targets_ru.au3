@@ -1,6 +1,6 @@
 ; Arrays with monsters names. It is grouped by locations.
-global const $gTargetCount = 28
-global const $gTargetNames[$gTargetCount] = [ _
+global const $kTargetCount = 28
+global const $kTargetNames[$kTargetCount] = [ _
 	"À", _
 	"Á", _
 	"Â", _

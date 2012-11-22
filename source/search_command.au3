@@ -3,20 +3,20 @@
 
 func SearchTarget()
 	LogWrite("SearchTarget() - command")
-	
+
 	AttackNextTarget()
-	
-	for $i = 0 to $gTargetCount step 1
+
+	for $i = 0 to $kTargetCount step 1
 		NextTarget()
-		PotionHealing()		
+		PotionHealing()
 
 		SendClient($kEnterKey)
 		Sleep(500)
-		SendTextClient("/target " & $gTargetNames[$i])
+		SendTextClient("/target " & $kTargetNames[$i])
 		Sleep(500)
 		SendClient($kEnterKey)
 		Sleep(500)
-		
+
 		if IsTargetForAttack() then
 			exitloop
 		endif

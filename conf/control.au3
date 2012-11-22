@@ -1,4 +1,4 @@
 ; Control keys configuration
-global const $gWalkFrontKey = "W"
-global const $gWalkBackKey = "S"
-global const $gCancelTarget = "{ESC}"
+global const $kWalkFrontKey = "W"
+global const $kWalkBackKey = "S"
+global const $kCancelTarget = "{ESC}"
