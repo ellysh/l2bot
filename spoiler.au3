@@ -17,7 +17,7 @@ LogWrite("Window handle = " + $kWindowHandle)
 Sleep (3000)
 
 ; Main Loop
-while 1
+while true
 	if not IsPlayerAlive() then
 		exitloop
 	endif

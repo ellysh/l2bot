@@ -1,24 +1,32 @@
 #include "analysis.au3"
 #include "../conf/targets_ru.au3"
 
+global $gTargetIndex
+
 func SearchTarget()
 	LogWrite("SearchTarget() - command")
 
 	AttackNextTarget()
 
-	for $i = 0 to $kTargetCount step 1
+	while true
 		NextTarget()
 		PotionHealing()
 
 		SendClient($kEnterKey)
-		Sleep(500)
-		SendTextClient("/target " & $kTargetNames[$i])
-		Sleep(500)
+		Sleep(200)
+		SendTextClient("/target " & $kTargetNames[$gTargetIndex])
+		Sleep(200)
 		SendClient($kEnterKey)
 		Sleep(500)
+
+		if $gTargetIndex < $kTargetCount then
+			$gTargetIndex = $gTargetIndex + 1
+		else
+			$gTargetIndex = 0
+		endif
 
 		if IsTargetForAttack() then
 			exitloop
 		endif
-	next
+	wend
 endfunc

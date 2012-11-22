@@ -12,7 +12,7 @@ func SendTextClient($text)
 
 	for $i = 1 to $key_array[0] step 1
 		ControlSend($kWindowHandle, "", "", $key_array[$i])
-		Sleep(50)
+		Sleep(5)
 	next
 endfunc
 
