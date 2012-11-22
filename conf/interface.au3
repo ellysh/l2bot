@@ -4,7 +4,7 @@ global const $kTargetWindowColor = 0x282319			; brown
 global const $kTargetHealthColor = 0x871D18			; red
 global const $kTargetDamagedHealthColor = 0x45FFFF	; dark red
 global const $kTargetManaColor = 0x074B9C			; blue
-global const $kTargetHealthPos[2] = [695, 54]
+global const $kTargetHealthPos[2] = [716, 53]
 
 global const $kSearchTargetArea[4] = [10, 205, 1270, 600]
 

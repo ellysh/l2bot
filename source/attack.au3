@@ -15,18 +15,13 @@ func Attack()
 
 		$timeout = $timeout + 1
 
-		if mod($timeout, 6) == 0 and not IsTargetDamaged() then
-			AttackNextTarget()
-			return
-		endif
-
 		if IsTargetDamaged() and not $is_spoiled then
 			SendClient($kSpoilKey)
 			SendClient($kPetAttackKey)
 			$is_spoiled = true
 		endif
 
-		if $timeout = 20 and not IsTargetDamaged() then
+		if mod($timeout, 18) == 0 and not IsTargetDamaged() then
 			LogWrite("Attack timeout")
 			SendClient($kCancelTarget)
 			ChangePosition()
