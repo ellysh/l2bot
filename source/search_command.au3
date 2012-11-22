@@ -19,10 +19,10 @@ func SearchTarget()
 		SendClient($kEnterKey)
 		Sleep(500)
 
-		if $gTargetIndex < $kTargetCount then
-			$gTargetIndex = $gTargetIndex + 1
+		if $gTargetIndex == ($kTargetCount - 1) then
+			$gTargetIndex = 0		
 		else
-			$gTargetIndex = 0
+			$gTargetIndex = $gTargetIndex + 1
 		endif
 
 		if IsTargetForAttack() then
