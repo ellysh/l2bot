@@ -53,6 +53,6 @@ func WalkBack($delay)
 endfunc
 
 func ChangePosition()
-	WalkBack(4000)
 	TurnRight(5)
+	WalkBack(4000)
 endfunc
