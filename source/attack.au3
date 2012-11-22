@@ -15,8 +15,9 @@ func Attack()
 
 		$timeout = $timeout + 1
 
-		if mod($timeout, 5) == 0 and not IsTargetDamaged() then
+		if mod($timeout, 7) == 0 and not IsTargetDamaged() then
 			AttackNextTarget()
+			return
 		endif
 
 		if IsTargetDamaged() and not $is_spoiled then

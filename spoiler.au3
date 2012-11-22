@@ -18,6 +18,10 @@ Sleep (3000)
 
 ; Main Loop
 while 1
+	if not IsPlayerAlive() then
+		exitloop
+	endif
+
 	Attack()
 
 	SearchTarget()
