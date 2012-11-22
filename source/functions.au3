@@ -2,10 +2,12 @@ global const $kWindowHandle = WinGetHandle("[CLASS:l2UnrealWWindowsViewportWindo
 
 func SendClient($key)
 	;Send($key)
+	LogWrite("SendClient() - " & $key)
 	ControlSend($kWindowHandle, "", "", $Key)
 endfunc
 
 func SendTextClient($text)
+	LogWrite("SendTextClient() - " & $text)
 	$key_array = StringSplit($text, "")
 
 	for $i = 1 to $key_array[0] step 1
@@ -28,6 +30,7 @@ func PixelPixelGetColorClient($point)
 endfunc
 
 func MouseClickClient($botton, $x, $y)
+	LogWrite("MouseClickClient() - " & $botton & $x & $y)
 	MouseClick($botton, $x, $y, 1, 1)
 	;ControlClick("[CLASS:l2UnrealWWindowsViewportWindow]", "", "", $botton, 1, $x, $y)
 endfunc
