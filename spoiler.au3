@@ -18,10 +18,8 @@ Sleep (3000)
 
 ; Main Loop
 while true
-	if not IsPlayerAlive() then
-		exitloop
-	endif
-
+	ExitOnDeath()
+	
 	Attack()
 
 	SearchTarget()

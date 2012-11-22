@@ -66,12 +66,11 @@ func IsTargetDamaged()
 	endif
 endfunc
 
-func IsPlayerAlive()
+func ExitOnDeath()
 	if IsPixelExistClient($kCityWindowPos, $kCityColor) then
 		LogWrite("Player died")
-		return false
+		exit
 	else
 		LogWrite("Player alive")
-		return true
 	endif
 endfunc

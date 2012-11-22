@@ -26,6 +26,8 @@ func Attack()
 			SendClient($kCancelTarget)
 			ChangePosition()
 		endif
+		
+		ExitOnDeath()
 	wend
 
 	SendClient($kSweeperKey)
