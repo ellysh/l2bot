@@ -1,3 +1,8 @@
+* L2Bot 0.4
+	- improve target searching algorithm
+	- add target health checking for attack timeout and skill usage
+	- stop script execution on player death
+
 * L2Bot 0.3
 	- implement pet controlling
 
