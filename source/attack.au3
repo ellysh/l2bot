@@ -6,7 +6,7 @@ func Attack()
 	endif
 
 	local $timeout = 0
-	local $is_spoiled = false
+	local $is_attacked = false
 	while IsTargetAlive()
 		PotionHealing()
 
@@ -15,10 +15,9 @@ func Attack()
 
 		$timeout = $timeout + 1
 
-		if IsTargetDamaged() and not $is_spoiled then
-			SendClient($kSpoilKey)
-			SendClient($kPetAttackKey)
-			$is_spoiled = true
+		if IsTargetDamaged() and not $is_attacked then
+			OnAttack()
+			$is_attacked = true
 		endif
 
 		if mod($timeout, 18) == 0 and not IsTargetDamaged() then
@@ -29,9 +28,8 @@ func Attack()
 		
 		ExitOnDeath()
 	wend
-
-	SendClient($kSweeperKey)
-	Sleep(1000);
+	
+	OnKill()
 
 	AttackNextTarget()
 

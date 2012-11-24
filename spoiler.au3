@@ -1,3 +1,5 @@
+#include "tactics/spoiler.au3"
+
 #include "conf/hotbar.au3"
 #include "conf/interface.au3"
 #include "conf/control.au3"
