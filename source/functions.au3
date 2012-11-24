@@ -1,5 +1,7 @@
 global const $kWindowHandle = WinGetHandle("[CLASS:l2UnrealWWindowsViewportWindow]")
 
+LogWrite("Window handle = " & $kWindowHandle)
+
 func SendClient($key)
 	;Send($key)
 	LogWrite("SendClient() - " & $key)
@@ -8,12 +10,20 @@ endfunc
 
 func SendTextClient($text)
 	LogWrite("SendTextClient() - " & $text)
+
+	SendClient($kEnterKey)
+	Sleep(200)
+		
 	$key_array = StringSplit($text, "")
 
 	for $i = 1 to $key_array[0] step 1
 		ControlSend($kWindowHandle, "", "", $key_array[$i])
 		Sleep(5)
 	next
+	Sleep(200)
+	
+	SendClient($kEnterKey)
+	Sleep(500)
 endfunc
 
 func IsPixelExistClient($window_pos, $color)

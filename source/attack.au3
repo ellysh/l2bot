@@ -8,12 +8,12 @@ func Attack()
 	local $timeout = 0
 	local $is_attacked = false
 	while IsTargetAlive()
+		$timeout = $timeout + 1
+		
 		PotionHealing()
 
 		SendClient($kAttackKey)
 		Sleep(500)
-
-		$timeout = $timeout + 1
 
 		if IsTargetDamaged() and not $is_attacked then
 			OnAttack()
@@ -22,25 +22,17 @@ func Attack()
 
 		if mod($timeout, 18) == 0 and not IsTargetDamaged() then
 			LogWrite("Attack timeout")
-			SendClient($kCancelTarget)
-			ChangePosition()
+			OnTimeout()
 		endif
 		
 		ExitOnDeath()
 	wend
 	
-	OnKill()
+	OnFirstKill()
 
 	AttackNextTarget()
-
-	LogWrite("Get drop")
-	PickDrop(5)
-endfunc
-
-func NextTarget()
-	LogWrite("NextTarget()")
-	SendClient($kNextTargetKey)
-	Sleep(800)
+	
+	OnAllKill()
 endfunc
 
 func AttackNextTarget()

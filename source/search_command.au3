@@ -12,12 +12,7 @@ func SearchTarget()
 		NextTarget()
 		PotionHealing()
 
-		SendClient($kEnterKey)
-		Sleep(200)
 		SendTextClient("/target " & $kTargetNames[$gTargetIndex])
-		Sleep(200)
-		SendClient($kEnterKey)
-		Sleep(500)
 
 		if $gTargetIndex == ($kTargetCount - 1) then
 			$gTargetIndex = 0		

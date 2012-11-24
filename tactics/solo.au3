@@ -9,8 +9,6 @@
 #include "../source/attack.au3"
 #include "../source/items.au3"
 
-LogWrite("Window handle = " + $kWindowHandle)
-
 ; Main Loop
 while true
 	ExitOnDeath()
