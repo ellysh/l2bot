@@ -6,8 +6,7 @@ func SearchTarget()
 	AttackNextTarget()
 
 	LogWrite("Sit")
-	SendClient($kSitKey)
-	Sleep(2000)
+	SendClient($kSitKey, 2000)
 
 	for $i = 0 to 10 step 1
 		PotionHealing()
@@ -24,8 +23,7 @@ func SearchTarget()
 	endif
 
 	LogWrite("Stand")
-	SendClient($kSitKey)
-	Sleep(2000)
+	SendClient($kSitKey, 2000)
 endfunc
 
 func IsTargetInArea()

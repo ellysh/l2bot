@@ -41,15 +41,13 @@ func TurnLeft($offset)
 endfunc
 
 func WalkFront($delay)
-	SendClient("{" & $kWalkFrontKey & " down}")
-	Sleep($delay)
-	SendClient("{" & $kWalkFrontKey & " up}")
+	SendClient("{" & $kWalkFrontKey & " down}", $delay)
+	SendClient("{" & $kWalkFrontKey & " up}", 0)
 endfunc
 
 func WalkBack($delay)
-	SendClient("{" & $kWalkBackKey & " down}")
-	Sleep($delay)
-	SendClient("{" & $kWalkBackKey & " up}")
+	SendClient("{" & $kWalkBackKey & " down}", $delay)
+	SendClient("{" & $kWalkBackKey & " up}", 0)
 endfunc
 
 func ChangePosition()

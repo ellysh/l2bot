@@ -6,13 +6,12 @@ global const $kSweeperKey = "2"
 global const $kPetAttackKey = "{F2}"
 
 func OnAttack()
-	SendClient($kSpoilKey)
-	;SendClient($kPetAttackKey)
+	SendClient($kSpoilKey, 50)
+	;SendClient($kPetAttackKey, 50)
 endfunc
 
 func OnFirstKill()
-	SendClient($kSweeperKey)
-	Sleep(1000);
+	SendClient($kSweeperKey, 1000)
 endfunc
 
 func OnAllKill()
@@ -22,11 +21,10 @@ endfunc
 
 func NextTarget()
 	LogWrite("NextTarget()")
-	SendClient($kNextTargetKey)
-	Sleep(800)
+	SendClient($kNextTargetKey, 800)
 endfunc
 
 func OnTimeout()
-	SendClient($kCancelTarget)
+	SendClient($kCancelTarget, 50)
 	ChangePosition()	
 endfunc

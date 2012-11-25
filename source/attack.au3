@@ -12,8 +12,7 @@ func Attack()
 		
 		PotionHealing()
 
-		SendClient($kAttackKey)
-		Sleep(500)
+		SendClient($kAttackKey, 500)
 
 		if IsTargetDamaged() and not $is_attacked then
 			OnAttack()
