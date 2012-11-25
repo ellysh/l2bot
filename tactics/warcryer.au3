@@ -11,6 +11,7 @@ func OnFirstKill()
 endfunc
 
 func OnAllKill()
+	PickDrop(2)
 endfunc
 
 func NextTarget()
@@ -20,8 +21,8 @@ func NextTarget()
 endfunc
 
 func OnAttackTimeout()
-	SendClient($kCancelTarget, 200)
-	FollowLider()
+	SendClient($kCancelTarget, 50)
+	ChangePosition()	
 endfunc
 
 func OnBuffTimeout()

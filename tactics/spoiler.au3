@@ -15,7 +15,6 @@ func OnFirstKill()
 endfunc
 
 func OnAllKill()
-	LogWrite("Get drop")
 	PickDrop(5)
 endfunc
 
