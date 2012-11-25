@@ -6,8 +6,7 @@ func OnAttack()
 endfunc
 
 func OnFirstKill()
-	SendClient($kCancelTarget)
-	Sleep(200)
+	SendClient($kCancelTarget, 200)
 	FollowLider()
 endfunc
 
@@ -21,6 +20,8 @@ func NextTarget()
 endfunc
 
 func OnAttackTimeout()
+	SendClient($kCancelTarget, 200)
+	FollowLider()
 endfunc
 
 func OnBuffTimeout()
