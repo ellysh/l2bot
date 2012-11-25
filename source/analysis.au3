@@ -51,7 +51,7 @@ func IsTargetForAttack()
 endfunc
 
 func IsTargetDamaged()
-	if not IsTargetExist() then
+	if not IsTargetExist() or not IsTargetAlive() then
 		return false
 	endif
 

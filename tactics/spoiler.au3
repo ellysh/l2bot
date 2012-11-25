@@ -1,4 +1,4 @@
-; Spoiler skills
+; Skills
 global const $kSpoilKey = "1"
 global const $kSweeperKey = "2"
 
@@ -24,7 +24,10 @@ func NextTarget()
 	SendClient($kNextTargetKey, 800)
 endfunc
 
-func OnTimeout()
+func OnAttackTimeout()
 	SendClient($kCancelTarget, 50)
 	ChangePosition()	
+endfunc
+
+func OnBuffTimeout()
 endfunc

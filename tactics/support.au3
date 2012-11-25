@@ -7,6 +7,7 @@
 #include "../source/items.au3"
 #include "../source/attack.au3"
 #include "../source/assist.au3"
+#include "../source/buff.au3"
 
 ; Team info
 global const $kLeaderName = "Logis"
@@ -20,4 +21,6 @@ while true
 	Attack()
 	
 	SearchTarget()
+	
+	Buff()
 wend

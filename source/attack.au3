@@ -21,7 +21,7 @@ func Attack()
 
 		if mod($timeout, 18) == 0 and not IsTargetDamaged() then
 			LogWrite("Attack timeout")
-			OnTimeout()
+			OnAttackTimeout()
 		endif
 		
 		ExitOnDeath()

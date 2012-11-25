@@ -1,3 +1,7 @@
+; Skills
+global const $kBuffKey = "3"
+global const $kAssistKey = "{F2}"
+
 func OnAttack()
 endfunc
 
@@ -13,9 +17,14 @@ endfunc
 func NextTarget()
 	LogWrite("NextTarget()")
 	SendTextClient("/target " & $kLeaderName)
-	SendTextClient("/assist")
-	Sleep(800)
+	SendClient($kAssistKey, 500)
 endfunc
 
-func OnTimeout()
+func OnAttackTimeout()
+endfunc
+
+func OnBuffTimeout()
+	LogWrite("OnBuffTimeout() - warcrayer")
+	SendTextClient("/target " & $kLeaderName)
+	SendClient($kBuffKey, 16 * 1000)
 endfunc
