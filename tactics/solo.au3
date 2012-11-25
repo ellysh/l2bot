@@ -11,7 +11,7 @@
 
 ; Main Loop
 while true
-	ExitOnDeath()
+	;ExitOnDeath()
 	
 	Attack()
 

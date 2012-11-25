@@ -14,7 +14,7 @@ global const $kLeaderName = "Logis"
 
 ; Main Loop
 while true
-	ExitOnDeath()
+	;ExitOnDeath()
 	
 	FollowLider()
 	
