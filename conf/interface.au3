@@ -9,7 +9,7 @@ global const $kTargetHealthPos[2] = [716, 53]
 global const $kSearchTargetArea[4] = [10, 205, 1270, 600]
 
 ; Position of trigger self health pixel
-global const $kSelfHealthPos[2] = [146, 62]
+global const $kSelfHealthPos[2] = [66, 62]
 global const $kSelfDamagedHealthColor = 0x45FFFF		; dark red
 
 ; "To city" window position and color
