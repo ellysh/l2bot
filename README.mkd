@@ -1,18 +1,16 @@
-# L2Bot 0.4 version README
+# L2Bot 0.5 version
 
 ## INTRODUCTION
 
 This is package of AutoIt scripts to implement Lineage 2 simple bot.
-The base bot functionality only have been implemented because the software
-is under development.
+The base bot functionality only have been implemented because the software is under development.
 
 ## INSTALLATION
 
 To launch L2Bot you need to download AutoIt interpreter from official website:
 http://www.autoitscript.com/site/autoit/downloads
 
-The x64 interpreter version must be selected for users with x64 Windows
-version.
+The x64 interpreter version must be selected for users with x64 Windows version.
 
 Then download archive with L2Bot scripts and extract it.
 
@@ -36,22 +34,15 @@ Specify this information in hotbar.au3 file:
 6. $kHealthPoition - key to use health poition (by default F5)
 7. $kPetAttackKey - command to pet attacking (by default F2)
 
-You can use the CoolPix.exe utility from 'tools' directory to get next interface
-inforamtion.
+You can use the CoolPix.exe utility from 'tools' directory to get next interface inforamtion.
 
 Specify this information in interface.au3 file:
-1. $kTargetWindowPos[x1, y1, x2, y2] - this is left up point (x1 and y1) and
-bottom down point (x2, y2) area coordinates array of the target window
-2. $kTargetWindowColor - color of target window to detect if it exists in the
-specified location
-3. $kTargetHealthColor - color of full health bar in the target window to detect
-if current target is alive
-4. $kTargetDamagedHealthColor - color of empty health bar in the target window
-to detect if current target have been damaged
-5. $kSearchTargetArea[x1, y1, x2, y2] - this is coordinates array of the
-searching target area to 'find' target by mouse clicking actions
-6. $kSelfHealthPos[x, y] - coordinates of the player health bar point. The
-health potion will be used if HP have been less than this value
+1. $kTargetWindowPos[x1, y1, x2, y2] - this is left up point (x1 and y1) and bottom down point (x2, y2) area coordinates array of the target window
+2. $kTargetWindowColor - color of target window to detect if it exists in the specified location
+3. $kTargetHealthColor - color of full health bar in the target window to detect if current target is alive
+4. $kTargetDamagedHealthColor - color of empty health bar in the target window to detect if current target have been damaged
+5. $kSearchTargetArea[x1, y1, x2, y2] - this is coordinates array of the searching target area to 'find' target by mouse clicking actions
+6. $kSelfHealthPos[x, y] - coordinates of the player health bar point. The health potion will be used if HP have been less than this value
 7. $kSelfDamagedHealthColor - color of the empty player HP bar
 8. $kCityWindowPos - position of the button "Return to city" when player died
 9. $kCityColor - color of "Return to city" button text
@@ -60,11 +51,10 @@ health potion will be used if HP have been less than this value
 
 To start L2Bot work perform next actions:
 
-1. Launch your Lineage 2 client in window mode (press Alt+Enter to do it)
-and start game with your character.
-2. Go to locations with mobs
+1. Launch your Lineage 2 client in window mode (press Alt+Enter to do it) and start game with your character.
+2. Go to location with mobs
 3. Minimize Lineage 2 client window
-4. Start spoiler.au3 script from the L2Bot directory
-5. Switch and restore the Linegae 2 client window
+4. Start spoiler.au3, warcrayer.au3 or tank.au3 script from the L2Bot directory
+5. Switch and restore the Linegae 2 client window for three seconds
 
 To stop L2Bot work press Alt+F1 key.

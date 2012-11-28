@@ -1,16 +1,19 @@
+* L2Bot 0.5
+	- Add tactics for several classes and group roles
+
 * L2Bot 0.4
-	- improve target searching algorithm
-	- add target health checking for attack timeout and skill usage
-	- stop script execution on player death
+	- Improve target searching algorithm
+	- Add target health checking for attack timeout and skill usage
+	- Stop script execution on player death
 
 * L2Bot 0.3
-	- implement pet controlling
+	- Implement pet controlling
 
 * L2Bot 0.2
-	- implement health potion using
+	- Implement health potion using
 
 * L2Bot 0.1 pre-alpha
-	- target searching
-	- attack action
-	- attack timeout
-	- configuration files for interface and hotbar
+	- Target searching
+	- Attack action
+	- Attack timeout
+	- Configuration files for interface and hotbar
