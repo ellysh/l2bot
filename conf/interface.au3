@@ -1,10 +1,10 @@
 ; Panels positions and trigger colors
 global const $kTargetWindowPos[4] = [548, 26, 735, 75]
 global const $kTargetWindowColor = 0x282319			; brown
-global const $kTargetHealthColor = 0x871D18			; red
+global const $kTargetHealthColor = 0xAB3022			; red
 global const $kTargetDamagedHealthColor = 0x45FFFF	; dark red
 global const $kTargetManaColor = 0x074B9C			; blue
-global const $kTargetHealthPos[2] = [716, 53]
+global const $kTargetHealthPos[4] = [715, 35, 716, 70]
 
 global const $kSearchTargetArea[4] = [10, 205, 1270, 600]
 

@@ -56,12 +56,11 @@ func IsTargetDamaged()
 	endif
 
 	; Check to red color in target info
-	local $color = PixelPixelGetColorClient($kTargetHealthPos)
-	if $color <= $kTargetDamagedHealthColor then
-		LogWrite("Target damaged, color = " & hex($color, 6))
+	if not IsPixelExistClient($kTargetHealthPos, $kTargetHealthColor) then
+		LogWrite("Target damaged")
 		return true
 	else
-		LogWrite("Target not damaged, color = " & hex($color, 6))
+		LogWrite("Target not damaged")
 		return false
 	endif
 endfunc
