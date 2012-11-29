@@ -32,12 +32,11 @@ func IsTargetPet()
 endfunc
 
 func IsHealthCritical()
-	local $color = PixelPixelGetColorClient($kSelfHealthPos)
-	if $color <= $kSelfDamagedHealthColor then
-		LogWrite("Health is critical, color = " & hex($color, 6))
+	if not IsPixelExistClient($kSelfHealthPos, $kSelfHealthColor) then
+		LogWrite("Health is critical")
 		return true
 	else
-		LogWrite("Health is ok, color = " & hex($color, 6))
+		LogWrite("Health is ok")
 		return false
 	endif
 endfunc
