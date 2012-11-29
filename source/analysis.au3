@@ -33,7 +33,7 @@ func IsTargetPet()
 endfunc
 
 func IsHealthCritical()
-	if not IsPixelExistClient($kSelfHealthPos, $kSelfHealthColor) then
+	if not IsPixelExistClient($kSelfHealthMinPos, $kSelfHealthColor) then
 		LogWrite("Health is critical")
 		return true
 	else
@@ -66,10 +66,10 @@ func IsTargetDamaged()
 endfunc
 
 func ExitOnDeath()
-	if IsPixelExistClient($kCityWindowPos, $kCityColor) then
+	if not IsPixelExistClient($kSelfHealthEmptyPos, $kSelfHealthColor) then
 		LogWrite("Player died")
 		exit
-	else
+	else	
 		LogWrite("Player alive")
 	endif
 endfunc
