@@ -1,12 +1,13 @@
 func IsTargetExist()
 	; Check target info window existance
-	if IsPixelExistClient($kTargetWindowPos, $kTargetWindowColor) then
-		LogWrite("Target exist")
-		return true
-	else
-		LogWrite("Target not exist")
-		return false
+	if IsPixelExistClient($kTargetWindowPos, $kTargetWindowColorBrown) then
+		if IsPixelExistClient($kTargetWindowPos, $kTargetWindowColorGray) then
+			LogWrite("Target exist")
+			return true
+		endif
 	endif
+
+	LogWrite("Target not exist")
 endfunc
 
 func IsTargetAlive()
