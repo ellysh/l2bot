@@ -21,6 +21,7 @@ func MoveToTarget()
 		if mod($timeout, 18) == 0 and not IsTargetForAttack() then
 			LogWrite("Move timeout")
 			OnAttackTimeout()
+			return
 		endif
 	wend
 endfunc

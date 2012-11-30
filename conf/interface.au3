@@ -6,8 +6,6 @@ global const $kTargetHealthColor = 0xAB3022			; red
 global const $kTargetManaColor = 0x074B9C			; blue
 global const $kTargetHealthPos[4] = [715, 35, 716, 70]
 
-global const $kSearchTargetArea[4] = [10, 205, 1270, 600]
-
 ; Position of trigger self health pixel
 global const $kSelfHealthMinPos[4] = [65, 58, 172, 72]
 global const $kSelfHealthEmptyPos[4] = [15, 58, 172, 72]
