@@ -1,5 +1,5 @@
-global $kXCenter = 650
-global $kYCenter = 450
+global const $kXCenter = 650
+global const $kYCenter = 450
 
 func MoveToTarget()
 	LogWrite("MoveToTarget()")
@@ -18,7 +18,7 @@ func MoveToTarget()
 		
 		Sleep(500)
 		
-		if mod($timeout, 18) == 0 and not IsTargetForAttack() then
+		if mod($timeout, 5) == 0 and not IsPositionChanged() then
 			LogWrite("Move timeout")
 			OnAttackTimeout()
 			return

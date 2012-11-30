@@ -33,6 +33,10 @@ func IsPixelExistClient($window_pos, $color)
 	endif
 endfunc
 
+func PixelGetColorClient($point)
+	return PixelGetColor($point[0], $point[1], $kWindowHandle)
+endfunc
+
 func MouseClickClient($botton, $x, $y)
 	LogWrite("MouseClickClient() - " & $botton & $x & $y)
 	MouseClick($botton, $x, $y, 1, 1)
