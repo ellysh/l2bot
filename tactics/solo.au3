@@ -12,8 +12,10 @@
 ; Main Loop
 while true
 	ExitOnDeath()
-	
-	Attack()
 
 	SearchTarget()
+
+	MoveToTarget()
+	
+	Attack()
 wend

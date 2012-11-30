@@ -1,6 +1,30 @@
 global $kXCenter = 650
 global $kYCenter = 450
 
+func MoveToTarget()
+	LogWrite("MoveToTarget()")
+	
+	if not IsTargetForAttack() then
+		return
+	endif
+
+	SendClient($kAttackKey, 500)
+
+	SendClient($kCancelTarget, 500)	
+	
+	local $timeout = 0
+	while not IsTargetForAttack()
+		$timeout = $timeout + 1
+		
+		Sleep(500)
+		
+		if mod($timeout, 18) == 0 and not IsTargetForAttack() then
+			LogWrite("Move timeout")
+			OnAttackTimeout()
+		endif
+	wend
+endfunc
+
 func TurnRight($offset)
 	MouseMove($kXCenter, $kYCenter)
 	MouseDown("right")
