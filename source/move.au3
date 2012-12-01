@@ -54,6 +54,15 @@ endfunc
 
 func ChangePosition()
 	LogWrite("ChangePosition()")
-	TurnRight(5)
-	MoveBack(4000)
+	
+	local $turn = Random(0, 1, 1)
+	local $angle = Random(3, 7, 1)
+	if $turn == 0 then
+		TurnRight($angle)
+	else
+		TurnLeft($angle)
+	endif
+	
+	local $delay = Random(2000, 4000, 1)
+	MoveBack($delay)
 endfunc
