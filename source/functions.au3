@@ -1,6 +1,19 @@
-global const $kWindowHandle = WinGetHandle("[CLASS:l2UnrealWWindowsViewportWindow]")
+WaitStartCommand()
+
+global const $kWindowHandle = WinGetHandle("")
 
 LogWrite("Window handle = " & $kWindowHandle)
+
+func WaitStartCommand()
+	while not $gIsStart
+		Sleep(1)
+	wend
+endfunc
+
+if not WinExists($kWindowHandle) then
+	LogWrite("Window not exist")
+	exit
+endif
 
 func SendClient($key, $delay)
 	;Send($key)
