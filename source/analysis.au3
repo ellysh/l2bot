@@ -70,25 +70,31 @@ func IsTargetDamaged()
 	endif
 endfunc
 
+func SetControlColors($color1, $color2, $color3)
+	$gMoveControlColor1 = $color1
+	$gMoveControlColor2 = $color2
+	$gMoveControlColor3 = $color3
+endfunc
+
 func IsPositionChanged()
-	local $control_color1 = PixelGetColorClient($kMoveControlPos1)
-	local $control_color2 = PixelGetColorClient($kMoveControlPos2)
-	local $control_color3 = PixelGetColorClient($kMoveControlPos3)
+	local $color1 = PixelGetColorClient($kMoveControlPos1)
+	local $color2 = PixelGetColorClient($kMoveControlPos2)
+	local $color3 = PixelGetColorClient($kMoveControlPos3)
 
 	if $gMoveControlColor1 == $kEmptyColor or $gMoveControlColor2 == $kEmptyColor or $gMoveControlColor3 == $kEmptyColor then
-		$gMoveControlColor1 = $control_color1
-		$gMoveControlColor2 = $control_color2
-		$gMoveControlColor3 = $control_color3
+		SetControlColors($color1, $color2, $color3)
+		LogWrite("Player moving #1")
 		return true
 	endif
 	
-	if $gMoveControlColor1 == $control_color1 and $gMoveControlColor2 == $control_color2 and $gMoveControlColor3 == $control_color3 then
-		$gMoveControlColor1 = $control_color1
-		$gMoveControlColor2 = $control_color2
-		$gMoveControlColor3 = $control_color3
+	if $gMoveControlColor1 == $color1 and $gMoveControlColor2 == $color2 and $gMoveControlColor3 == $color3 then
+		SetControlColors($color1, $color2, $color3)	
+		LogWrite("Player not moving")
 		return false
 	endif
-	
+
+	SetControlColors($color1, $color2, $color3)
+	LogWrite("Player moving #2")
 	return true
 endfunc
 
