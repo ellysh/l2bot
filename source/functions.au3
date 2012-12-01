@@ -1,8 +1,16 @@
-WaitStartCommand()
+WaitGrabCommand()
 
 global const $kWindowHandle = WinGetHandle("")
 
+WaitStartCommand()
+
 LogWrite("Window handle = " & $kWindowHandle)
+
+func WaitGrabCommand()
+	while not $gIsGrab
+		Sleep(1)
+	wend
+endfunc
 
 func WaitStartCommand()
 	while not $gIsStart
