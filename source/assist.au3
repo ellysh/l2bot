@@ -16,7 +16,9 @@ func SearchTarget()
 	while true
 		$timeout = $timeout + 1
 		
-		PotionHealing()
+		if IsHealthCritical() then
+			OnHealthCritical()
+		endif
 
 		AttackNextTarget()
 

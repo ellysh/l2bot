@@ -10,7 +10,10 @@ func SearchTarget()
 
 	while true
 		NextTarget()
-		PotionHealing()
+		
+		if IsHealthCritical() then
+			OnHealthCritical()
+		endif
 
 		SendTextClient("/target " & $kTargetNames[$gTargetIndex])
 

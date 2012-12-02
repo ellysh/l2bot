@@ -10,7 +10,9 @@ func Attack()
 	while IsTargetAlive()
 		$timeout = $timeout + 1
 		
-		PotionHealing()
+		if IsHealthCritical() then
+			OnHealthCritical()
+		endif
 
 		SendClient($kAttackKey, 500)
 

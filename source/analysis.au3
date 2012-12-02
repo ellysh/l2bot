@@ -47,6 +47,16 @@ func IsHealthCritical()
 	endif
 endfunc
 
+func IsManaCritical()
+	if not IsPixelExistClient($kSelfManaMinPos, $kSelfManaColor) then
+		LogWrite("Mana is critical")
+		return true
+	else
+		LogWrite("Mana is ok")
+		return false
+	endif
+endfunc
+
 func IsTargetForAttack()
 	if IsTargetExist() and IsTargetAlive() and not IsTargetPet() then
 		return true

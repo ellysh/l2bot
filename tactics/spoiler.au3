@@ -33,3 +33,7 @@ endfunc
 
 func OnBuffTimeout()
 endfunc
+
+func OnHealthCritical()
+	PotionHealing()
+endfunc

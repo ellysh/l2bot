@@ -35,3 +35,7 @@ func OnBuffTimeout()
 	Sleep(1000)
 	SendClient($kBuffKey, 16 * 1000)
 endfunc
+
+func OnHealthCritical()
+	PotionHealing()
+endfunc

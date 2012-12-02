@@ -10,6 +10,8 @@ global const $kTargetHealthPos[4] = [715, 35, 716, 70]
 global const $kSelfHealthMinPos[4] = [65, 58, 172, 72]
 global const $kSelfHealthEmptyPos[4] = [15, 58, 172, 72]
 global const $kSelfHealthColor = 0x932518			; red
+global const $kSelfManaMinPos[4] = [50, 71, 172, 83]
+global const $kSelfManaColor = 0x074092				; blue
 
 ; Movement control points
 global const $kMoveControlPos1[2] = [550, 590]
