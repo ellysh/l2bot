@@ -19,7 +19,13 @@ func MoveToTarget()
 		Sleep(500)
 		
 		if mod($timeout, 5) == 0 and not IsPositionChanged() then
-			LogWrite("Move timeout")
+			LogWrite("Move timeout #1")
+			OnAttackTimeout()
+			return
+		endif
+		
+		if mod($timeout, 30) == 0 then
+			LogWrite("Move timeout #2")
 			OnAttackTimeout()
 			return
 		endif
