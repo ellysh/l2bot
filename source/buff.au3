@@ -1,4 +1,4 @@
-global const $kBuffTimeout = 18 * 60 * 1000 ;ms
+global const $kBuffTimeout = 15 * 60 * 1000 ;ms
 
 global $gLastBuffTime = TimerInit()
 

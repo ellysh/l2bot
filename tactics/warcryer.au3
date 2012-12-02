@@ -28,7 +28,7 @@ endfunc
 
 func OnBuffTimeout()
 	LogWrite("OnBuffTimeout() - warcrayer")
-	SendTextClient("/target " & $kLeaderName)
+	SendTextClientWin("/target " & $kLeaderName)
 	Sleep(1000)
 	SendClient($kBuffKey, 16 * 1000)
 endfunc
