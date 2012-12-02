@@ -8,6 +8,7 @@
 #include "../source/search.au3"
 #include "../source/attack.au3"
 #include "../source/items.au3"
+#include "../source/buff.au3"
 
 ; Main Loop
 while true
@@ -18,4 +19,6 @@ while true
 	MoveToTarget()
 	
 	Attack()
+	
+	Buff(5 * $kMinute)
 wend

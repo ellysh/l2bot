@@ -1,15 +1,15 @@
-global const $kBuffTimeout = 15 * 60 * 1000 ;ms
+global const $kMinute = 60 * 1000
 
 global $gLastBuffTime = TimerInit()
 
-func Buff()
+func Buff($timeout)
 	LogWrite("Buff()")
 
 	local $time_diff = TimerDiff($gLastBuffTime)
 	
-	LogWrite("	- time_diff = " & $time_diff & " timeout = " & $kBuffTimeout)
+	LogWrite("	- time_diff = " & $time_diff & " timeout = " & $timeout)
 	
-	if $time_diff >= $kBuffTimeout then
+	if $time_diff >= $timeout then
 		OnBuffTimeout()
 		$gLastBuffTime = TimerInit()
 	endif

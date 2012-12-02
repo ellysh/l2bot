@@ -2,6 +2,7 @@
 global const $kAttackSkill = "{F2}"
 global const $kStunSkill = "{F2}"
 global const $kHealSkill = "{F6}"
+global const $kSelfBuff = "5"
 
 func OnAttack()
 	if not IsManaCritical() then
@@ -33,6 +34,7 @@ func OnAttackTimeout()
 endfunc
 
 func OnBuffTimeout()
+	SendClient($kSelfBuff, 3000)
 endfunc
 
 func OnHealthCritical()

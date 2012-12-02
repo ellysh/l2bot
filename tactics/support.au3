@@ -22,5 +22,5 @@ while true
 	
 	SearchTarget()
 	
-	Buff()
+	Buff(20)
 wend

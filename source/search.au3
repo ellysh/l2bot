@@ -16,6 +16,7 @@ func SearchTarget()
 		endif
 
 		SendTextClient("/target " & $kTargetNames[$gTargetIndex])
+		Sleep(500)
 
 		if $gTargetIndex == ($kTargetCount - 1) then
 			$gTargetIndex = 0		
