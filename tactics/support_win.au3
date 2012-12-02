@@ -16,18 +16,15 @@ global const $kLeaderName = "Logis"
 while true
 	;ExitOnDeath()
 
-	FollowLider()
+	;FollowLider()
 	
 	NextTarget()
 	
 	Sleep(1000)
 
 	SendClient("{F1}", 1000)
-	while IsTargetForAttack()
-		Sleep(500)
-	wend
 	
-	OnAllKill()
+	Sleep(2000)
 	
 	Buff()
 wend
