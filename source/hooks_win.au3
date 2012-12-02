@@ -1,7 +1,7 @@
 ; Global hooks
-HotKeySet("!{F1}" ,"_Exit")
-HotKeySet("!{F2}" ,"_GrabWindow")
-HotKeySet("!{F3}" ,"_Start")
+HotKeySet("!{F5}" ,"_Exit")
+HotKeySet("!{F6}" ,"_GrabWindow")
+HotKeySet("!{F7}" ,"_Start")
 
 global $gIsStart = false
 global $gIsGrab = false

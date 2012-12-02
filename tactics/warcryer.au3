@@ -16,8 +16,9 @@ endfunc
 
 func NextTarget()
 	LogWrite("NextTarget()")
-	SendTextClient("/target " & $kLeaderName)
-	SendClient($kAssistKey, 500)
+	SendTextClientWin("/target " & $kLeaderName)
+	Sleep(1000)
+	SendClient($kAssistKey, 1000)
 endfunc
 
 func OnAttackTimeout()
@@ -28,5 +29,6 @@ endfunc
 func OnBuffTimeout()
 	LogWrite("OnBuffTimeout() - warcrayer")
 	SendTextClient("/target " & $kLeaderName)
+	Sleep(1000)
 	SendClient($kBuffKey, 16 * 1000)
 endfunc

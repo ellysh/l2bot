@@ -2,8 +2,8 @@
 
 func FollowLider()
 	if not IsTargetExist() then
-		SendTextClient("/target " & $kLeaderName)
-		SendTextClient("/target " & $kLeaderName)
+		SendTextClientWin("/target " & $kLeaderName)
+		SendTextClientWin("/target " & $kLeaderName)
 	endif
 endfunc
 
