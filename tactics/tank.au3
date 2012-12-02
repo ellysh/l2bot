@@ -1,12 +1,12 @@
 ; Skills
 global const $kAttackSkill = "{F2}"
-global const $kStunSkill = "{F2}"
+global const $kStunSkill = "2"
 global const $kHealSkill = "{F6}"
 global const $kSelfBuff = "5"
 
 func OnAttack()
 	if not IsManaCritical() then
-		;SendClient($kStunSkill, 1000)
+		SendClient($kStunSkill, 1000)
 	endif
 endfunc
 
@@ -38,7 +38,8 @@ func OnBuffTimeout()
 endfunc
 
 func OnHealthCritical()
-	if not IsManaCritical() then
+	if not IsManaCritical() and not IsTargetForAttack() then
+		LogWrite("Use heah skill")
 		SendClient($kHealSkill, 8000)
 	else
 		PotionHealing()

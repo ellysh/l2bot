@@ -21,7 +21,7 @@ func Attack()
 			$is_attacked = true
 		endif
 
-		if mod($timeout, 5) == 0 and $is_attacked then
+		if mod($timeout, 6) == 0 and $is_attacked then
 			OnAttackSkill()
 		endif
 
