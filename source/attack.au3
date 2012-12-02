@@ -19,6 +19,10 @@ func Attack()
 			$is_attacked = true
 		endif
 
+		if mod($timeout, 5) == 0 and $is_attacked then
+			OnAttackSkill()
+		endif
+
 		if mod($timeout, 20) == 0 and IsTargetForAttack() and not IsTargetDamaged() then
 			LogWrite("Attack timeout")
 			OnAttackTimeout()

@@ -5,6 +5,9 @@ global const $kAssistKey = "{F2}"
 func OnAttack()
 endfunc
 
+func OnAttackSkill()
+endfunc
+
 func OnFirstKill()
 	SendClient($kCancelTarget, 200)
 	FollowLider()

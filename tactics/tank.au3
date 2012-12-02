@@ -1,4 +1,11 @@
+; Skills
+global const $kAttackSkill = "{F2}"
+
 func OnAttack()
+endfunc
+
+func OnAttackSkill()
+	SendClient($kAttackSkill, 1000)
 endfunc
 
 func OnFirstKill()

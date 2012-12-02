@@ -24,7 +24,7 @@ func MoveToTarget()
 			return
 		endif
 		
-		if mod($timeout, 30) == 0 then
+		if mod($timeout, 40) == 0 then
 			LogWrite("Move timeout #2")
 			OnAttackTimeout()
 			return
@@ -69,6 +69,8 @@ func ChangePosition()
 		TurnLeft($angle)
 	endif
 	
-	local $delay = Random(2000, 4000, 1)
+	Sleep(400)
+	
+	local $delay = Random(3000, 4000, 1)
 	MoveBack($delay)
 endfunc

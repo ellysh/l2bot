@@ -10,6 +10,9 @@ func OnAttack()
 	;SendClient($kPetAttackKey, 50)
 endfunc
 
+func OnAttackSkill()
+endfunc
+
 func OnFirstKill()
 	SendClient($kSweeperKey, 1000)
 endfunc
