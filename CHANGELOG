@@ -1,3 +1,13 @@
+* L2Bot 0.6
+	- Use PixelSearch function instead PixelGetColor one in triggers checking functions
+	- New movement to target algorithm
+	- Add some chance to ChangePosition function
+	- Grab client window on ALT+F2 key pressing
+	- Start bot on Alt+F5 key pressing
+	- Base implemetation of second window support bot
+	- Implement attack skills usage
+	- Implement self buff for solo tactic
+
 * L2Bot 0.5
 	- Add tactics for several classes and group roles
 
