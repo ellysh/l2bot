@@ -13,6 +13,10 @@ func Attack()
 		if IsHealthCritical() then
 			OnHealthCritical()
 		endif
+		
+		if IsHealthHalf() then
+			OnHealthHalf()
+		endif
 
 		SendClient($kAttackKey, 500)
 

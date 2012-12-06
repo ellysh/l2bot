@@ -12,8 +12,5 @@ endfunc
 
 func PotionHealing()
 	LogWrite("PotionHealing()")
-	if IsHealthCritical() then
-		LogWrite("	- use health")
-		SendClient($kHeathPoitionKey, 500)
-	endif
+	SendClient($kHeathPoitionKey, 500)
 endfunc

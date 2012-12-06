@@ -38,8 +38,18 @@ func IsTargetPet()
 endfunc
 
 func IsHealthCritical()
-	if not IsPixelExistClient($kSelfHealthMinPos, $kSelfHealthColor) then
+	if not IsPixelExistClient($kSelfHealthCritPos, $kSelfHealthColor) then
 		LogWrite("Health is critical")
+		return true
+	else
+		LogWrite("Health is not critical")
+		return false
+	endif
+endfunc
+
+func IsHealthHalf()
+	if not IsPixelExistClient($kSelfHealthHalfPos, $kSelfHealthColor) then
+		LogWrite("Health is half")
 		return true
 	else
 		LogWrite("Health is ok")

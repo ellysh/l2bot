@@ -37,5 +37,8 @@ func OnBuffTimeout()
 endfunc
 
 func OnHealthCritical()
+endfunc
+
+func OnHealthHalf()
 	PotionHealing()
 endfunc

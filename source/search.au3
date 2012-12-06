@@ -11,8 +11,8 @@ func SearchTarget()
 	while true
 		NextTarget()
 		
-		if IsHealthCritical() then
-			OnHealthCritical()
+		if IsHealthHalf() then
+			OnHealthHalf()
 		endif
 
 		SendTextClient("/target " & $kTargetNames[$gTargetIndex])
