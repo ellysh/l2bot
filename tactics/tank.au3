@@ -1,6 +1,6 @@
 ; Skills
-global const $kAttackSkill = "{F2}"
-global const $kStunSkill = "2"
+global const $kAttackSkill = "{F3}"
+global const $kStunSkill = "{F2}"
 global const $kHealSkill = "{F6}"
 global const $kSelfBuff = "5"
 global const $kDefenseSkill = "7"

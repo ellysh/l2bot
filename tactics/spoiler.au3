@@ -1,6 +1,7 @@
 ; Skills
 global const $kSpoilKey = "1"
 global const $kSweeperKey = "2"
+global const $kStunSkill = "{F2}"
 
 ; Pet
 global const $kPetAttackKey = "{F2}"

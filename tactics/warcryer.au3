@@ -1,6 +1,6 @@
 ; Skills
 global const $kBuffKey = "3"
-global const $kAssistKey = "{F2}"
+global const $kAssistKey = "{F11}"
 
 func OnAttack()
 endfunc
