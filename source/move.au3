@@ -62,7 +62,7 @@ func ChangePosition()
 	LogWrite("ChangePosition()")
 	
 	local $turn = Random(0, 10, 1)
-	local $angle = Random(3, 7, 1)
+	local $angle = Random(3, 12, 1)
 	if $turn < 5 then
 		TurnRight($angle)
 	else

@@ -3,4 +3,4 @@
 ; This is needed for Windows Vista and above
 #requireadmin
 
-#include "tactics/support_win.au3"
+#include "tactics/support.au3"

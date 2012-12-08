@@ -2,8 +2,8 @@
 
 func FollowLider()
 	if not IsTargetExist() then
-		SendTextClientWin("/target " & $kLeaderName)
-		SendTextClientWin("/target " & $kLeaderName)
+		SendTextClient("/target " & $kLeaderName)
+		SendTextClient("/target " & $kLeaderName)
 	endif
 endfunc
 
@@ -26,12 +26,14 @@ func SearchTarget()
 
 		AttackNextTarget()
 
-		if mod($timeout, 10) == 0 and not IsTargetDamaged() then
+		if mod($timeout, 20) == 0 and IsTargetForAttack() and not IsTargetDamaged() then		
 			exitloop
 		endif
 
 		if IsTargetForAttack() then
 			exitloop
 		endif
+		
+		Buff(10 * $kMinute)
 	wend
 endfunc

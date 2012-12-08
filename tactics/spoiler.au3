@@ -7,7 +7,7 @@ global const $kStunSkill = "{F2}"
 global const $kPetAttackKey = "{F2}"
 
 func OnAttack()
-	SendClient($kSpoilKey, 50)
+	SendClient($kSpoilKey, 1000)
 	;SendClient($kPetAttackKey, 50)
 endfunc
 
