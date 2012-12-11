@@ -34,6 +34,6 @@ func SearchTarget()
 			exitloop
 		endif
 		
-		Buff(10 * $kMinute)
+		Buff(16 * $kMinute)
 	wend
 endfunc
