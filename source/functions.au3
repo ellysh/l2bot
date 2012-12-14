@@ -42,7 +42,7 @@ func SendTextClient($text)
 	for $i = 1 to $key_array[0] step 1
 		SendClient($key_array[$i], 20)
 	next
-	Sleep(200)	
+	Sleep(200)
 	
 	SendClient($kEnterKey, 500)
 endfunc
