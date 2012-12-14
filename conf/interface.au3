@@ -11,7 +11,7 @@ global const $kTargetHealthPos[4] = [715, 35, 716, 70]
 global const $kSelfHealthCritPos[4] = [45, 58, 172, 72]
 global const $kSelfHealthHalfPos[4] = [110, 58, 172, 72]
 global const $kSelfHealthEmptyPos[4] = [15, 58, 172, 72]
-global const $kSelfHealthColor = 0x932518			; red
+global const $kSelfHealthColor = 0x942518			; red
 global const $kSelfManaMinPos[4] = [65, 71, 172, 83]
 global const $kSelfManaColor = 0x074092				; blue
 

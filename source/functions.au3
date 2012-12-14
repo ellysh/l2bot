@@ -26,9 +26,9 @@ if not WinExists($kWindowHandle) then
 endif
 
 func SendClient($key, $delay)
-	;Send($key)
 	LogWrite("SendClient() - " & $key)
-	ControlSend($kWindowHandle, "", "", $Key)
+	;ControlSend($kWindowHandle, "", "", $key)
+	Send($key)
 	Sleep($delay)
 endfunc
 
@@ -40,7 +40,7 @@ func SendTextClient($text)
 	$key_array = StringSplit($text, "")
 
 	for $i = 1 to $key_array[0] step 1
-		SendClient($key_array[$i], 5)
+		SendClient($key_array[$i], 20)
 	next
 	Sleep(200)	
 	
