@@ -1,5 +1,4 @@
 #include "../source/hooks.au3"
-#include "../conf/hotbar.au3"
 #include "../conf/interface.au3"
 #include "../conf/control.au3"
 #include "../source/debug.au3"

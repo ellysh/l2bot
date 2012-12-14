@@ -24,12 +24,11 @@ First of all set checkbox "chat with Enter" in your Lineage client options.
 You can modify the following configuration files to adapt L2Bot for your Lineage 2 client.
 
 This is list of configuration files from 'conf' directory:
-hotbar.au3 - content of your hotbar is described there
 interface.au3 - position of interface windows and trigger colors are described there
-control.au3 - specific keys to control player character is described there
+control.au3 - your hotbar configuration and specific keys to control player character is described there
 targets_ru.au3 - list of patterns for target mobs names
 
-Specify or leave unchanged this information in hotbar.au3 file:
+Specify or leave unchanged this information in control.au3 file:
 1. kAttackKey - key to attack action in your hotbar (by default F1)
 2. kNextTargetKey - key to next target action in your hotbar (by default F10)
 3. kPickDropKey - key to pickup drop action in your hotbar (by default F8)
