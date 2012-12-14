@@ -1,10 +1,13 @@
-# L2Bot 0.6 version
+L2Bot 0.6 version
+=================
 
-## INTRODUCTION
+INTRODUCTION
+------------
 
 L2Bot is toolkit of AutoIt scripts to implement Lineage 2 bot.
 
-## INSTALLATION
+INSTALLATION
+------------
 
 To launch L2Bot you need to download AutoIt interpreter from official website:
 http://www.autoitscript.com/site/autoit/downloads
@@ -13,7 +16,8 @@ The x64 interpreter version must be selected in installation dialog for users wi
 
 Then download archive with L2Bot scripts and extract it.
 
-## CONFIGURATION
+CONFIGURATION
+-------------
 
 First of all set checkbox "chat with Enter" in your Lineage client options.
 
@@ -54,7 +58,8 @@ Specify or leave unchanged this information in interface.au3 file:
 
 Specify or leave unchanged class spicific skills in the files of 'tactics' directory. You can find these in the spoiler.au3, tank.au3 and warcrayer.au3 files.
 
-## LAUNCHING
+LAUNCHING
+---------
 
 To start L2Bot work perform next actions:
 
