@@ -1,5 +1,5 @@
 #include "analysis.au3"
-#include "../conf/targets_ru.au3"
+#include "../conf/targets_en.au3"
 
 global $gTargetIndex
 
