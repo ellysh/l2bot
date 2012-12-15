@@ -4,11 +4,10 @@
 #include "source/functions.au3"
 #include "source/buff.au3"
 
-global const $kDelayMinutes = 2
-
 ; Проект бесплатного скриптового бота с открытыми исходниками
 global const $kMessageTextRus = "Ghjtrn ,tcgkfnyjuj ,jnf c jnrhsnsvb bc[jlybrfvb"
 global const $kMessageTextEn = " - http://vk.com/l2bot"
+global const $kDelayMinutes = 2
 
 ; This is needed for Windows Vista and above
 #requireadmin

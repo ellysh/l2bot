@@ -1,4 +1,4 @@
-L2Bot 0.6 version
+L2Bot 0.7 version
 =================
 
 INTRODUCTION
@@ -38,7 +38,8 @@ Specify or leave unchanged this information in control.au3 file:
 You can use the CoolPix.exe utility from 'tools' directory to get next interface inforamtion.
 
 Specify or leave unchanged this information in interface.au3 file:
-1. kTargetWindowPos[x1, y1, x2, y2] - this is left top point (x1 and y1) and right bottom point (x2, y2) area coordinates array of the target window
+1. kTargetWindowPos[x1, y1, x2, y2] - this is left top point (x1 and y1) and right bottom point (x2, y2)
+area coordinates array of the target window
 2. kTargetWindowColorBrown - first color of target window
 3. kTargetWindowColorGray - second color of target window
 4. kTargetHealthColor - color of full health bar in the target window
@@ -55,7 +56,13 @@ Specify or leave unchanged this information in interface.au3 file:
 15. kMoveControlPos2 - second screen point to check player's moving
 16. kMoveControlPos3 - third screen point to check player's moving
 
-Specify or leave unchanged class spicific skills in the files of 'tactics' directory. You can find these in the spoiler.au3, tank.au3 and warcrayer.au3 files.
+Specify or leave unchanged class spicific skills in the files of 'tactics' directory. You can find these
+in the spoiler.au3, tank.au3 and warcrayer.au3 files.
+
+You can specify message text and delay betweeen message outputs for chat bot in the chat.au3 file:
+1. kMessageTextRus - message in Russian language (this must be written in English keyboard layout for Java servers)
+2. kMessageTextEn - message in English language
+3. kDelayMinutes - delay betweeen message outputs in minutes
 
 LAUNCHING
 ---------

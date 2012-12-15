@@ -1,3 +1,9 @@
+* L2Bot 0.7
+	- Implement chat bot
+	- Add English target list
+	- Move the hotbar.au3 file content to control.au3 one
+	- Add Russian README file
+
 * L2Bot 0.6
 	- Use PixelSearch function instead PixelGetColor one in triggers checking functions
 	- New movement to target algorithm
