@@ -32,17 +32,21 @@ func SendClient($key, $delay)
 	Sleep($delay)
 endfunc
 
-func SendTextClient($text)
-	LogWrite("SendTextClient() - " & $text)
-
-	SendClient($kEnterKey, 200)
-	
-	$key_array = StringSplit($text, "")
+func SendSplitText($text)
+	local $key_array = StringSplit($text, "")
 
 	for $i = 1 to $key_array[0] step 1
 		SendClient($key_array[$i], 20)
 	next
 	Sleep(200)
+endfunc
+
+func SendTextClient($text)
+	LogWrite("SendTextClient() - " & $text)
+
+	SendClient($kEnterKey, 200)
+
+	SendSplitText($text)
 	
 	SendClient($kEnterKey, 500)
 endfunc
