@@ -76,4 +76,4 @@ To start L2Bot work perform next actions:
 5. Switch and restore the Linegae 2 client window
 6. Press Alt+F2 to grab Lineage 2 client window
 7. Press Alt+F3 to start bot
-8. Press Alt+F1 to stop bot
+8. To interrupt bot press Alt+F1
