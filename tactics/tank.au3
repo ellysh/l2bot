@@ -1,3 +1,6 @@
+; Configuration
+global const $kAttackSkillDelay = 6
+
 ; Skills
 global const $kAttackSkill = "{F3}"
 global const $kStunSkill = "{F2}"

@@ -1,3 +1,6 @@
+; Configuration
+global const $kAttackSkillDelay = 6
+
 ; Skills
 global const $kBuffKey = "3"
 global const $kAssistKey = "{F11}"

@@ -64,7 +64,7 @@ endfunc
 
 func IsPixelExistClient($window_pos, $color)
 	;local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 0, 1, $kWindowHandle)
-	local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 5)
+	local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 10)
 	if not @error then
 		return true
 	else
