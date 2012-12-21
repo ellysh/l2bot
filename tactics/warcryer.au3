@@ -1,11 +1,15 @@
 ; Configuration
-global const $kAttackSkillDelay = 6
+global const $kAttackSkillDelay = 15
 
 ; Skills
-global const $kBuffKey = "3"
+global const $kBuffKey = "5"
 global const $kAssistKey = "{F11}"
+global const $kStunSkill = "{F2}"
 
 func OnAttack()
+	if not IsManaCritical() then	
+		SendClient($kStunSkill, 1000)
+	endif
 endfunc
 
 func OnAttackSkill()
@@ -33,7 +37,7 @@ endfunc
 
 func OnBuffTimeout()
 	LogWrite("OnBuffTimeout() - warcrayer")
-	SendClient($kBuffKey, 12 * 1000)
+	SendClient($kBuffKey, 20 * 1000)
 endfunc
 
 func OnHealthCritical()
