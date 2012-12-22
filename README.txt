@@ -1,4 +1,4 @@
-L2Bot 0.7 version
+L2Bot 0.8 version
 =================
 
 INTRODUCTION
@@ -97,7 +97,7 @@ Alt+F3 - start bot
 Alt+F1 - interrupt bot work
 
 CHAT BOT
------------
+--------
 
 Chat bot is implemented in chat.au3 script file from L2Bot root directory.
 

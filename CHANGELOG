@@ -1,3 +1,8 @@
+* L2Bot 0.8
+	- Implement fishing bot
+	- Check change position action result to success
+	- Use attack skills by spoiler and warcryer classes
+	
 * L2Bot 0.7
 	- Implement chat bot
 	- Add English target list
