@@ -53,10 +53,10 @@ endfunc
 
 ; Main Loop
 while true
-	SendClient($kFishingKey, 500)
+	SendClient($kFishingKey, 3000)
 	
-	while not IsFishBiting()
-		Sleep(100)
+	while not IsFishBiting() and not IsFishingFinish()
+		Sleep(500)
 	wend
 	
 	while not IsFishingFinish()

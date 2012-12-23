@@ -7,12 +7,8 @@ global const $kSweeperKey = "2"
 global const $kStunSkill = "{F2}"
 global const $kAttackSkill = "{F3}"
 
-; Pet
-global const $kPetAttackKey = "{F2}"
-
 func OnAttack()
 	SendClient($kSpoilKey, 1000)
-	;SendClient($kPetAttackKey, 50)
 	
 	if not IsManaCritical() then	
 		SendClient($kAttackSkill, 1000)
