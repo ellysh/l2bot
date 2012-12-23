@@ -105,3 +105,9 @@ You can specify message text and delay betweeen message outputs for chat bot in 
 1. kMessageTextRus - message in Russian language (this must be written in English keyboard layout for Java servers)
 2. kMessageTextEn - message in English language
 3. kDelayMinutes - delay betweeen message outputs in minutes
+
+CONTACT INFORMATION
+-------------------
+
+You can ask any questions about usage L2Bot, report about bugs, send your suggestions and patches to me:
+Ilya Shpigor <petrsum@gmail.com>
