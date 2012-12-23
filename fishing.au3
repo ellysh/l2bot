@@ -15,6 +15,7 @@ global const $kSkillPumpColor = 0x183452	; dark blue
 global const $kFishingKey = "{F1}"
 global const $kSkillPumpKey = "{F2}"
 global const $kSkillReelKey = "{F3}"
+global const $kFishShotKey = "{F12}"
 
 ; This is needed for Windows Vista and above
 #requireadmin
@@ -60,12 +61,13 @@ while true
 	wend
 	
 	while not IsFishingFinish()
+		SendClient($kFishShotKey, 500)
 		if IsSkillReel() then
 			SendClient($kSkillReelKey, 500)
 		else
 			SendClient($kSkillPumpKey, 500)		
 		endif
 		
-		Sleep(500)
+		Sleep(2000)
 	wend
 wend
