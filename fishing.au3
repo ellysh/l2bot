@@ -52,12 +52,6 @@ func IsHealthGrow()
 
 	LogWrite("IsHealthGrow() - coord[0] = " & $coord[0] & " prev = " & $gPrevHealth)
 	
-	if $gPrevHealth = 0 then
-		LogWrite("IsHealthGrow() - init prev health value")
-		$gPrevHealth = $coord[0]
-		return false
-	endif
-	
 	if $coord[0] > $gPrevHealth then
 		LogWrite("IsHealthGrow() - health is grow")
 		$gPrevHealth = $coord[0]
@@ -85,16 +79,20 @@ while true
 		Sleep(500)
 	wend
 	
+	SendClient($kFishShotKey, 0)
+
+	Sleep(1000)
+	UpdatePrevHealth()
+	Sleep(500)
+	
 	while not IsFishingFinish()
-		SendClient($kFishShotKey, 200)
 		if IsHealthGrow() then
-			SendClient($kSkillReelKey, 500)
-			UpdatePrevHealth()
+			SendClient($kSkillReelKey, 600)
 		else
-			SendClient($kSkillPumpKey, 500)		
-			UpdatePrevHealth()
+			SendClient($kSkillPumpKey, 600)		
 		endif
+		UpdatePrevHealth()		
 		
-		Sleep(1000)
+		Sleep(1100)
 	wend
 wend
