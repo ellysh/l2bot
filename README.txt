@@ -80,16 +80,16 @@ Fishing bot is implemented in fishing.au3 script file from L2Bot root directory.
 Open the fishing.au3 file in text editor and specify values of the next variables:
 kFishingWindowPos - coordinates of the "Fishing" window
 kFishingColor1, kFishingColor2 - colors of the couple pixels of "Fishing" window to detect its existance
-kSkillWindowPos - coordinates of the icon with skill in the "Fishing" window (this icon is hint)
-kSkillReelColor - color of the Reeling skill icon
-kSkillPumpColor - color of the Pumping skill icon
+kFishHealthPos - coordinates of the fish's health bar
+kFishHealthColor - color of the full fish's health bar (by default blue)
 kFishingKey - hotkey of the "Fishing" skill (by default F1)
 kSkillPumpKey - hotkey of the "Pumping" skill (by default F2)
 kSkillReelKey - hotkey of the "Reeling" skill (by default F3)
+kFishShotKey - hotkey for fish shot usage (by default F12)
 
 Perform next actions before start fishing:
 1. Place you character near the water where you can use "Fishing" skill
-2. Wear the fishing rod and bait for beginners (bot is not working with professional bait)
+2. Wear the fishing rod and any bait
 
 You can launch and stop bot as any others L2Bot scripts:
 Alt+F2 - grab Lineage 2 client window
