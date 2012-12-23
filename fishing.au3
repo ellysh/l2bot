@@ -8,21 +8,21 @@ global const $kFishingWindowPos[4] = [373, 106, 490, 150]
 global const $kFishingColor1 = 0x181810	; dark brown
 global const $kFishingColor2 = 0x73797B	; grey
 
-global const $kSkillWindowPos[4] = [319, 166, 350, 200]
-global const $kSkillReelColor = 0x310C39	; dark purple
-global const $kSkillPumpColor = 0x183452	; dark blue
+global const $kFishHealthPos[4] = [554, 369, 320, 383]
+global const $kFishHealthColor = 0x0065A5		; blue
 
 global const $kFishingKey = "{F1}"
 global const $kSkillPumpKey = "{F2}"
 global const $kSkillReelKey = "{F3}"
 global const $kFishShotKey = "{F12}"
 
+global $gPrevHealth = 0
+
 ; This is needed for Windows Vista and above
 #requireadmin
 
 func IsFishBiting()
-	if IsPixelExistClient($kSkillWindowPos, $kSkillReelColor) _ 
-	or IsPixelExistClient($kSkillWindowPos, $kSkillPumpColor) then
+	if IsPixelExistClient($kFishHealthPos, $kFishHealthColor) then
 		LogWrite("Fish is bitting!")
 		return true
 	else	
@@ -42,13 +42,38 @@ func IsFishingFinish()
 	endif
 endfunc
 
-func IsSkillReel()
-	if IsPixelExistClient($kSkillWindowPos, $kSkillReelColor) then	
-		LogWrite("Current skill is reel")
-		return true
-	else
-		LogWrite("Current skill is pump")
+func IsHealthGrow()
+	local $coord = GetPixelCoordinateClient($kFishHealthPos, $kFishHealthColor)
+	
+	if $coord[0] = $kErrorCoord then
+		LogWrite("IsHealthGrow() - health bar is not exist")
 		return false
+	endif
+
+	LogWrite("IsHealthGrow() - coord[0] = " & $coord[0] & " prev = " & $gPrevHealth)
+	
+	if $gPrevHealth = 0 then
+		LogWrite("IsHealthGrow() - init prev health value")
+		$gPrevHealth = $coord[0]
+		return false
+	endif
+	
+	if $coord[0] > $gPrevHealth then
+		LogWrite("IsHealthGrow() - health is grow")
+		$gPrevHealth = $coord[0]
+		return true	
+	else
+		LogWrite("IsHealthGrow() - health is not grow")
+		$gPrevHealth = $coord[0]
+		return false	
+	endif
+endfunc
+
+func UpdatePrevHealth()
+	local $coord = GetPixelCoordinateClient($kFishHealthPos, $kFishHealthColor)
+	
+	if $coord <> false then
+		$gPrevHealth = $coord[0]	
 	endif
 endfunc
 
@@ -61,13 +86,15 @@ while true
 	wend
 	
 	while not IsFishingFinish()
-		SendClient($kFishShotKey, 500)
-		if IsSkillReel() then
+		SendClient($kFishShotKey, 200)
+		if IsHealthGrow() then
 			SendClient($kSkillReelKey, 500)
+			UpdatePrevHealth()
 		else
 			SendClient($kSkillPumpKey, 500)		
+			UpdatePrevHealth()
 		endif
 		
-		Sleep(2000)
+		Sleep(1000)
 	wend
 wend

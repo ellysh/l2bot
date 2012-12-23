@@ -97,9 +97,9 @@ func SetControlColors($color1, $color2, $color3)
 endfunc
 
 func IsPositionChanged()
-	local $color1 = PixelGetColorClient($kMoveControlPos1)
-	local $color2 = PixelGetColorClient($kMoveControlPos2)
-	local $color3 = PixelGetColorClient($kMoveControlPos3)
+	local $color1 = GetPixelColorClient($kMoveControlPos1)
+	local $color2 = GetPixelColorClient($kMoveControlPos2)
+	local $color3 = GetPixelColorClient($kMoveControlPos3)
 
 	if $gMoveControlColor1 == $kEmptyColor or $gMoveControlColor2 == $kEmptyColor or $gMoveControlColor3 == $kEmptyColor then
 		SetControlColors($color1, $color2, $color3)

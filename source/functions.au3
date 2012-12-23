@@ -8,6 +8,8 @@ LogWrite("Window handle = " & $kWindowHandle)
 
 Sleep(3000)
 
+global const $kErrorCoord = -1
+
 func WaitGrabCommand()
 	while not $gIsGrab
 		Sleep(1)
@@ -72,7 +74,18 @@ func IsPixelExistClient($window_pos, $color)
 	endif
 endfunc
 
-func PixelGetColorClient($point)
+func GetPixelCoordinateClient($window_pos, $color)
+	local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 10)
+	
+	if not @error then
+		return $coord
+	else
+		local $error[2] = [$kErrorCoord, $kErrorCoord]
+		return $error
+	endif
+endfunc
+
+func GetPixelColorClient($point)
 	;return PixelGetColor($point[0], $point[1], $kWindowHandle)
 	return PixelGetColor($point[0], $point[1])
 endfunc
