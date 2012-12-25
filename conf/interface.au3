@@ -10,11 +10,9 @@ global const $kTargetManaColor = 0x074B9C			; blue
 global const $kTargetManaEmptyColor = 0x1B2C44		; dark blue
 
 ; Self state panel triggers
-global const $kSelfHealthCritPos[4] = [45, 58, 172, 72]
-global const $kSelfHealthHalfPos[4] = [110, 58, 172, 72]
-global const $kSelfHealthEmptyPos[4] = [15, 58, 172, 72]
+global const $kSelfHealthPos[4] = [173, 60, 19, 71]
 global const $kSelfHealthColor = 0x942518			; red
-global const $kSelfManaMinPos[4] = [65, 71, 172, 83]
+global const $kSelfManaPos[4] = [173, 73, 19, 84]
 global const $kSelfManaColor = 0x074092				; blue
 
 ; Movement control points

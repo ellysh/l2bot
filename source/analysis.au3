@@ -39,7 +39,8 @@ func IsTargetPet()
 endfunc
 
 func IsHealthCritical()
-	if not IsPixelExistClient($kSelfHealthCritPos, $kSelfHealthColor) then
+	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
+	if GetBarValue($coord, $kSelfHealthPos) < 30 then
 		LogWrite("Health is critical")
 		return true
 	else
@@ -49,7 +50,8 @@ func IsHealthCritical()
 endfunc
 
 func IsHealthHalf()
-	if not IsPixelExistClient($kSelfHealthHalfPos, $kSelfHealthColor) then
+	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
+	if GetBarValue($coord, $kSelfHealthPos) < 50 then
 		LogWrite("Health is half")
 		return true
 	else
@@ -59,7 +61,8 @@ func IsHealthHalf()
 endfunc
 
 func IsManaCritical()
-	if not IsPixelExistClient($kSelfManaMinPos, $kSelfManaColor) then
+	local $coord = GetPixelCoordinateClient($kSelfManaPos, $kSelfManaColor)
+	if GetBarValue($coord, $kSelfManaPos) < 20 then
 		LogWrite("Mana is critical")
 		return true
 	else
@@ -120,10 +123,12 @@ func IsPositionChanged()
 endfunc
 
 func ExitOnDeath()
-	if not IsPixelExistClient($kSelfHealthEmptyPos, $kSelfHealthColor) then
+	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
+	if GetBarValue($coord, $kSelfHealthPos) < 1 then
 		LogWrite("Player died")
-		exit
-	else	
+		;exit
+	else
 		LogWrite("Player alive")
+		return false
 	endif
 endfunc
