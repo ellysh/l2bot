@@ -80,8 +80,8 @@ func IsTargetDamaged()
 		return false
 	endif
 
-	; Check to red color in target info
-	if not IsPixelExistClient($kTargetHealthPos, $kTargetHealthColor) then
+	local $coord = GetPixelCoordinateClient($kTargetHealthPos, $kTargetHealthColor)
+	if GetBarValue($coord, $kTargetHealthPos) < 95 then
 		LogWrite("Target damaged")
 		return true
 	else

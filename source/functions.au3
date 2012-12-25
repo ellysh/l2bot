@@ -95,3 +95,8 @@ func MouseClickClient($botton, $x, $y)
 	MouseClick($botton, $x, $y, 1, 1)
 	;ControlClick($kWindowHandle, "", "", $botton, 1, $x, $y)
 endfunc
+
+func GetBarValue($coord, $bar_pos)
+	local $result = ($coord[0] - $bar_pos[2]) / ($bar_pos[0] - $bar_pos[2]) * 100
+	return $result
+endfunc
