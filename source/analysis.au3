@@ -28,7 +28,8 @@ endfunc
 
 func IsTargetPet()
 	; Check to blue color in target info
-	if IsPixelExistClient($kTargetWindowPos, $kTargetManaColor) or IsPixelExistClient($kTargetWindowPos, $kTargetManaEmptyColor) then
+	if IsPixelExistClient($kTargetManaPos, $kTargetManaColor) _
+	or IsPixelExistClient($kTargetManaPos, $kTargetManaEmptyColor) then
 		LogWrite("Target is pet")
 		return true
 	else

@@ -5,6 +5,7 @@ global const $kTargetWindowColorGray = 0x968B79		; gray
 
 global const $kTargetHealthPos[4] = [717, 49, 564, 56]
 global const $kTargetHealthColor = 0xAB3022			; red
+global const $kTargetManaPos[4] = [717, 56, 564, 64]
 global const $kTargetManaColor = 0x074B9C			; blue
 global const $kTargetManaEmptyColor = 0x1B2C44		; dark blue
 
