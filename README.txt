@@ -43,17 +43,16 @@ kTargetWindowPos[x1, y1, x2, y2] - this is coordinates left top point (x1 and y1
 area coordinates array of the target window
 kTargetWindowColorBrown - first color to detect target window existance
 kTargetWindowColorGray - second color to detect target window existance
-kTargetHealthColor - color of full health bar in the target window
-kTargetManaColor - color of full mana bar in the target window
-kTargetManaEmptyColor - color of empty mana bar in the target window
-kTargetHealthPos -  coordinates of the target's health bar to detect first hit event
-kSelfHealthCritPos - coordinates of the player's health bar to detect critical HP value
-kSelfHealthHalfPos - coordinates of the player's health bar to detect half HP value
-kSelfHealthEmptyPos - coordinates of whole player's health bar
-kSelfHealthColor - color of the full player's health bar
-kSelfManaMinPos - coordinates of the the player's mana bar to detect critical MP value
-kSelfManaColor - color of the full player's mana bar
-kMoveControlPos1,kMoveControlPos2,kMoveControlPos3  - three screen points to check player's moving
+kTargetHealthPos - coordinates of the target's health bar
+kTargetHealthColor - color of the target's full health bar (by default red)
+kTargetManaPos - coordinates of the target's mana bar
+kTargetManaColor - color of the target's full mana bar (by default blue)
+kTargetManaEmptyColor - color of the target's empty mana bar (by default dark blue)
+kSelfHealthPos - coordinates of the player's health bar
+kSelfHealthColor - color of the player's full health bar (by default red)
+kSelfManaPos - coordinates of the player's mana bar
+kSelfManaColor - color of the player's full mana bar (by default blue)
+kMoveControlPos1,kMoveControlPos2,kMoveControlPos3 - three screen points to check player's moving
 
 Specify or leave unchanged class spicific skills hotkeys in the files of 'tactics' directory. You can find these
 in the spoiler.au3, tank.au3 and warcrayer.au3 files.
@@ -81,7 +80,7 @@ Open the fishing.au3 file in text editor and specify values of the next variable
 kFishingWindowPos - coordinates of the "Fishing" window
 kFishingColor1, kFishingColor2 - colors of the couple pixels of "Fishing" window to detect its existance
 kFishHealthPos - coordinates of the fish's health bar
-kFishHealthColor - color of the full fish's health bar (by default blue)
+kFishHealthColor - color of the fish's full health bar (by default blue)
 kFishingKey - hotkey of the "Fishing" skill (by default F1)
 kSkillPumpKey - hotkey of the "Pumping" skill (by default F2)
 kSkillReelKey - hotkey of the "Reeling" skill (by default F3)
