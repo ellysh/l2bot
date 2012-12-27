@@ -29,7 +29,7 @@ interface.au3 - position of interface windows and trigger colors are described t
 control.au3 - your hotbar configuration and specific keys to control player character is described there
 targets_ru.au3,targets_en.au3 - list of patterns for target mobs names in English and Russian
 
-Specify or leave unchanged this information in control.au3 file:
+Specify or leave unchanged this parameters in control.au3 file:
 kAttackKey - key to attack action in your hotbar (by default F1)
 kNextTargetKey - key to next target action in your hotbar (by default F10)
 kPickDropKey - key to pickup drop action in your hotbar (by default F8)
@@ -38,9 +38,15 @@ kHealthPoition - key to use health poition (by default F5)
 
 You can use the CoolPix.exe utility from 'tools' directory to get next interface inforamtion.
 
-Specify or leave unchanged this information in interface.au3 file:
-kTargetWindowPos[x1, y1, x2, y2] - this is coordinates left top point (x1 and y1) and right bottom point (x2, y2)
-area coordinates array of the target window
+NB: Changing interface parameters is needed only if you have change size
+and position of the client windows. Don't change interface parameters for
+default windows configuration.
+
+NB: Specify windows and bars coordinares in right-top point and left-bottom
+point order.
+
+Specify or leave unchanged this parameters in interface.au3 file:
+kTargetWindowPos - coordinates of the target state window
 kTargetWindowColorBrown - first color to detect target window existance
 kTargetWindowColorGray - second color to detect target window existance
 kTargetHealthPos - coordinates of the target's health bar
@@ -53,6 +59,9 @@ kSelfHealthColor - color of the player's full health bar (by default red)
 kSelfManaPos - coordinates of the player's mana bar
 kSelfManaColor - color of the player's full mana bar (by default blue)
 kMoveControlPos1,kMoveControlPos2,kMoveControlPos3 - three screen points to check player's moving
+
+More information about this parameters is available in interface_conf_1.png and
+interface_conf_2.png illustrations in the 'images' directory.
 
 Specify or leave unchanged class spicific skills hotkeys in the files of 'tactics' directory. You can find these
 in the spoiler.au3, tank.au3 and warcrayer.au3 files.
@@ -86,6 +95,8 @@ kFishingKey - hotkey of the "Fishing" skill (by default F1)
 kSkillPumpKey - hotkey of the "Pumping" skill (by default F2)
 kSkillReelKey - hotkey of the "Reeling" skill (by default F3)
 kFishShotKey - hotkey for fish shot usage (by default F12)
+
+More information about this parameters is available in fishing_conf.png illustration in the 'images' directory.
 
 Perform next actions before start fishing:
 1. Place you character near the water where you can use "Fishing" skill
