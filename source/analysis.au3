@@ -85,7 +85,7 @@ func IsTargetDamaged()
 	endif
 
 	local $coord = GetPixelCoordinateClient($kTargetHealthPos, $kTargetHealthColor)
-	if GetBarValue($coord, $kTargetHealthPos) < 95 then
+	if GetBarValue($coord, $kTargetHealthPos) < 98 then
 		LogWrite("Target damaged")
 		return true
 	else
