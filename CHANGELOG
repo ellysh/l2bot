@@ -1,3 +1,10 @@
+* L2Bot 0.9
+    - Using fish shots in the fishing bot
+    - Improve fishing bot analysis for next action choosing
+    - Use whole health and mana bar position for analyze
+    - Decrease interface parameters count
+    - Add illustration images for interface parameters
+
 * L2Bot 0.8
 	- Implement fishing bot
 	- Check change position action result to success

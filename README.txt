@@ -1,4 +1,4 @@
-L2Bot 0.8 version
+L2Bot 0.9 version
 =================
 
 INTRODUCTION
