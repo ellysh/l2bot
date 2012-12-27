@@ -1,0 +1,23 @@
+RUS
+---
+
+Иллюстрация значений параметров для бота рыбалки fishing.au3.
+
+1. kFishingWindowPos - координаты окна "Рыбалка"
+2. kFishingColor1 - первый цвет произвольного пикселя в окне "Рыбалка"
+3. kFishingColor2 - второй цвет произвольного пикселя в окне "Рыбалка" (для
+определения факта наличия этого окна)
+4. kFishHealthPos - координаты всей полосы HP рыбы
+5. kFishHealthColor - цвет полной полосы HP рыбы (по-умолчанию голубой)
+
+EN
+--
+
+Parameters illustration of fishing bot fishing.au3.
+
+1. kFishingWindowPos - coordinates of the "Fishing" window
+2. kFishingColor1 - first color of any pixel in the "Fishing" window
+3. kFishingColor2 - second color of any pixel in the "Fishing" window to detect
+the window existance
+4. kFishHealthPos - coordinates of the fish's health bar
+5. kFishHealthColor - color of the fish's full health bar (by default blue)

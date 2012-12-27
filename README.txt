@@ -78,7 +78,8 @@ Fishing bot is implemented in fishing.au3 script file from L2Bot root directory.
 
 Open the fishing.au3 file in text editor and specify values of the next variables:
 kFishingWindowPos - coordinates of the "Fishing" window
-kFishingColor1, kFishingColor2 - colors of the couple pixels of "Fishing" window to detect its existance
+kFishingColor1, kFishingColor2 - colors of the couple pixels of "Fishing" window
+to detect the window existance
 kFishHealthPos - coordinates of the fish's health bar
 kFishHealthColor - color of the fish's full health bar (by default blue)
 kFishingKey - hotkey of the "Fishing" skill (by default F1)
