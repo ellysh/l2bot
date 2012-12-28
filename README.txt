@@ -20,7 +20,7 @@ https://github.com/ellysh/l2bot/archive/master.zip
 CONFIGURATION
 -------------
 
-First of all set checkbox "chat with Enter" in your Lineage client options.
+NB: First of all set checkbox "chat with Enter" in your Lineage client options.
 
 You can modify the following configuration files to adapt L2Bot for your Lineage 2 client.
 
