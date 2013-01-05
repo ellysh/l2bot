@@ -69,6 +69,9 @@ in the spoiler.au3, tank.au3 and warcrayer.au3 files.
 LAUNCHING
 ---------
 
+NB: Bots of L2Bot project is not executable exe files! All of them have been implemented as AutoIt scripts
+with au3 filename extension. You must run these scripts.
+
 To start L2Bot work perform next actions:
 
 1. Launch your Lineage 2 client in window mode (press Alt+Enter to do it) and start game with your character.
