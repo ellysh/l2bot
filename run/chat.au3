@@ -1,10 +1,10 @@
-#include "conf/control.au3"
-#include "source/hooks.au3"
-#include "source/debug.au3"
-#include "source/functions.au3"
-#include "source/buff.au3"
+#include "../conf/control.au3"
+#include "../source/hooks.au3"
+#include "../source/debug.au3"
+#include "../source/functions.au3"
+#include "../source/buff.au3"
 
-; Проект бесплатного скриптового бота с открытыми исходниками
+; РџСЂРѕРµРєС‚ Р±РµСЃРїР»Р°С‚РЅРѕРіРѕ СЃРєСЂРёРїС‚РѕРІРѕРіРѕ Р±РѕС‚Р° СЃ РѕС‚РєСЂС‹С‚С‹РјРё РёСЃС…РѕРґРЅРёРєР°РјРё
 global const $kMessageTextRus = "Ghjtrn ,tcgkfnyjuj ,jnf c jnrhsnsvb bc[jlybrfvb"
 global const $kMessageTextEn = " - http://vk.com/l2bot"
 global const $kDelayMinutes = 2
