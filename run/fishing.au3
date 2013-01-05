@@ -80,9 +80,8 @@ while true
 	
 	SendClient($kFishShotKey, 0)
 
-	Sleep(1000)
 	UpdatePrevHealth()
-	Sleep(500)
+	Sleep(1100)
 	
 	while not IsFishingFinish()
 		if IsHealthGrow() then
