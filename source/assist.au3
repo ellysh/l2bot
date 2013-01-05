@@ -26,7 +26,7 @@ func SearchTarget()
 
 		AttackNextTarget()
 
-		if mod($timeout, 20) == 0 and IsTargetForAttack() and not IsTargetDamaged() then		
+		if mod($timeout, $kAttackTimeout) == 0 and IsTargetForAttack() and not IsTargetDamaged() then		
 			exitloop
 		endif
 
