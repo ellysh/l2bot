@@ -1,3 +1,7 @@
+* L2Bot 1.0
+    - Add timeout parameters to class tactics
+    - Move runnable scripts to the 'run' directory
+
 * L2Bot 0.9
     - Using fish shots in the fishing bot
     - Improve fishing bot analysis for next action choosing
