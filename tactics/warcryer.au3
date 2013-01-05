@@ -1,5 +1,6 @@
 ; Configuration
 global const $kAttackSkillDelay = 15
+global const $kBuffTimeout = 5
 
 ; Skills
 global const $kBuffKey = "5"

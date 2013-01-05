@@ -2,7 +2,6 @@
 #include "source/hooks.au3"
 #include "source/debug.au3"
 #include "source/functions.au3"
-#include "source/buff.au3"
 
 global const $kFishingWindowPos[4] = [373, 106, 490, 150]
 global const $kFishingColor1 = 0x181810	; dark brown

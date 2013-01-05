@@ -19,5 +19,5 @@ while true
 	
 	Attack()
 	
-	Buff(5 * $kMinute)
+	Buff($kBuffTimeout * $kMinute)
 wend
