@@ -1,9 +1,10 @@
 ; Configuration
-global const $kAttackSkillDelay = 10
+global const $kAttackSkillDelay = 15
 global const $kBuffTimeout = 16
 
 ; Skills
 global const $kBuffKey = "5"
+global const $kAssistKey = "{F11}"
 global const $kStunSkill = "{F2}"
 
 func OnAttack()
@@ -13,12 +14,11 @@ func OnAttack()
 endfunc
 
 func OnAttackSkill()
-	if not IsManaCritical() then	
-		SendClient($kStunSkill, 1000)
-	endif
 endfunc
 
 func OnFirstKill()
+	SendClient($kCancelTarget, 200)
+	FollowLider()
 endfunc
 
 func OnAllKill()
@@ -27,7 +27,8 @@ endfunc
 
 func NextTarget()
 	LogWrite("NextTarget()")
-	SendClient($kNextTargetKey, 800)
+	SendTextClient("/target " & $kLeaderName)
+	SendClient($kAssistKey, 1000)
 endfunc
 
 func OnAttackTimeout()
