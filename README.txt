@@ -74,7 +74,7 @@ To start L2Bot work perform next actions:
 1. Launch your Lineage 2 client in window mode (press Alt+Enter to do it) and start game with your character.
 2. Manually resize Lineage 2 client window to full screen with mouse
 3. Login by your cahracter
-4. Start one of scripts from the L2Bot root directory
+4. Start one of scripts from the 'run' directory
 5. Switch focus to the Linegae 2 client window for input receiving
 6. Press Alt+F2 to grab Lineage 2 client window
 7. Press Alt+F3 to start bot
@@ -83,7 +83,7 @@ To start L2Bot work perform next actions:
 FISHING BOT
 -----------
 
-Fishing bot is implemented in fishing.au3 script file from L2Bot root directory.
+Fishing bot is implemented in fishing.au3 script file from 'run' directory.
 
 Open the fishing.au3 file in text editor and specify values of the next variables:
 kFishingWindowPos - coordinates of the "Fishing" window
@@ -110,7 +110,7 @@ Alt+F1 - interrupt bot work
 CHAT BOT
 --------
 
-Chat bot is implemented in chat.au3 script file from L2Bot root directory.
+Chat bot is implemented in chat.au3 script file from 'run' directory.
 
 You can specify message text and delay betweeen message outputs for chat bot in the chat.au3 file:
 1. kMessageTextRus - message in Russian language (this must be written in English keyboard layout for Java servers)
