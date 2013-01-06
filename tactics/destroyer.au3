@@ -1,11 +1,12 @@
 ; Configuration
 global const $kAttackSkillTimeout = 6
 global const $kAttackTimeout = 20
-global const $kBuffTimeout = 5
+global const $kBuffTimeout = 1.5
 
 ; Skills
 global const $kAttackSkill = "{F3}"
 global const $kStunSkill = "{F2}"
+global const $kSelfBuff = "5"
 
 func OnAttack()
 	if not IsManaCritical() then
@@ -37,6 +38,7 @@ func OnAttackTimeout()
 endfunc
 
 func OnBuffTimeout()
+	SendClient($kSelfBuff, 1000)
 endfunc
 
 func OnHealthCritical()
