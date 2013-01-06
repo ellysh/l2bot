@@ -70,7 +70,7 @@ kMoveControlPos1,kMoveControlPos2,kMoveControlPos3 - координаты 3-х произвольных
 interface_conf_1.png и interface_conf_2.png в каталоге 'images'.
 
 Также вы можете указать горячие клавиши использования умений специфичных для каждого класса.
-Эти настройки вы можете найти в следующих файлах каталога 'tactics' - spoiler.au3, tank.au3 и warcrayer.au3.
+Эти настройки вы можете найти в файлах каталога 'run'.
 
 ЗАПУСК
 ------

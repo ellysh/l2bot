@@ -63,8 +63,7 @@ kMoveControlPos1,kMoveControlPos2,kMoveControlPos3 - three screen points to chec
 More information about this parameters is available in interface_conf_1.png and
 interface_conf_2.png illustrations in the 'images' directory.
 
-Specify or leave unchanged class spicific skills hotkeys in the files of 'tactics' directory. You can find these
-in the spoiler.au3, tank.au3 and warcrayer.au3 files.
+Specify or leave unchanged class spicific skills hotkeys in the files of 'run' directory.
 
 LAUNCHING
 ---------
