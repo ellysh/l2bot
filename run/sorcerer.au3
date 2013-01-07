@@ -1,28 +1,26 @@
 ; Configuration
-global const $kAttackSkillTimeout = 15
-global const $kAttackTimeout = 20
-global const $kBuffTimeout = 5
-global const $kIsCancelTargetMove = true
+global const $kAttackSkillTimeout = 10
+global const $kAttackTimeout = 50
+global const $kBuffTimeout = 16
+global const $kIsCancelTargetMove = false
 
 ; Skills
-global const $kSpoilKey = "1"
-global const $kSweeperKey = "2"
+global const $kBuffKey = "5"
 global const $kStunSkill = "{F2}"
-global const $kAttackSkill = "{F3}"
 
 func OnAttack()
-	SendClient($kSpoilKey, 1000)
-	
-	if not IsManaCritical() then	
-		SendClient($kAttackSkill, 1000)
-	endif
+	;if not IsManaCritical() then	
+	;	SendClient($kStunSkill, 1000)
+	;endif
 endfunc
 
 func OnAttackSkill()
+	;if not IsManaCritical() then	
+	;	SendClient($kStunSkill, 1000)
+	;endif
 endfunc
 
 func OnFirstKill()
-	SendClient($kSweeperKey, 1000)
 endfunc
 
 func OnAllKill()
@@ -36,10 +34,12 @@ endfunc
 
 func OnAttackTimeout()
 	SendClient($kCancelTarget, 50)
-	ChangePosition()	
+	ChangePosition()
 endfunc
 
 func OnBuffTimeout()
+	LogWrite("OnBuffTimeout() - warcrayer")
+	SendClient($kBuffKey, 20 * 1000)
 endfunc
 
 func OnHealthCritical()

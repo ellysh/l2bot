@@ -10,7 +10,9 @@ func MoveToTarget()
 
 	SendClient($kAttackKey, 500)
 
-	SendClient($kCancelTarget, 500)	
+	if $kIsCancelTargetMove then
+		SendClient($kCancelTarget, 500)	
+	endif
 	
 	local $timeout = 0
 	while not IsTargetForAttack()

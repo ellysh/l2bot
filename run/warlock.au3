@@ -2,6 +2,7 @@
 global const $kAttackSkillTimeout = 10
 global const $kAttackTimeout = 20
 global const $kBuffTimeout = 16
+global const $kIsCancelTargetMove = false
 
 ; Skills
 global const $kSummonAttackKey = "{F2}"
@@ -21,7 +22,6 @@ func OnFirstKill()
 endfunc
 
 func OnAllKill()
-	SendClient($kHealthSkill, 1000)
 	PickDrop(5)
 endfunc
 
