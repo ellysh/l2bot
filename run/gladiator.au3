@@ -27,7 +27,7 @@ endfunc
 func OnAllKill()
 	PickDrop(5)
 	
-	SendClient($kFocusSkill, 2000)
+	SendClient($kFocusSkill, 1000)
 	SendClient($kFocusSkill, 1000)	
 endfunc
 
