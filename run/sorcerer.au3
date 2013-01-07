@@ -1,23 +1,16 @@
 ; Configuration
 global const $kAttackSkillTimeout = 10
-global const $kAttackTimeout = 50
+global const $kAttackTimeout = 20
 global const $kBuffTimeout = 16
 global const $kIsCancelTargetMove = false
 
 ; Skills
 global const $kBuffKey = "5"
-global const $kStunSkill = "{F2}"
 
 func OnAttack()
-	;if not IsManaCritical() then	
-	;	SendClient($kStunSkill, 1000)
-	;endif
 endfunc
 
 func OnAttackSkill()
-	;if not IsManaCritical() then	
-	;	SendClient($kStunSkill, 1000)
-	;endif
 endfunc
 
 func OnFirstKill()
