@@ -1,3 +1,12 @@
+* L2Bot 1.1
+	- Improve first action choosing in fishing bot
+	- Disable debug file output
+	- Merge classes tactics files and run files
+	- Add the destroyer class bot
+	- Add the gladiator class bot
+	- Add the warlock class bot
+	- Add the sorcerer class bot
+
 * L2Bot 1.0
     - Add timeout parameters to class tactics
     - Move runnable scripts to the 'run' directory
