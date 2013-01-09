@@ -5,12 +5,16 @@ global const $kBuffTimeout = 16
 global const $kIsCancelTargetMove = false
 
 ; Skills
+global const $kAttackSkill = "{F2}"
 global const $kBuffKey = "5"
 
 func OnAttack()
 endfunc
 
 func OnAttackSkill()
+	if not IsManaCritical() then
+		SendClient($kAttackSkill, 1000)
+	endif
 endfunc
 
 func OnFirstKill()

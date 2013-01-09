@@ -62,9 +62,9 @@ endfunc
 
 func ChangePosition()
 	LogWrite("ChangePosition()")
-	
-	while not IsPositionChanged()
+
+	do 
 		TurnRight(5)
 		MoveBack(4000)
-	wend
+	until IsPositionChanged()
 endfunc

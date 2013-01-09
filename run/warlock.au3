@@ -1,6 +1,6 @@
 ; Configuration
 global const $kAttackSkillTimeout = 10
-global const $kAttackTimeout = 20
+global const $kAttackTimeout = 16
 global const $kBuffTimeout = 16
 global const $kIsCancelTargetMove = false
 
