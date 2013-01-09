@@ -1,6 +1,6 @@
 ; Configuration
 global const $kAttackSkillTimeout = 10
-global const $kAttackTimeout = 16
+global const $kAttackTimeout = 20
 global const $kBuffTimeout = 16
 global const $kIsCancelTargetMove = false
 
@@ -36,7 +36,7 @@ endfunc
 
 func OnBuffTimeout()
 	LogWrite("OnBuffTimeout()")
-	SendClient($kBuffKey, 20 * 1000)
+	SendClient($kBuffKey, 5000)
 endfunc
 
 func OnHealthCritical()
