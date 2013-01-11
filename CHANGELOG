@@ -1,3 +1,8 @@
+* L2Bot 1.2
+	- Fix bug with position changing by attack timeout
+	- Add bot for the hawkeye class
+	- Add bot for the bladedancer class	
+	
 * L2Bot 1.1
 	- Improve first action choosing in fishing bot
 	- Disable debug file output
