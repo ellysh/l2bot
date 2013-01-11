@@ -1,15 +1,14 @@
 ; Configuration
 global const $kAttackSkillTimeout = 6
 global const $kAttackTimeout = 20
-global const $kBuffTimeout = 5
+global const $kBuffTimeout = 16
 global const $kIsCancelTargetMove = true
 
 ; Skills
 global const $kAttackSkill = "{F3}"
 global const $kStunSkill = "{F2}"
-global const $kHealSkill = "{F6}"
-global const $kSelfBuff = "5"
-global const $kDefenseSkill = "7"
+global const $kBuffKey = "5"
+global const $kDefenseSkill = "6"
 
 func OnAttack()
 	if not IsManaCritical() then
@@ -41,7 +40,7 @@ func OnAttackTimeout()
 endfunc
 
 func OnBuffTimeout()
-	SendClient($kSelfBuff, 3000)
+	SendClient($kBuffKey, 5000)
 endfunc
 
 func OnHealthCritical()
@@ -49,12 +48,7 @@ func OnHealthCritical()
 endfunc
 
 func OnHealthHalf()
-	if not IsManaCritical() and not IsTargetForAttack() then
-		LogWrite("Use heah skill")
-		SendClient($kHealSkill, 8000)
-	else
-		PotionHealing()
-	endif
+	PotionHealing()
 endfunc
 
 ; This is needed for Windows Vista and above
