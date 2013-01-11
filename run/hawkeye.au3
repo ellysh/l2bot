@@ -7,6 +7,7 @@ global const $kIsCancelTargetMove = false
 ; Skills
 global const $kAttackSkill = "{F2}"
 global const $kBuffKey = "5"
+global const $kDefenseSkill = "6"
 
 func OnAttack()
 endfunc
@@ -40,6 +41,7 @@ func OnBuffTimeout()
 endfunc
 
 func OnHealthCritical()
+	SendClient($kDefenseSkill, 1000)
 endfunc
 
 func OnHealthHalf()

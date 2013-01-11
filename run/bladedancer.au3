@@ -40,7 +40,7 @@ func OnBuffTimeout()
 endfunc
 
 func OnHealthCritical()
-	SendClient($kDefenseSkill, 500)
+	SendClient($kDefenseSkill, 1000)
 endfunc
 
 func OnHealthHalf()
