@@ -1,12 +1,10 @@
 ; Configuration
 global const $kAttackSkillTimeout = 6
 global const $kAttackTimeout = 20
-global const $kBuffTimeout = 16
 global const $kIsCancelTargetMove = true
 
 ; Skills
 global const $kAttackSkill = "{F2}"
-global const $kBuffKey = "5"
 global const $kDefenseSkill = "6"
 
 func OnAttack()
@@ -36,8 +34,6 @@ func OnAttackTimeout()
 endfunc
 
 func OnBuffTimeout()
-	LogWrite("OnBuffTimeout()")
-	SendClient($kBuffKey, 5000)
 endfunc
 
 func OnHealthCritical()
