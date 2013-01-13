@@ -2,7 +2,7 @@ RUS
 ---
 
 Иллюстрация параметров конфигурирования интерфейса клиента в файле
-conf/interface.au3. Картинка 2
+conf/interface_highfive.au3. Картинка 2
 
 1. kTargetManaPos - координаты всей полосы MP цели
 2. kTargetManaEmptyColor - цвет пустой полосы MP цели (по-умолчанию синий)
@@ -10,7 +10,7 @@ conf/interface.au3. Картинка 2
 EN
 --
 
-Parameters illustration of Lineage 2 client interface in conf/interface.au3
+Parameters illustration of Lineage 2 client interface in conf/interface_highfive.au3
 file. Picture 2.
 
 1. kTargetManaPos - coordinates of the target's mana bar

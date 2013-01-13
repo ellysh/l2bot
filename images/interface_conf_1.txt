@@ -2,7 +2,7 @@ RUS
 ---
 
 Иллюстрация параметров конфигурирования интерфейса клиента в файле
-conf/interface.au3. Картинка 1
+conf/interface_highfive.au3. Картинка 1
 
 1. kTargetWindowPos - координаты окна состояния цели
 2. kTargetWindowColorBrown - первый цвет произвольного пикселя в окне цели
@@ -17,7 +17,7 @@ conf/interface.au3. Картинка 1
 EN
 --
 
-Parameters illustration of Lineage 2 client interface in conf/interface.au3
+Parameters illustration of Lineage 2 client interface in conf/interface_highfive.au3
 file. Picture 1.
 
 1. kTargetWindowPos - coordinates of the target state window
