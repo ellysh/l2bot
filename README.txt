@@ -25,7 +25,8 @@ NB: First of all set checkbox "chat with Enter" in your Lineage client options.
 You can modify the following configuration files to adapt L2Bot for your Lineage 2 client.
 
 This is list of configuration files from 'conf' directory:
-interface.au3 - position of interface windows and trigger colors are described there
+interface_highfive.au3,interface_interlude.au3 - position of interface windows and trigger colors are
+described there (for High Five and Interlude)
 control.au3 - your hotbar configuration and specific keys to control player character is described there
 targets_ru.au3,targets_en.au3 - list of patterns for target mobs names in English and Russian
 
@@ -45,7 +46,7 @@ default windows configuration.
 NB: Specify windows and bars coordinares in right-top point and left-bottom
 point order.
 
-Specify or leave unchanged this parameters in interface.au3 file:
+Specify or leave unchanged this parameters in interface_highfive.au3 or interface_interlude.au3 file:
 kTargetWindowPos - coordinates of the target state window
 kTargetWindowColorBrown - first color to detect target window existance
 kTargetWindowColorGray - second color to detect target window existance
