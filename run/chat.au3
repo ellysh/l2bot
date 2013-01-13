@@ -12,12 +12,6 @@ global const $kDelayMinutes = 2
 ; This is needed for Windows Vista and above
 #requireadmin
 
-func SendSymbolClient($key, $delay)
-	LogWrite("SendSymbolClient() - " & $key)
-	Send($key, 1)
-	Sleep($delay)
-endfunc
-
 func SwitchLanguage()
 	Send ("{CTRLDOWN}{LSHIFT}")
 	Send ("{CTRLUP}")

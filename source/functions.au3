@@ -34,11 +34,21 @@ func SendClient($key, $delay)
 	Sleep($delay)
 endfunc
 
+func SendSymbolClient($key, $delay)
+	LogWrite("SendSymbolClient() - " & $key)
+	Send($key, 1)
+	Sleep($delay)
+endfunc
+
 func SendSplitText($text)
 	local $key_array = StringSplit($text, "")
 
 	for $i = 1 to $key_array[0] step 1
-		SendClient($key_array[$i], 20)
+		if $key_array[$i] == "!" or $key_array[$i] == "/" then
+			SendSymbolClient($key_array[$i], 20)
+		else
+			SendClient($key_array[$i], 20)
+		endif
 	next
 	Sleep(200)
 endfunc
@@ -62,7 +72,6 @@ func SendTextClientWin($text)
 	
 	SendClient($kEnterKey, 1000)
 endfunc
-
 
 func IsPixelExistClient($window_pos, $color)
 	;local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 0, 1, $kWindowHandle)
