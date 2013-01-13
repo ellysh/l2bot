@@ -1,5 +1,5 @@
 #include "../source/hooks.au3"
-#include "../conf/interface.au3"
+#include "../conf/interface_highfive.au3"
 #include "../conf/control.au3"
 #include "../source/debug.au3"
 #include "../source/functions.au3"
