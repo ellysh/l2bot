@@ -26,7 +26,7 @@ func MoveToTarget()
 			return
 		endif
 		
-		if mod($timeout, 40) == 0 then
+		if mod($timeout, $kMoveTimeout) == 0 then
 			LogWrite("Move timeout #2")
 			OnAttackTimeout()
 			return
