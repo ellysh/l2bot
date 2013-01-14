@@ -1,3 +1,34 @@
+global $gPrevHealth = 0
+
+func IsHealthDecrease()
+	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
+	
+	if $coord[0] = $kErrorCoord then
+		LogWrite("IsHealthDecrease() - health bar is not exist")
+		return false
+	endif
+
+	LogWrite("IsHealthDecrease() - coord[0] = " & $coord[0] & " prev = " & $gPrevHealth)
+	
+	if $coord[0] < $gPrevHealth then
+		LogWrite("IsHealthDecrease() - health is decrease")
+		$gPrevHealth = $coord[0]
+		return true	
+	else
+		LogWrite("IsHealthDecrease() - health is not decrease")
+		$gPrevHealth = $coord[0]
+		return false	
+	endif
+endfunc
+
+func UpdatePrevHealth()
+	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
+	
+	if $coord <> false then
+		$gPrevHealth = $coord[0]	
+	endif
+endfunc
+
 func Attack()
 	LogWrite("Attack()")
 
@@ -5,6 +36,8 @@ func Attack()
 		return
 	endif
 
+	UpdatePrevHealth()
+					
 	local $timeout = 0
 	local $is_attacked = false
 	while IsTargetAlive()
@@ -23,6 +56,11 @@ func Attack()
 		if IsTargetDamaged() and not $is_attacked then
 			OnAttack()
 			$is_attacked = true
+		else
+			if not $kIsCancelTargetMove and not $is_attacked and IsHealthDecrease() then
+				SendClient($kCancelTarget, 500)
+				Sleep(1000)
+			endif
 		endif
 
 		if mod($timeout, $kAttackSkillTimeout) == 0 and $is_attacked then
@@ -33,7 +71,9 @@ func Attack()
 			LogWrite("Attack timeout")
 			OnAttackTimeout()
 		endif
-		
+
+		UpdatePrevHealth()
+					
 		ExitOnDeath()
 	wend
 	
