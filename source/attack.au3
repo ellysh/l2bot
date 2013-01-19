@@ -29,6 +29,13 @@ func UpdatePrevHealth()
 	endif
 endfunc
 
+func Retarget($is_attacked)
+	if not $kIsCancelTargetMove and not $is_attacked and IsHealthDecrease() then
+		SendClient($kCancelTarget, 500)
+		Sleep(1000)
+	endif
+endfunc
+
 func Attack()
 	LogWrite("Attack()")
 
@@ -57,10 +64,7 @@ func Attack()
 			OnAttack()
 			$is_attacked = true
 		else
-			if not $kIsCancelTargetMove and not $is_attacked and IsHealthDecrease() then
-				SendClient($kCancelTarget, 500)
-				Sleep(1000)
-			endif
+			Retarget($is_attacked)
 		endif
 
 		if mod($timeout, $kAttackSkillTimeout) == 0 and $is_attacked then
