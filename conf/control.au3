@@ -1,6 +1,6 @@
 ; Common keys
-global const $kWalkFrontKey = "W"
-global const $kWalkBackKey = "S"
+global const $kWalkFrontKey = "UP"
+global const $kWalkBackKey = "DOWN"
 global const $kCancelTarget = "{ESC}"
 global const $kEnterKey = "{ENTER}"
 
