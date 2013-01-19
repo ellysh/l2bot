@@ -1,3 +1,7 @@
+* L2Bot 1.4
+	- Use the arrow keys instead W and S for bot moving
+	- Move to target after kill for drop picking in hawkeye and sorcerer bots
+	
 * L2Bot 1.3
 	- Add bot for the treasure hunter class
 	- Add the interface config for Interlude chronicles
