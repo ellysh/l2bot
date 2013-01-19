@@ -9,6 +9,7 @@ global const $kIsCancelTargetMove = false
 global const $kAttackSkill = "{F2}"
 global const $kBuffKey = "5"
 global const $kDefenseSkill = "6"
+global const $kMeleeAttackKey = "1"
 
 func OnAttack()
 endfunc
@@ -23,6 +24,7 @@ func OnFirstKill()
 endfunc
 
 func OnAllKill()
+	SendClient($kMeleeAttackKey, 2500)
 	PickDrop(5)
 endfunc
 
