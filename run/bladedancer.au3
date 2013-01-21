@@ -7,8 +7,8 @@ global const $kIsCancelTargetMove = true
 
 ; Skills
 global const $kAttackSkill = "{F2}"
-global const $kSelfBuff = "5"
-global const $kDefenseSkill = "6"
+global const $kSelfBuff = "{F7}"
+global const $kDefenseSkill = "{F4}"
 
 func OnAttack()
 endfunc
