@@ -1,3 +1,6 @@
+* L2Bot 1.5
+	- Fix the hotbar keys for all class
+
 * L2Bot 1.4
 	- Use the arrow keys instead W and S for bot moving
 	- Move to target after kill for drop picking in hawkeye and sorcerer bots
