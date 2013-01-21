@@ -6,7 +6,7 @@ global const $kBuffTimeout = 16
 global const $kIsCancelTargetMove = false
 
 ; Skills
-global const $kBuffKey = "5"
+global const $kBuffKey = "{F7}"
 global const $kMeleeAttackKey = "{F2}"
 
 func OnAttack()
