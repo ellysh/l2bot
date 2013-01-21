@@ -6,13 +6,12 @@ global const $kBuffTimeout = 16
 global const $kIsCancelTargetMove = false
 
 ; Skills
-global const $kSummonAttackKey = "{F2}"
-global const $kBuffKey = "5"
-global const $kSummonSkill = "6"
-global const $kHealthSkill = "1"
+global const $kMeleeAttackKey = "{F2}"
+global const $kBuffKey = "{F7}"
+global const $kSummonSkill = "{F4}"
+global const $kHealthSkill = "{F3}"
 
 func OnAttack()
-	SendClient($kSummonAttackKey, 1000)
 endfunc
 
 func OnAttackSkill()
@@ -23,6 +22,7 @@ func OnFirstKill()
 endfunc
 
 func OnAllKill()
+	SendClient($kMeleeAttackKey, 2500)
 	PickDrop(5)
 endfunc
 
