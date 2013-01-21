@@ -1,25 +1,24 @@
 ; Configuration
-global const $kAttackSkillTimeout = 15
+global const $kAttackSkillTimeout = 6
 global const $kAttackTimeout = 20
 global const $kMoveTimeout = 40
 global const $kBuffTimeout = 5
 global const $kIsCancelTargetMove = true
 
 ; Skills
-global const $kSpoilKey = "1"
-global const $kSweeperKey = "2"
+global const $kSpoilKey = "{F6}"
+global const $kSweeperKey = "{F7}"
 global const $kStunSkill = "{F2}"
 global const $kAttackSkill = "{F3}"
 
 func OnAttack()
 	SendClient($kSpoilKey, 1000)
-	
-	if not IsManaCritical() then	
-		SendClient($kAttackSkill, 1000)
-	endif
 endfunc
 
 func OnAttackSkill()
+	if not IsManaCritical() then	
+		SendClient($kAttackSkill, 1000)
+	endif
 endfunc
 
 func OnFirstKill()
