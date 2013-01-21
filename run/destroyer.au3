@@ -8,7 +8,7 @@ global const $kIsCancelTargetMove = true
 ; Skills
 global const $kAttackSkill = "{F3}"
 global const $kStunSkill = "{F2}"
-global const $kSelfBuff = "5"
+global const $kSelfBuff = "{F7}"
 
 func OnAttack()
 	if not IsManaCritical() then
