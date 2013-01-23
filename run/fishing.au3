@@ -3,11 +3,11 @@
 #include "../source/debug.au3"
 #include "../source/functions.au3"
 
-global const $kFishingWindowPos[4] = [373, 106, 490, 150]
+global const $kFishingWindowPos[4] = [576, 98, 289, 415]
 global const $kFishingColor1 = 0x181810	; dark brown
 global const $kFishingColor2 = 0x73797B	; grey
 
-global const $kFishHealthPos[4] = [554, 369, 320, 383]
+global const $kFishHealthPos[4] = [551, 360, 320, 371]
 global const $kFishHealthColor = 0x0065A5		; blue
 
 global const $kFishingKey = "{F1}"
@@ -78,17 +78,18 @@ while true
 		Sleep(500)
 	wend
 	
-	SendClient($kFishShotKey, 0)
-
 	UpdatePrevHealth()
 	Sleep(1100)
 	
 	while not IsFishingFinish()
+		SendClient($kFishShotKey, 0)	
+
 		if IsHealthGrow() then
 			SendClient($kSkillReelKey, 600)
 		else
 			SendClient($kSkillPumpKey, 600)		
 		endif
+
 		UpdatePrevHealth()		
 		
 		Sleep(1100)
