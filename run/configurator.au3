@@ -6,32 +6,48 @@
 #requireadmin
 
 ; FIXME: Make Russian and English variant of tips
-global const $kParamCount = 5
+global const $kParamCount = 17
 global const $kTipText[$kParamCount] = [ _
-	"Укажите произвольную точку окна цели", _
-	"Укажите точку на полоске HP цели", _
-	"Укажите точку на полоске MP цели (выделите себя или пета)", _
- 	"Укажите точку на полоске HP персонажа", _
-	"Укажите точку на полоске MP персонажа" _
+	"Укажите левую-нижнюю точку окна цели", _
+	"Укажите правую-верхнюю точку окна цели", _	
+	"Укажите первую точку окна цели с характерным цветом", _
+	"Укажите вторую точку окна цели с характерным цветом", _
+	"Укажите левую-нижнюю точку на полоске HP цели", _
+	"Укажите правую-верхнюю точку на полоске HP цели", _	
+	"Укажите точку на полной полоске HP цели с характерным цветом", _
+	"Укажите левую-нижнюю точку на полоске MP цели (выделите себя или пета)", _
+	"Укажите правую-верхнюю точку на полоске MP цели (выделите себя или пета)", _	
+	"Укажите точку на полной полоске MP цели с характерным цветом (выделите себя или пета)", _	
+	"Укажите точку на пустой полоске MP цели с характерным цветом (выделите себя или пета)", _		
+ 	"Укажите левую-нижнюю точку на полоске HP персонажа", _
+ 	"Укажите правую-верхнюю точку на полоске HP персонажа", _	
+	"Укажите точку на полной полоске HP персонажа с характерным цветом", _	
+	"Укажите левую-нижнюю точку на полоске MP персонажа", _
+	"Укажите правую-верхнюю точку на полоске MP персонажа", _
+	"Укажите точку на полной полоске MP персонажа с характерным цветом" _	
 ]
 
-global const $kPosParams[$kParamCount] = [ _
-	"kTargetWindowPos", _
-	"kTargetHealthPos", _
-	"kTargetManaPos", _
- 	"kSelfHealthPos", _
-	"kSelfManaPos" _
-]
-
-global const $kColorParams[$kParamCount] = [ _
-	"kTargetWindowColor", _
-	"kTargetHealthColor", _
-	"kTargetManaColor", _
+global const $kParamNames[$kParamCount] = [ _
+	"kTargetWindowLeft", _
+	"kTargetWindowRight", _
+	"kTargetWindowColorBrown", _
+	"kTargetWindowColorGray", _	
+	"kTargetHealthLeft", _
+ 	"kTargetHealthRight", _
+ 	"kTargetHealthColor", _
+ 	"kTargetManaLeft", _
+ 	"kTargetManaRight", _
+ 	"kTargetManaColor", _
+ 	"kTargetManaEmptyColor", _
+ 	"kSelfHealthLeft", _
+ 	"kSelfHealthRight", _
  	"kSelfHealthColor", _
-	"kSelfManaColor" _
+ 	"kSelfManaLeft", _	
+ 	"kSelfManaRight", _	
+ 	"kSelfManaColor" _	
 ]
 
-global const $kConfigFile = "test.txt"
+global const $kConfigFile = "../conf/interface.au3"
 
 global $gTipIndex = 0
 global $gIsSelect = false
@@ -59,9 +75,9 @@ func FindEdge($step)
 	return $check_coord[0]
 endfunc
 
-func WriteAreaCoord($param, $x1, $y1, $x2, $y2)
-	FileWrite($kConfigFile, "global const $" & $param & "[4] = [" & _
-			  $x2 & "," & $y2 & "," & $x1 & "," & $y1 & "]" & chr(10))
+func WritePoint($param, $x, $y)
+	FileWrite($kConfigFile, "global const $" & $param & "[2] = [" & _
+			  $x & "," & $y & "]" & chr(10))
 endfunc
 
 func WriteColor($param, $color)
@@ -75,19 +91,22 @@ while true
 	ToolTip($kTipText[$gTipIndex])
 
 	if $gIsSelect = true then
-		local $left = FindEdge(-1)
-		local $right = FindEdge(1)
-		local $pos_param = $kPosParams[$gTipIndex]
-		local $color_param = $kColorParams[$gTipIndex]
+		local $param = $kParamNames[$gTipIndex]
 
-		WriteAreaCoord($pos_param, $left, $gCoord[0] + 10, $right, $gCoord[0] - 10)
-		WriteColor($color_param, $gColor)
+		if StringInStr($param, "Color") then
+			WriteColor($param, $gColor)
+		else
+			WritePoint($param, $gCoord[0], $gCoord[1])		
+		endif
 
 		$gTipIndex = $gTipIndex + 1
 		$gIsSelect = false
 	endif
 
 	if $gTipIndex = $kParamCount then
+		WritePoint("kMoveControlPos1", 550, 590)
+		WritePoint("kMoveControlPos2", 640, 370)
+		WritePoint("kMoveControlPos3", 770, 590)
 		exit
 	endif
 	
