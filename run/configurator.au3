@@ -1,17 +1,95 @@
+#include "../source/debug.au3"
 #include "../source/hooks.au3"
+#include "../source/functions.au3"
 
 ; This is needed for Windows Vista and above
 #requireadmin
 
-HotKeySet("!{F4}", "_GetCursorPos")
+; FIXME: Make Russian and English variant of tips
+global const $kParamCount = 5
+global const $kTipText[$kParamCount] = [ _
+	"Укажите произвольную точку окна цели", _
+	"Укажите точку на полоске HP цели", _
+	"Укажите точку на полоске MP цели (выделите себя или пета)", _
+ 	"Укажите точку на полоске HP персонажа", _
+	"Укажите точку на полоске MP персонажа" _
+]
+
+global const $kPosParams[$kParamCount] = [ _
+	"kTargetWindowPos", _
+	"kTargetHealthPos", _
+	"kTargetManaPos", _
+ 	"kSelfHealthPos", _
+	"kSelfManaPos" _
+]
+
+global const $kColorParams[$kParamCount] = [ _
+	"kTargetWindowColor", _
+	"kTargetHealthColor", _
+	"kTargetManaColor", _
+ 	"kSelfHealthColor", _
+	"kSelfManaColor" _
+]
+
+global const $kConfigFile = "test.txt"
+
+global $gTipIndex = 0
+global $gIsSelect = false
+global $gCoord[2] = [0, 0]
+global $gColor = 0x000000
+
+HotKeySet("!{F3}", "_GetCursorPos")
 
 func _GetCursorPos()
-	$coord = MouseGetPos()
-	$color = PixelGetColor($coord[0], $coord[1])
-	MsgBox(0, "Pixel info", "x = " & $coord[0] & " y = " & $coord[1] & " color = " & Hex($color, 6))
+	$gCoord = MouseGetPos()
+	$gColor = PixelGetColor($gCoord[0], $gCoord[1])
+	$gIsSelect = true
+	LogWrite("_GetCursorPos() - x = " & $gCoord[0] & " y = " & $gCoord[1] & " color = " & Hex($gColor, 6))
 endfunc
+
+func FindEdge($step)
+	$check_coord = $gCoord
+	
+	while $gCoord[0] <> 0 and $gColor == GetPixelColorClient($check_coord)
+		$check_coord[0] = $check_coord[0] + $step
+	wend
+	
+	LogWrite("FindEdge() - color = " & Hex($gColor, 6) & " check_color = " & Hex(GetPixelColorClient($check_coord), 6))
+	
+	return $check_coord[0]
+endfunc
+
+func WriteAreaCoord($param, $x1, $y1, $x2, $y2)
+	FileWrite($kConfigFile, "global const $" & $param & "[4] = [" & _
+			  $x2 & "," & $y2 & "," & $x1 & "," & $y1 & "]" & chr(10))
+endfunc
+
+func WriteColor($param, $color)
+	FileWrite($kConfigFile, "global const $" & $param & " = 0x" & Hex($color, 6) & chr(10))
+endfunc
+
+FileDelete($kConfigFile)
 
 ; Main Loop
 while true
+	ToolTip($kTipText[$gTipIndex])
+
+	if $gIsSelect = true then
+		local $left = FindEdge(-1)
+		local $right = FindEdge(1)
+		local $pos_param = $kPosParams[$gTipIndex]
+		local $color_param = $kColorParams[$gTipIndex]
+
+		WriteAreaCoord($pos_param, $left, $gCoord[0] + 10, $right, $gCoord[0] - 10)
+		WriteColor($color_param, $gColor)
+
+		$gTipIndex = $gTipIndex + 1
+		$gIsSelect = false
+	endif
+
+	if $gTipIndex = $kParamCount then
+		exit
+	endif
+	
 	Sleep(1)
 wend
