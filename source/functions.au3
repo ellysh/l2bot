@@ -65,9 +65,9 @@ func SendTextClientWin($text)
 	SendClient($kEnterKey, 1000)
 endfunc
 
-func IsPixelExistClient($window_pos, $color)
+func IsPixelExistClient($window_left, $window_right, $color)
 	;local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 0, 1, $kWindowHandle)
-	local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 10)
+	local $coord = PixelSearch($window_right[0], $window_right[1], $window_left[0], $window_left[1], $color, 10)
 	if not @error then
 		return true
 	else
@@ -75,8 +75,8 @@ func IsPixelExistClient($window_pos, $color)
 	endif
 endfunc
 
-func GetPixelCoordinateClient($window_pos, $color)
-	local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 10)
+func GetPixelCoordinateClient($window_left, $window_right, $color)
+	local $coord = PixelSearch($window_right[0], $window_right[1], $window_left[0], $window_left[1], $color, 10)
 	
 	if not @error then
 		return $coord
@@ -97,7 +97,7 @@ func MouseClickClient($botton, $x, $y)
 	;ControlClick($kWindowHandle, "", "", $botton, 1, $x, $y)
 endfunc
 
-func GetBarValue($coord, $bar_pos)
-	local $result = ($coord[0] - $bar_pos[2]) / ($bar_pos[0] - $bar_pos[2]) * 100
+func GetBarValue($coord, $bar_left, $bar_right)
+	local $result = ($coord[0] - $bar_left[0]) / ($bar_right[0] - $bar_left[0]) * 100
 	return $result
 endfunc

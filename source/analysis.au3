@@ -5,8 +5,8 @@ global $gMoveControlColor3 = $kEmptyColor
 
 func IsTargetExist()
 	; Check target info window existance
-	if IsPixelExistClient($kTargetWindowPos, $kTargetWindowColorBrown) then
-		if IsPixelExistClient($kTargetWindowPos, $kTargetWindowColorGray) then
+	if IsPixelExistClient($kTargetWindowLeft, $kTargetWindowRight, $kTargetWindowColorBrown) then
+		if IsPixelExistClient($kTargetWindowLeft, $kTargetWindowRight, $kTargetWindowColorGray) then
 			LogWrite("Target exist")
 			return true
 		endif
@@ -17,7 +17,7 @@ endfunc
 
 func IsTargetAlive()
 	; Check to red color in target info
-	if IsPixelExistClient($kTargetWindowPos, $kTargetHealthColor) then
+	if IsPixelExistClient($kTargetWindowLeft, $kTargetWindowRight, $kTargetHealthColor) then
 		LogWrite("Target alive")
 		return true
 	else
@@ -28,8 +28,8 @@ endfunc
 
 func IsTargetPet()
 	; Check to blue color in target info
-	if IsPixelExistClient($kTargetManaPos, $kTargetManaColor) _
-	or IsPixelExistClient($kTargetManaPos, $kTargetManaEmptyColor) then
+	if IsPixelExistClient($kTargetManaLeft, $kTargetManaRight, $kTargetManaColor) _
+	or IsPixelExistClient($kTargetManaLeft, $kTargetManaRight, $kTargetManaEmptyColor) then
 		LogWrite("Target is pet")
 		return true
 	else
@@ -39,8 +39,8 @@ func IsTargetPet()
 endfunc
 
 func IsHealthCritical()
-	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
-	if GetBarValue($coord, $kSelfHealthPos) < 30 then
+	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
+	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < 30 then
 		LogWrite("Health is critical")
 		return true
 	else
@@ -50,8 +50,8 @@ func IsHealthCritical()
 endfunc
 
 func IsHealthHalf()
-	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
-	if GetBarValue($coord, $kSelfHealthPos) < 50 then
+	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
+	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < 50 then
 		LogWrite("Health is half")
 		return true
 	else
@@ -61,8 +61,8 @@ func IsHealthHalf()
 endfunc
 
 func IsManaCritical()
-	local $coord = GetPixelCoordinateClient($kSelfManaPos, $kSelfManaColor)
-	if GetBarValue($coord, $kSelfManaPos) < 20 then
+	local $coord = GetPixelCoordinateClient($kSelfManaLeft, $kSelfManaRight, $kSelfManaColor)
+	if GetBarValue($coord, $kSelfManaLeft, $kSelfManaRight) < 20 then
 		LogWrite("Mana is critical")
 		return true
 	else
@@ -84,8 +84,8 @@ func IsTargetDamaged()
 		return false
 	endif
 
-	local $coord = GetPixelCoordinateClient($kTargetHealthPos, $kTargetHealthColor)
-	if GetBarValue($coord, $kTargetHealthPos) < 98 then
+	local $coord = GetPixelCoordinateClient($kTargetHealthLeft, $kTargetHealthRight, $kTargetHealthColor)
+	if GetBarValue($coord, $kTargetHealthLeft, $kTargetHealthRight) < 98 then
 		LogWrite("Target damaged")
 		return true
 	else
@@ -123,8 +123,8 @@ func IsPositionChanged()
 endfunc
 
 func ExitOnDeath()
-	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
-	if GetBarValue($coord, $kSelfHealthPos) < 1 then
+	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
+	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < 1 then
 		LogWrite("Player died")
 		;exit
 	else

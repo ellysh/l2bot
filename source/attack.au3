@@ -1,7 +1,7 @@
 global $gPrevHealth = 0
 
 func IsHealthDecrease()
-	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
+	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
 	
 	if $coord[0] = $kErrorCoord then
 		LogWrite("IsHealthDecrease() - health bar is not exist")
@@ -22,7 +22,7 @@ func IsHealthDecrease()
 endfunc
 
 func UpdatePrevHealth()
-	local $coord = GetPixelCoordinateClient($kSelfHealthPos, $kSelfHealthColor)
+	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
 	
 	if $coord <> false then
 		$gPrevHealth = $coord[0]	
