@@ -3,11 +3,13 @@
 #include "../source/debug.au3"
 #include "../source/functions.au3"
 
-global const $kFishingWindowPos[4] = [576, 98, 289, 415]
+global const $kFishingWindowLeft[2] = [289, 415]
+global const $kFishingWindowRight[2] = [576, 98]
 global const $kFishingColor1 = 0x181810	; dark brown
 global const $kFishingColor2 = 0x73797B	; grey
 
-global const $kFishHealthPos[4] = [551, 360, 320, 371]
+global const $kFishHealthLeft[2] = [320, 371]
+global const $kFishHealthRight[2] = [551, 360]
 global const $kFishHealthColor = 0x0065A5		; blue
 
 global const $kFishingKey = "{F1}"
@@ -21,7 +23,7 @@ global $gPrevHealth = 0
 #requireadmin
 
 func IsFishBiting()
-	if IsPixelExistClient($kFishHealthPos, $kFishHealthColor) then
+	if IsPixelExistClient($kFishHealthLeft, $kFishHealthRight, $kFishHealthColor) then
 		LogWrite("Fish is bitting!")
 		return true
 	else	
@@ -31,8 +33,8 @@ func IsFishBiting()
 endfunc
 
 func IsFishingFinish()
-	if IsPixelExistClient($kFishingWindowPos, $kFishingColor1) _
-	and IsPixelExistClient($kFishingWindowPos, $kFishingColor2) then
+	if IsPixelExistClient($kFishingWindowLeft, $kFishingWindowRight, $kFishingColor1) _
+	and IsPixelExistClient($kFishingWindowLeft, $kFishingWindowRight, $kFishingColor2) then
 		LogWrite("Fishing is not finish")
 		return false
 	else
@@ -42,7 +44,7 @@ func IsFishingFinish()
 endfunc
 
 func IsHealthGrow()
-	local $coord = GetPixelCoordinateClient($kFishHealthPos, $kFishHealthColor)
+	local $coord = GetPixelCoordinateClient($kFishHealthLeft, $kFishHealthRight, $kFishHealthColor)
 	
 	if $coord[0] = $kErrorCoord then
 		LogWrite("IsHealthGrow() - health bar is not exist")
@@ -63,7 +65,7 @@ func IsHealthGrow()
 endfunc
 
 func UpdatePrevHealth()
-	local $coord = GetPixelCoordinateClient($kFishHealthPos, $kFishHealthColor)
+	local $coord = GetPixelCoordinateClient($kFishHealthLeft, $kFishHealthRight, $kFishHealthColor)
 	
 	if $coord <> false then
 		$gPrevHealth = $coord[0]	
