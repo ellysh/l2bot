@@ -1,0 +1,45 @@
+RUS
+---
+
+Иллюстрация параметров конфигурирования интерфейса клиента в файле
+conf/interface.au3.
+
+1. kTargetWindowLeft - левая-верхняя точка окна цели
+2. kTargetWindowRight - правая-нижняя точка окна цели
+3. kTargetWindowColorBrown,kTargetWindowColorGray - цвета двух произвольных пикселей в окне цели
+4. kTargetHealthLeft - левая-верхняя точка на полоске HP цели
+5. kTargetHealthRight - правая-нижняя точка на полоске HP цели
+6. kTargetHealthColor - цвет полной полосы HP цели (по-умолчанию красный)
+7. kTargetManaLeft - левая-верхняя точка на полоске MP цели
+8. kTargetManaRight - правая-нижняя точка на полоске MP цели
+9. kTargetManaColor - цвет полной полосы MP цели (по-умолчанию голубой)
+10. kTargetManaEmptyColor - цвет пустой полосы MP цели (по-умолчанию синий)
+11. kSelfHealthLeft - левая-верхняя точка на полоске HP игрока
+12. kSelfHealthRight - правая-нижняя точка на полоске HP игрока
+13. kSelfHealthColor - цвет полной полосы HP игрока (по-умолчанию красный)
+14. kSelfManaLeft - левая-верхняя точка на полоске MP игрока
+15. kSelfManaRight - правая-нижняя точка на полоске MP игрока
+16. kSelfManaColor - цвет полной полосы MP игрока (по-умолчанию голубой)
+
+EN
+--
+
+Parameters illustration of Lineage client interface in conf/interface.au3
+file.
+
+1. kTargetWindowLeft - this is left-up point of the target window
+2. kTargetWindowRight - this is right-bottom point of the target window
+3. kTargetWindowColorBrown,kTargetWindowColorGray - this is colors of two random pixels in the target window
+4. kTargetHealthLeft - this is left-up point of the target's HP bar
+5. kTargetHealthRight - this is right-bottom point of the target's HP bar
+6. kTargetHealthColor - this is color of the target's full HP bar (by default red)
+7. kTargetManaLeft - this is left-up point of the target's MP bar
+8. kTargetManaRight - this is right-bottom point of the target's MP bar
+9. kTargetManaColor - this is color of the target's full MP bar (by default blue)
+10. kTargetManaEmptyColor - this is color of the target's empty MP bar (by default dark blue)
+11. kSelfHealthLeft - this is left-up point of the player's HP bar
+12. kSelfHealthRight - this is right-bottom point of the player's HP bar
+13. kSelfHealthColor - this is color of the player's full HP bar (by default red)
+14. kSelfManaLeft - this is left-up point of the player's MP bar
+15. kSelfManaRight - this is right-bottom point of the player's MP bar
+16. kSelfManaColor - color of the player's full MP bar (by default blue)
