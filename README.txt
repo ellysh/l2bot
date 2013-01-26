@@ -54,7 +54,7 @@ You can use the CoolPix.exe utility from 'tools' directory to check interface in
 These parameters are specified in the interface.au3 file:
 kTargetWindowLeft - this is left-up point of the target window
 kTargetWindowRight - this is right-bottom point of the target window
-kTargetWindowColorBrown,kTargetWindowColorGray - this is colors of two random pixels in the target window
+kTargetWindowColorBrown,kTargetWindowColorGray - these are colors of two random pixels in the target window
 kTargetHealthLeft - this is left-up point of the target's HP bar
 kTargetHealthRight - this is right-bottom point of the target's HP bar
 kTargetHealthColor - this is color of the target's full HP bar (by default red)
@@ -70,7 +70,7 @@ kSelfManaRight - this is right-bottom point of the player's MP bar
 kSelfManaColor - color of the player's full MP bar (by default blue)
 kMoveControlPos1,kMoveControlPos2,kMoveControlPos3 - these are three random screen points to check player's moving
 
-More information about this parameters is available on interface_conf.png
+More information about this parameters is available on interface_conf.jpg
 illustration in the 'images' directory.
 
 Specify or leave unchanged class spicific skills hotkeys in the files of 'run' directory.
@@ -113,7 +113,7 @@ kSkillPumpKey - hotkey of the "Pumping" skill (by default F2)
 kSkillReelKey - hotkey of the "Reeling" skill (by default F3)
 kFishShotKey - hotkey for fish shot usage (by default F12)
 
-More information about this parameters is available in fishing_conf.png illustration in the 'images' directory.
+More information about this parameters is available in fishing_conf.jpg illustration in the 'images' directory.
 
 Perform next actions before start fishing:
 1. Place you character near the water where you can use "Fishing" skill

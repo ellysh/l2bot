@@ -1,23 +1,27 @@
 RUS
 ---
 
-»ллюстраци€ значений параметров дл€ бота рыбалки fishing.au3.
+»ллюстраци€ параметров конфигурировани€ интерфейса клиента в файле
+conf/interface_fishing.au3.
 
-1. kFishingWindowPos - координаты окна "–ыбалка"
-2. kFishingColor1 - первый цвет произвольного пиксел€ в окне "–ыбалка"
-3. kFishingColor2 - второй цвет произвольного пиксел€ в окне "–ыбалка" (дл€
-определени€ факта наличи€ этого окна)
-4. kFishHealthPos - координаты всей полосы HP рыбы
-5. kFishHealthColor - цвет полной полосы HP рыбы (по-умолчанию голубой)
+1. kFishingWindowLeft - лева€-верхн€€ точка окна "–ыбалка"
+2. kFishingWindowRight - права€-нижн€€ точка окна "–ыбалка"
+3. kFishingColor1 - цвет произвольного пиксел€ в окне "–ыбалка"
+4. kFishingColor2 - цвет произвольного пиксел€ в окне "–ыбалка"
+5. kFishHealthLeft - лева€-верхн€€ точка на полоске HP рыбы
+6. kFishHealthRight - права€-нижн€€ точка на полоске HP рыбы
+7. kFishHealthColor - цвет полной полоски HP рыбы (по-умолчанию голубой)
 
 EN
 --
 
-Parameters illustration of fishing bot fishing.au3.
+Parameters illustration of Lineage client interface in conf/interface_fishing.au3
+file.
 
-1. kFishingWindowPos - coordinates of the "Fishing" window
-2. kFishingColor1 - first color of any pixel in the "Fishing" window
-3. kFishingColor2 - second color of any pixel in the "Fishing" window to detect
-the window existance
-4. kFishHealthPos - coordinates of the fish's health bar
-5. kFishHealthColor - color of the fish's full health bar (by default blue)
+1. kFishingWindowLeft - this is left-up point of the "Fishing" window
+2. kFishingWindowRight - this is right-bottom point of the "Fishing" window
+3. kFishingColor1 - this is color of the random pixel in the "Fishing" window
+4. kFishingColor2 - this is color of the random pixel in the "Fishing" window
+5. kFishHealthLeft - this is left-up point of the fish's HP bar
+6. kFishHealthRight - this is right-bottom point of the fish's HP bar
+7. kFishHealthColor - color of the fish's full HP bar (by default blue)
