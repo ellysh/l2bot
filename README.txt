@@ -25,44 +25,53 @@ NB: First of all set checkbox "chat with Enter" in your Lineage client options.
 You can modify the following configuration files to adapt L2Bot for your Lineage 2 client.
 
 This is list of configuration files from 'conf' directory:
-interface_highfive.au3,interface_interlude.au3 - position of interface windows and trigger colors are
-described there (for High Five and Interlude)
-control.au3 - your hotbar configuration and specific keys to control player character is described there
-targets_ru.au3,targets_en.au3 - list of patterns for target mobs names in English and Russian
+interface.au3 - this is position of points in Lineage windows and the trigger colors for the farm bots
+interface_fishing.au3 - this is position of points in Lineage windows and the trigger colors for the fishing bot
+control.au3 - this is your hotbar configuration and specific keys to control player character
+targets.au3 - this is list of names for searching mobs with /target command
 
-Specify or leave unchanged this parameters in control.au3 file:
-kAttackKey - key to attack action in your hotbar (by default F1)
-kNextTargetKey - key to next target action in your hotbar (by default F10)
-kPickDropKey - key to pickup drop action in your hotbar (by default F8)
-kSitKey - key to sit/stand action in your hotbar (by default F9)
-kHealthPoition - key to use health poition (by default F5)
+These parameters are specified in the control.au3 file:
+kAttackKey - this is key to attack action in your hotbar (by default F1)
+kNextTargetKey - this is key to next target action in your hotbar (by default F10)
+kPickDropKey - this is key to pickup drop action in your hotbar (by default F8)
+kSitKey - this is key to sit/stand action in your hotbar (by default F9)
+kHealthPoition - this is key to use health poition (by default F5)
 
-You can use the CoolPix.exe utility from 'tools' directory to get next interface inforamtion.
+You must use the configurator.au3 script from 'run' directory to setup the interface file (interface.au3).
 
-NB: Changing interface parameters is needed only if you have change size
-and position of the client windows. Don't change interface parameters for
-default windows configuration.
+This is instruction of usage configurator script:
+1. Launch your Lineage client in window mode (press Alt+Enter to do it) and start game with your character.
+2. Manually resize Lineage client window to full screen with mouse
+3. Login by your cahracter
+4. Start configurator.au3 scripts from the 'run' directory
+5. Switch focus to the Linegae client window for input receiving
+6. Press Alt+F2 to start bot
+7. Select point in the Lineage window according information in the popup tip. To select point move cursor
+to it and press Alt+F3.
 
-NB: Specify windows and bars coordinares in right-top point and left-bottom
-point order.
+You can use the CoolPix.exe utility from 'tools' directory to check interface inforamtion.
 
-Specify or leave unchanged this parameters in interface_highfive.au3 or interface_interlude.au3 file:
-kTargetWindowPos - coordinates of the target state window
-kTargetWindowColorBrown - first color to detect target window existance
-kTargetWindowColorGray - second color to detect target window existance
-kTargetHealthPos - coordinates of the target's health bar
-kTargetHealthColor - color of the target's full health bar (by default red)
-kTargetManaPos - coordinates of the target's mana bar
-kTargetManaColor - color of the target's full mana bar (by default blue)
-kTargetManaEmptyColor - color of the target's empty mana bar (by default dark blue)
-kSelfHealthPos - coordinates of the player's health bar
-kSelfHealthColor - color of the player's full health bar (by default red)
-kSelfManaPos - coordinates of the player's mana bar
-kSelfManaColor - color of the player's full mana bar (by default blue)
-kMoveControlPos1,kMoveControlPos2,kMoveControlPos3 - three screen points to check player's moving
+These parameters are specified in the interface.au3 file:
+kTargetWindowLeft - this is left-up point of the target window
+kTargetWindowRight - this is right-bottom point of the target window
+kTargetWindowColorBrown,kTargetWindowColorGray - this is colors of two random pixels in the target window
+kTargetHealthLeft - this is left-up point of the target's HP bar
+kTargetHealthRight - this is right-bottom point of the target's HP bar
+kTargetHealthColor - this is color of the target's full HP bar (by default red)
+kTargetManaLeft - this is left-up point of the target's MP bar
+kTargetManaRight - this is right-bottom point of the target's MP bar
+kTargetManaColor - this is color of the target's full MP bar (by default blue)
+kTargetManaEmptyColor - this is color of the target's empty MP bar (by default dark blue)
+kSelfHealthLeft - this is left-up point of the player's HP bar
+kSelfHealthRight - this is right-bottom point of the player's HP bar
+kSelfHealthColor - this is color of the player's full HP bar (by default red)
+kSelfManaLeft - this is left-up point of the player's MP bar
+kSelfManaRight - this is right-bottom point of the player's MP bar
+kSelfManaColor - color of the player's full MP bar (by default blue)
+kMoveControlPos1,kMoveControlPos2,kMoveControlPos3 - these are three random screen points to check player's moving
 
-More information about this parameters is available in interface_conf_1.png and
-interface_conf_2.png illustrations in the 'images' directory.
+More information about this parameters is available on interface_conf.png
+illustration in the 'images' directory.
 
 Specify or leave unchanged class spicific skills hotkeys in the files of 'run' directory.
 
@@ -74,26 +83,31 @@ with au3 filename extension. You must run these scripts.
 
 To start L2Bot work perform next actions:
 
-1. Launch your Lineage 2 client in window mode (press Alt+Enter to do it) and start game with your character.
-2. Manually resize Lineage 2 client window to full screen with mouse
+1. Launch your Lineage client in window mode (press Alt+Enter to do it) and start game with your character.
+2. Manually resize Lineage client window to full screen with mouse
 3. Login by your cahracter
 4. Start one of scripts from the 'run' directory
 5. Switch focus to the Linegae 2 client window for input receiving
-6. Press Alt+F2 to grab Lineage 2 client window
-7. Press Alt+F3 to start bot
-8. To interrupt bot work press Alt+F1
+6. Press Alt+F2 to start bot
+7. To interrupt bot work press Alt+F1
 
 FISHING BOT
 -----------
 
 Fishing bot is implemented in fishing.au3 script file from 'run' directory.
 
-Open the fishing.au3 file in text editor and specify values of the next variables:
-kFishingWindowPos - coordinates of the "Fishing" window
-kFishingColor1, kFishingColor2 - colors of the couple pixels of "Fishing" window
-to detect the window existance
-kFishHealthPos - coordinates of the fish's health bar
-kFishHealthColor - color of the fish's full health bar (by default blue)
+You must use the configurator_fishing.au3 script from 'run' directory to setup the fishing bot interface file
+(interface_fishing.au3).
+
+These parameters are specified in the interface.au3 file:
+kFishingWindowLeft - this is left-up point of the "Fishing" window
+kFishingWindowRight - this is right-bottom point of the "Fishing" window
+kFishingColor1, kFishingColor2 - these are colors of the two random pixels in the "Fishing" window
+kFishHealthLeft - this is left-up point of the fish's HP bar
+kFishHealthRight - this is right-bottom point of the fish's HP bar
+kFishHealthColor - color of the fish's full HP bar (by default blue)
+
+These hotkeys are specified in the fishing.au3 file in the 'run' directory:
 kFishingKey - hotkey of the "Fishing" skill (by default F1)
 kSkillPumpKey - hotkey of the "Pumping" skill (by default F2)
 kSkillReelKey - hotkey of the "Reeling" skill (by default F3)
@@ -106,8 +120,7 @@ Perform next actions before start fishing:
 2. Wear the fishing rod and any bait
 
 You can launch and stop bot as any others L2Bot scripts:
-Alt+F2 - grab Lineage 2 client window
-Alt+F3 - start bot
+Alt+F2 - start bot
 Alt+F1 - interrupt bot work
 
 CHAT BOT
