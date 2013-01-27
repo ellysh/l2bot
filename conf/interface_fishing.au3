@@ -1,7 +1,10 @@
-global const $kFishingWindowLeft[2] = [295,426]
-global const $kFishingWindowRight[2] = [576,118]
-global const $kFishingColor1 = 0x3A3731
-global const $kFishingColor2 = 0x1E1A13
-global const $kFishHealthLeft[2] = [318,385]
-global const $kFishHealthRight[2] = [548,373]
-global const $kFishHealthColor = 0x00689F
+global const $kFishingWindowLeft[2] = [297,106]
+global const $kFishingWindowRight[2] = [577,411]
+global const $kFishingColor1 = 0x181810
+global const $kFishingColor2 = 0x292C21
+global const $kFishHealthLeft[2] = [321,362]
+global const $kFishHealthRight[2] = [552,372]
+global const $kFishHealthColor = 0x00699C
+global const $kMoveControlPos1[2] = [550,590]
+global const $kMoveControlPos2[2] = [640,370]
+global const $kMoveControlPos3[2] = [770,590]

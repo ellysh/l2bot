@@ -19,7 +19,7 @@ func IsFishBiting()
 		LogWrite("Fish is bitting!")
 		return true
 	else	
-		LogWrite("Fish not bitting")
+		LogWrite("Fish is not bitting")
 		return false
 	endif
 endfunc
