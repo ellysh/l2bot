@@ -66,5 +66,5 @@ while true
 		exit
 	endif
 	
-	Sleep(1)
+	Sleep(10)
 wend
