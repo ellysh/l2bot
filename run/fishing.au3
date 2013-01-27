@@ -88,4 +88,6 @@ while true
 		
 		Sleep(1100)
 	wend
+	
+	Sleep(Random(500, 2000))
 wend
