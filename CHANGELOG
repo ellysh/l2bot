@@ -1,3 +1,7 @@
+* L2Bot 1.7
+	- Implement script pause by Pause key pressing
+	- Add random delay before next fishing
+
 * L2Bot 1.6
 	- Add configurator scripts for farm bots and fishing bot
 	- Change set of interface configuration parameters
