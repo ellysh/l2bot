@@ -5,6 +5,4 @@ global const $kFishingColor2 = 0x292C21
 global const $kFishHealthLeft[2] = [321,362]
 global const $kFishHealthRight[2] = [552,372]
 global const $kFishHealthColor = 0x00699C
-global const $kMoveControlPos1[2] = [550,590]
-global const $kMoveControlPos2[2] = [640,370]
-global const $kMoveControlPos3[2] = [770,590]
+

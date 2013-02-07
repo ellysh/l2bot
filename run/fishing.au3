@@ -1,13 +1,20 @@
 #include "../conf/control.au3"
-#include "../source/hooks.au3"
-#include "../source/debug.au3"
-#include "../source/functions.au3"
+#include "../conf/interface.au3"
 #include "../conf/interface_fishing.au3"
+#include "../source/hooks.au3"
+#include "../source/analysis.au3"
+#include "../source/debug.au3"
+#include "../source/items.au3"
+#include "../source/move.au3"
+#include "../source/functions.au3"
 
-global const $kFishingKey = "{F1}"
-global const $kSkillPumpKey = "{F2}"
-global const $kSkillReelKey = "{F3}"
+global const $kFishingKey = "{F5}"
+global const $kSkillPumpKey = "{F6}"
+global const $kSkillReelKey = "{F7}"
 global const $kFishShotKey = "{F12}"
+global const $kWeaponKey = "{F2}"
+global const $kFishrodKey = "{F3}"
+global const $kBaitKey = "{F4}"
 
 global $gPrevHealth = 0
 
@@ -64,8 +71,7 @@ func UpdatePrevHealth()
 	endif
 endfunc
 
-; Main Loop
-while true
+func Fishing()
 	SendClient($kFishingKey, 3000)
 	
 	while not IsFishBiting() and not IsFishingFinish()
@@ -88,6 +94,40 @@ while true
 		
 		Sleep(1100)
 	wend
+endfunc
+
+func AttackLoop()
+	while IsTargetAlive()
+		SendClient($kAttackKey, 500)
+	wend
+endfunc
+
+func Attack()
+	LogWrite("Attack()")
 	
-	Sleep(Random(500, 2000))
+	if not IsTargetForAttack() then
+		return
+	endif
+
+	SendClient($kWeaponKey, 500)
+
+	while IsTargetAlive()
+		AttackLoop()
+		
+		SendClient($kNextTargetKey, 800)
+	wend
+	
+	PickDrop(5)
+	
+	MoveBack(500)
+	
+	SendClient($kFishrodKey, 500)
+	SendClient($kBaitKey, 500)
+endfunc
+
+; Main Loop
+while true
+	Attack()
+	
+	Fishing()
 wend

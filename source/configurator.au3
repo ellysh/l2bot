@@ -59,7 +59,7 @@ while true
 		$gIsSelect = false
 	endif
 
-	if $gTipIndex = $kParamCount then
+	if $gTipIndex = $kParamCount and $kIsMoveControlPos = true then
 		WritePoint("kMoveControlPos1", 550, 590)
 		WritePoint("kMoveControlPos2", 640, 370)
 		WritePoint("kMoveControlPos3", 770, 590)

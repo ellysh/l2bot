@@ -38,7 +38,7 @@ endfunc
 
 func Attack()
 	LogWrite("Attack()")
-
+	
 	if not IsTargetForAttack() then
 		return
 	endif

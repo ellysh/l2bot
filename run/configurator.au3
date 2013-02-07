@@ -41,5 +41,6 @@ global const $kParamNames[$kParamCount] = [ _
 ]
 
 global const $kConfigFile = "../conf/interface.au3"
+global const $kIsMoveControlPos = true
 
 #include "../source/configurator.au3"
