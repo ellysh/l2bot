@@ -37,13 +37,13 @@ kPickDropKey - this is key to pickup drop action in your hotbar (by default F8)
 kSitKey - this is key to sit/stand action in your hotbar (by default F9)
 kHealthPoition - this is key to use health poition (by default F5)
 
-You must use the configurator.au3 script from 'run' directory to setup the interface file (interface.au3).
+You must use the configurator_en.au3 script from 'run' directory to setup the interface file (interface.au3).
 
 This is instruction of usage configurator script:
 1. Launch your Lineage client in window mode (press Alt+Enter to do it) and start game with your character.
 2. Manually resize Lineage client window to full screen with mouse
 3. Login by your cahracter
-4. Start configurator.au3 scripts from the 'run' directory
+4. Start configurator_en.au3 scripts from the 'run' directory
 5. Switch focus to the Linegae client window for input receiving
 6. Press Alt+F2 to start bot
 7. Select point in the Lineage window according information in the popup tip. To select point move cursor
@@ -96,7 +96,7 @@ FISHING BOT
 
 Fishing bot is implemented in fishing.au3 script file from 'run' directory.
 
-You must use the configurator_fishing.au3 script from 'run' directory to setup the fishing bot interface file
+You must use the configurator_fishing_en.au3 script from 'run' directory to setup the fishing bot interface file
 (interface_fishing.au3).
 
 These parameters are specified in the interface.au3 file:
