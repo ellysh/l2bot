@@ -88,7 +88,7 @@ endfunc
 func Rest()
 	LogWrite("Rest")
 
-	if IsTargetForAttack() then
+	if IsTargetForAttack() or not $kIsRestEnable then
 		return
 	endif
 

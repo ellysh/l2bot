@@ -4,6 +4,7 @@ global const $kAttackTimeout = 20
 global const $kMoveTimeout = 40
 global const $kBuffTimeout = 1.5
 global const $kIsCancelTargetMove = true
+global const $kIsRestEnable = true
 
 ; Skills
 global const $kAttackSkill = "{F3}"
