@@ -1,3 +1,8 @@
+* L2Bot 1.8
+	- Implement attacking mobs by the fishing bot
+	- Add English variant of the configurator scripts (with "en" suffix)
+	- Implement the Rest function for bots with the solo tactic
+
 * L2Bot 1.7
 	- Implement script pause by Pause key pressing
 	- Add random delay before next fishing
