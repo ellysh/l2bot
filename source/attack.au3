@@ -50,14 +50,8 @@ func Attack()
 	while IsTargetAlive()
 		$timeout = $timeout + 1
 		
-		if IsHealthCritical() then
-			OnHealthCritical()
-		endif
+		OnCheckHealthAndMana()
 		
-		if IsHealthHalf() then
-			OnHealthHalf()
-		endif
-
 		SendClient($kAttackKey, 500)
 
 		if IsTargetDamaged() and not $is_attacked then

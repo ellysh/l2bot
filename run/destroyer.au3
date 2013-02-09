@@ -43,11 +43,10 @@ func OnBuffTimeout()
 	SendClient($kSelfBuff, 1000)
 endfunc
 
-func OnHealthCritical()
-endfunc
-
-func OnHealthHalf()
-	PotionHealing()
+func OnCheckHealthAndMana()
+	if IsHealthHalf() then
+		PotionHealing()
+	endif
 endfunc
 
 ; This is needed for Windows Vista and above

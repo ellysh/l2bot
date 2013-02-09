@@ -16,13 +16,7 @@ func SearchTarget()
 	while true
 		$timeout = $timeout + 1
 
-		if IsHealthCritical() then
-			OnHealthCritical()
-		endif
-		
-		if IsHealthHalf() then
-			OnHealthHalf()
-		endif
+		OnCheckHealthAndMana()
 
 		AttackNextTarget()
 
