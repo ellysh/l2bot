@@ -11,15 +11,11 @@ global const $kStunSkill = "{F2}"
 global const $kSelfBuff = "{F7}"
 
 func OnAttack()
-	if not IsManaCritical() then
-		SendClient($kStunSkill, 1000)
-	endif
+	SendClient($kStunSkill, 1000)
 endfunc
 
 func OnAttackSkill()
-	if not IsManaCritical() then
-		SendClient($kAttackSkill, 1000)
-	endif
+	SendClient($kAttackSkill, 1000)
 endfunc
 
 func OnFirstKill()
@@ -44,7 +40,7 @@ func OnBuffTimeout()
 endfunc
 
 func OnCheckHealthAndMana()
-	if IsHealthHalf() then
+	if IsHealthLess($kBarHalf) then
 		PotionHealing()
 	endif
 endfunc

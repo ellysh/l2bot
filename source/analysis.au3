@@ -1,4 +1,7 @@
 global const $kEmptyColor = -1
+global const $kBarHalf = 50
+global const $kBarCritical = 20
+
 global $gMoveControlColor1 = $kEmptyColor
 global $gMoveControlColor2 = $kEmptyColor
 global $gMoveControlColor3 = $kEmptyColor
@@ -38,20 +41,9 @@ func IsTargetPet()
 	endif
 endfunc
 
-func IsHealthCritical()
+func IsHealthLess($value)
 	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
-	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < 30 then
-		LogWrite("Health is critical")
-		return true
-	else
-		LogWrite("Health is not critical")
-		return false
-	endif
-endfunc
-
-func IsHealthHalf()
-	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
-	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < 50 then
+	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < $value then
 		LogWrite("Health is half")
 		return true
 	else
@@ -60,9 +52,9 @@ func IsHealthHalf()
 	endif
 endfunc
 
-func IsManaCritical()
+func IsManaLess($value)
 	local $coord = GetPixelCoordinateClient($kSelfManaLeft, $kSelfManaRight, $kSelfManaColor)
-	if GetBarValue($coord, $kSelfManaLeft, $kSelfManaRight) < 20 then
+	if GetBarValue($coord, $kSelfManaLeft, $kSelfManaRight) < $value then
 		LogWrite("Mana is critical")
 		return true
 	else
