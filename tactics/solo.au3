@@ -12,6 +12,8 @@
 ; Main Loop
 while true
 	ExitOnDeath()
+	
+	Rest()
 
 	SearchTarget()
 

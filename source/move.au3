@@ -68,3 +68,31 @@ func ChangePosition()
 		MoveBack(4000)
 	until IsPositionChanged()
 endfunc
+
+func SitLoop()
+	SendTextClient("/sit")
+	Sleep(500)
+	
+	while not IsTargetForAttack() 
+		if not IsHealthLess($kBarFull) and not IsManaLess($kBarFull) then
+			exitloop
+		endif
+		
+		Sleep(500)
+	wend
+	
+	SendTextClient("/stand")
+	Sleep(500)
+endfunc
+
+func Rest()
+	LogWrite("Rest")
+
+	if IsTargetForAttack() then
+		return
+	endif
+
+	if IsHealthLess($kBarCritical) or IsManaLess($kBarCritical) then
+		SitLoop()
+	endif
+endfunc
