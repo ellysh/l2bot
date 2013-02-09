@@ -1,6 +1,7 @@
 global const $kEmptyColor = -1
 global const $kBarHalf = 50
 global const $kBarCritical = 20
+global const $kBarFull = 98
 
 global $gMoveControlColor1 = $kEmptyColor
 global $gMoveControlColor2 = $kEmptyColor
@@ -77,7 +78,7 @@ func IsTargetDamaged()
 	endif
 
 	local $coord = GetPixelCoordinateClient($kTargetHealthLeft, $kTargetHealthRight, $kTargetHealthColor)
-	if GetBarValue($coord, $kTargetHealthLeft, $kTargetHealthRight) < 98 then
+	if GetBarValue($coord, $kTargetHealthLeft, $kTargetHealthRight) < $kBarFull then
 		LogWrite("Target damaged")
 		return true
 	else
