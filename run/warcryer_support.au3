@@ -11,7 +11,7 @@ global const $kAssistKey = "{F11}"
 global const $kStunSkill = "{F2}"
 
 func OnAttack()
-	if not IsManaCritical() then	
+	if not IsManaLess($kBarCritical) then
 		SendClient($kStunSkill, 1000)
 	endif
 endfunc
@@ -44,11 +44,10 @@ func OnBuffTimeout()
 	SendClient($kBuffKey, 20 * 1000)
 endfunc
 
-func OnHealthCritical()
-endfunc
-
-func OnHealthHalf()
-	PotionHealing()
+func OnCheckHealthAndMana()
+	if IsHealthLess($kBarHalf) then
+		PotionHealing()
+	endif
 endfunc
 
 ; This is needed for Windows Vista and above

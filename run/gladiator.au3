@@ -12,15 +12,11 @@ global const $kSelfBuff = "{F7}"
 global const $kFocusSkill = "{F11}"
 
 func OnAttack()
-	if not IsManaCritical() then
-		SendClient($kSonicSkill, 1000)
-	endif
+	SendClient($kSonicSkill, 1000)
 endfunc
 
 func OnAttackSkill()
-	if not IsManaCritical() then
-		SendClient($kAttackSkill, 1000)
-	endif
+	SendClient($kAttackSkill, 1000)
 endfunc
 
 func OnFirstKill()
@@ -47,11 +43,10 @@ func OnBuffTimeout()
 	SendClient($kSelfBuff, 1000)
 endfunc
 
-func OnHealthCritical()
-endfunc
-
-func OnHealthHalf()
-	PotionHealing()
+func OnCheckHealthAndMana()
+	if IsHealthLess($kBarHalf) then
+		PotionHealing()
+	endif
 endfunc
 
 ; This is needed for Windows Vista and above

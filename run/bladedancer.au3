@@ -14,7 +14,7 @@ func OnAttack()
 endfunc
 
 func OnAttackSkill()
-	if not IsManaCritical() then
+	if not IsManaLess($kBarCritical) then
 		SendClient($kAttackSkill, 1000)
 	endif
 endfunc
@@ -40,12 +40,14 @@ func OnBuffTimeout()
 	SendClient($kSelfBuff, 6000)
 endfunc
 
-func OnHealthCritical()
-	SendClient($kDefenseSkill, 1000)
-endfunc
-
-func OnHealthHalf()
-	PotionHealing()
+func OnCheckHealthAndMana()
+	if IsHealthLess($kBarCritical) then
+		SendClient($kDefenseSkill, 1000)
+	endif
+	
+	if IsHealthLess($kBarHalf) then
+		PotionHealing()
+	endif
 endfunc
 
 ; This is needed for Windows Vista and above
