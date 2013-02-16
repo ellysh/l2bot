@@ -1,5 +1,5 @@
 ; Configuration
-global const $kAttackSkillTimeout = 10
+global const $kAttackSkillTimeout = 3
 global const $kAttackTimeout = 20
 global const $kMoveTimeout = 40
 global const $kBuffTimeout = 16
@@ -8,12 +8,14 @@ global const $kIsRestEnable = true
 
 ; Skills
 global const $kBuffKey = "{F7}"
-global const $kMeleeAttackKey = "{F2}"
+global const $kAttackSkill = "{F2}"
+global const $kMeleeAttackKey = "{F3}"
 
 func OnAttack()
 endfunc
 
 func OnAttackSkill()
+	SendClient($kAttackSkill, 1200)
 endfunc
 
 func OnFirstKill()
