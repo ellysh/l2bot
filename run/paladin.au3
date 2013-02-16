@@ -53,6 +53,10 @@ func OnCheckHealthAndMana()
 	if IsHealthLess($kBarHalf) then
 		HealthPotion()
 	endif
+	
+	if IsManaLess($kBarHalf) then
+		ManaPotion()
+	endif
 endfunc
 
 ; This is needed for Windows Vista and above
