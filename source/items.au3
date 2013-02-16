@@ -14,3 +14,8 @@ func PotionHealing()
 	LogWrite("PotionHealing()")
 	SendClient($kHeathPoitionKey, 500)
 endfunc
+
+func ManaPotion()
+	LogWrite("ManaPotion()")
+	SendClient($kManaPoitionKey, 500)
+endfunc

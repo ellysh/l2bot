@@ -14,3 +14,4 @@ global const $kSitKey = "{F9}"
 
 ; Items
 global const $kHeathPoitionKey = "{F5}"
+global const $kManaPoitionKey = "{F6}"

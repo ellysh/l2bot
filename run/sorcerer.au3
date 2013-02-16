@@ -22,7 +22,7 @@ func OnFirstKill()
 endfunc
 
 func OnAllKill()
-	SendClient($kMeleeAttackKey, 2500)
+	SendClient($kMeleeAttackKey, 2000)
 	PickDrop(5)
 endfunc
 
@@ -44,6 +44,10 @@ endfunc
 func OnCheckHealthAndMana()
 	if IsHealthLess($kBarHalf) then
 		PotionHealing()
+	endif
+
+	if IsManaLess($kBarHalf) then
+		ManaPotion()
 	endif
 endfunc
 
