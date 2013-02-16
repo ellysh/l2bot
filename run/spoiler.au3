@@ -45,7 +45,7 @@ endfunc
 
 func OnCheckHealthAndMana()
 	if IsHealthLess($kBarHalf) then
-		PotionHealing()
+		HealthPotion()
 	endif
 endfunc
 

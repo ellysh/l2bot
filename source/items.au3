@@ -10,8 +10,8 @@ func PickDropWin($count)
 	next
 endfunc
 
-func PotionHealing()
-	LogWrite("PotionHealing()")
+func HealthPotion()
+	LogWrite("HealthPotion()")
 	SendClient($kHeathPoitionKey, 500)
 endfunc
 
