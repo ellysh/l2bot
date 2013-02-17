@@ -7,7 +7,7 @@ global const $kIsCancelTargetMove = true
 global const $kIsRestEnable = true
 
 ; Skills
-global const $kSpoilKey = "{F6}"
+global const $kSpoilKey = "{F4}"
 global const $kSweeperKey = "{F7}"
 global const $kStunSkill = "{F2}"
 global const $kAttackSkill = "{F3}"
@@ -46,6 +46,10 @@ endfunc
 func OnCheckHealthAndMana()
 	if IsHealthLess($kBarHalf) then
 		HealthPotion()
+	endif
+	
+	if IsManaLess($kBarHalf) then
+		ManaPotion()
 	endif
 endfunc
 
