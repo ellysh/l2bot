@@ -1,7 +1,8 @@
 global const $kEmptyColor = -1
-global const $kBarHalf = 50
-global const $kBarCritical = 20
 global const $kBarFull = 98
+global const $kBarHalf = 50
+global const $kBarThird = 30
+global const $kBarCritical = 20
 
 global $gMoveControlColor1 = $kEmptyColor
 global $gMoveControlColor2 = $kEmptyColor

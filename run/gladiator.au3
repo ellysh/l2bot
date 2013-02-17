@@ -49,7 +49,7 @@ func OnCheckHealthAndMana()
 		HealthPotion()
 	endif
 	
-	if IsManaLess($kBarHalf) then
+	if IsManaLess($kBarThird) then
 		ManaPotion()
 	endif
 endfunc
