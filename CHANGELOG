@@ -1,3 +1,7 @@
+* L2Bot 1.9
+	- Implement the mana potions usage
+	- Add second nuke skill for the bot of sorcerer class
+
 * L2Bot 1.8
 	- Implement attacking mobs by the fishing bot
 	- Add English variant of the configurator scripts (with "en" suffix)
