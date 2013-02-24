@@ -8,7 +8,7 @@ global const $kScriptFile = "script.au3"
 #requireadmin
 
 func _KeyLogger()
-	FileWrite($kScriptFile, @HotKeyPressed)
+	WriteSendClient(@HotKeyPressed)
 	HotKeySet(@HotKeyPressed)
 	Send(@HotKeyPressed)
 	HotKeySet(@HotKeyPressed, "_KeyLogger")
@@ -33,6 +33,10 @@ endfunc
 
 func WriteFooter()
 	FileWrite($kScriptFile, chr(10) & "endfunc")
+endfunc
+
+func WriteSendClient($key)
+	FileWrite($kScriptFile, "	SendClient(" & $key & ", 500)" & chr(10))
 endfunc
 
 FileDelete($kScriptFile)
