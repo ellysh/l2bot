@@ -1,4 +1,3 @@
-; FIXME: Make Russian and English variant of tips
 global const $kParamCount = 7
 global const $kTipText[$kParamCount] = [ _
 	"1. Specify left-up point of the Fishing window", _
