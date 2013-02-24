@@ -1,13 +1,13 @@
 L2Bot 1.9 version
 =================
 
-INTRODUCTION
-------------
+1. INTRODUCTION
+---------------
 
 L2Bot is toolkit of AutoIt scripts to implement Lineage 2 bot.
 
-INSTALLATION
-------------
+2. INSTALLATION
+---------------
 
 To launch L2Bot you need to download AutoIt interpreter from official website:
 http://www.autoitscript.com/site/autoit/downloads
@@ -17,124 +17,117 @@ The x64 interpreter version must be selected in installation dialog for users wi
 Then download archive with L2Bot scripts and extract it:
 https://github.com/ellysh/l2bot/archive/master.zip
 
-CONFIGURATION
--------------
+3. CONFIGURATION
+----------------
 
-NB: First of all set checkbox "chat with Enter" in your Lineage client options.
+NB: You must set the `chat with Enter` checkbox in your Lineage client application for the correct bot's working.
 
-You can modify the following configuration files to adapt L2Bot for your Lineage 2 client.
+Configuration of the L2Bot consist of the three stages:
+1. Configuration of the bot according to your Lineage client's interface.
+2. Configuration of the mob's names to attack them by bot.
+3. Configuration of the hotbar keys according your character's class.
 
-This is list of configuration files from 'conf' directory:
-interface.au3 - this is position of points in Lineage windows and the trigger colors for the farm bots
-interface_fishing.au3 - this is position of points in Lineage windows and the trigger colors for the fishing bot
-control.au3 - this is your hotbar configuration and specific keys to control player character
-targets.au3 - this is list of names for searching mobs with /target command
+All these stages will be described below.
 
-These parameters are specified in the control.au3 file:
-kAttackKey - this is key to attack action in your hotbar (by default F1)
-kNextTargetKey - this is key to next target action in your hotbar (by default F10)
-kPickDropKey - this is key to pickup drop action in your hotbar (by default F8)
-kSitKey - this is key to sit/stand action in your hotbar (by default F9)
-kHealthPoition - this is key to use health poition (by default F5)
+3.1 INTERFACE CONFIGURATION
+---------------------------
 
-You must use the configurator_en.au3 script from 'run' directory to setup the interface file (interface.au3).
+You can use the `configurator_en.au3` script from the `run` directory to configure farm bot according your Lineage client's interface. All interface's parameters will be saved in `interface.au3` file from the `conf` directory.
 
-This is instruction of usage configurator script:
-1. Launch your Lineage client in window mode (press Alt+Enter to do it) and start game with your character.
-2. Manually resize Lineage client window to full screen with mouse
-3. Login by your cahracter
-4. Start configurator_en.au3 scripts from the 'run' directory
-5. Switch focus to the Linegae client window for input receiving
-6. Press Alt+F2 to start bot
-7. Select point in the Lineage window according information in the popup tip. To select point move cursor
-to it and press Alt+F3.
+There are steps to perform the interface configuration:
+1. Run your Lineage client in the window mode. You can press Alt+Enter for switching to the window mode.
+2. Resize the Lineage client window to full screen with mouse.
+3. Get into the game with your character.
+4. Run `configurator_en.au3` script from the `run` directory.
+5. Switch to the Lineage client window.
+6. Press Alt+F2 to start configuration script.
+7. Select the point in the Lineage window according the information in popup tip. You can select point at the current cursor's position by pressing Alt+F3.
+8. The popup tips will be disappeared after you has selected the last point. Configuration is complete.
 
-You can use the CoolPix.exe utility from 'tools' directory to check interface inforamtion.
+This is illustartion of all configuration points in the `interface_conf.jpg` file from the `images` directory.
 
-These parameters are specified in the interface.au3 file:
-kTargetWindowLeft - this is left-up point of the target window
-kTargetWindowRight - this is right-bottom point of the target window
-kTargetWindowColorBrown,kTargetWindowColorGray - these are colors of two random pixels in the target window
-kTargetHealthLeft - this is left-up point of the target's HP bar
-kTargetHealthRight - this is right-bottom point of the target's HP bar
-kTargetHealthColor - this is color of the target's full HP bar (by default red)
-kTargetManaLeft - this is left-up point of the target's MP bar
-kTargetManaRight - this is right-bottom point of the target's MP bar
-kTargetManaColor - this is color of the target's full MP bar (by default blue)
-kTargetManaEmptyColor - this is color of the target's empty MP bar (by default dark blue)
-kSelfHealthLeft - this is left-up point of the player's HP bar
-kSelfHealthRight - this is right-bottom point of the player's HP bar
-kSelfHealthColor - this is color of the player's full HP bar (by default red)
-kSelfManaLeft - this is left-up point of the player's MP bar
-kSelfManaRight - this is right-bottom point of the player's MP bar
-kSelfManaColor - color of the player's full MP bar (by default blue)
-kMoveControlPos1,kMoveControlPos2,kMoveControlPos3 - these are three random screen points to check player's moving
+You can use the `configurator_fishing_en.au3` script from the `run` directory to configure fishing bot. This script works like the described above `configurator_en.au3` one. This is illustration of all configuration points for fishing bot in the `fishing_conf.jpg` file from the `images` directory.
 
-More information about this parameters is available on interface_conf.jpg
-illustration in the 'images' directory.
+3.2 MOB'S NAMES CONFIGURATION
+-----------------------------
 
-Specify or leave unchanged class spicific skills hotkeys in the files of 'run' directory.
+There are steps to perform the mob's names configuration:
+1. Open the `targets.au3` fle from the `conf` directory with any text editor.
+2. Write mob's names into `$kTargetNames` list.
+3. Change value of the `$kTargetCount` variable according count of elements in the `$kTargetNames` list.
 
-LAUNCHING
----------
+NB: You can specify one or two letters of the mob's names for the Gracia Final and above Lineage chronicles. This is example:
+	global const $kTargetCount = 2
+	global const $kTargetNames[$kTargetCount] = [ "G", "Wo" ]
 
-NB: Bots of L2Bot project is not executable exe files! All of them have been implemented as AutoIt scripts
-with au3 filename extension. You must run these scripts.
+You must specify full mob's names for Lineage chronicles below the Gracia Final one:
+	global const $kTargetCount = 2
+	global const $kTargetNames[$kTargetCount] = [ "Gremlin", "Wolf" ]
 
-To start L2Bot work perform next actions:
+3.3 HOTBAR KEYS CONFIGURATION
+-----------------------------
 
-1. Launch your Lineage client in window mode (press Alt+Enter to do it) and start game with your character.
-2. Manually resize Lineage client window to full screen with mouse
-3. Login by your cahracter
-4. Start one of scripts from the 'run' directory
-5. Switch focus to the Linegae 2 client window for input receiving
-6. Press Alt+F2 to start bot
-7. To interrupt bot work press Alt+F1
+The L2Bot scripts implement the farm bots for several character's classes. All these scripts are placed to the `run` directory. Script's name is the same as relevant class's name.
 
-FISHING BOT
+The hotbar configuration is depended on the running script. You can use hotbar illustrations from the `images` directory. Name of the illustration file contains the character's class name and the `hotbar` word. For example, `bladedancer_hotbar.jpg` file is the illustration for `bladedancer.au3` script.
+
+The `fishing_hotbar.jpg` file from the `images` directory is a hotbar illustration for the fishing bot.
+
+4. LAUNCHING
+------------
+
+NB: Bots of L2Bot project is not executable `exe` files! All bots are implemented as AutoIt scripts with `au3` extention and them are placed to the `run` directory. You can run these scripts like the `exe` files.
+
+There are steps to run L2Bot:
+1. Run your Lineage client in the window mode. You can press Alt+Enter for switching to the window mode.
+2. Resize the Lineage client window to full screen with mouse.
+3. Get into the game with your character.
+4. Run one of the farm-bot script from the `run` directory.
+5. Switch to the Lineage client window.
+6. Press Alt+F2 to start bot.
+7. You can stop bot by Alt+F1 pressing.
+
+NB: The Lineage client window must have the same size and position as you have configured (see the 3.1 section).
+
+5. FISHING BOT
+--------------
+
+Fishing bot is implemented in the runnable `fishing.au3` script file from `run` directory.
+
+Configuration of the fishing bot consist of the two stages:
+1. Configuration of the bot according to your Lineage client's interface (see the 3.1 section).
+2. Configuration of the hotbar keys (see the 3.3 section).
+
+NB: You must set the attack skill to F1 key for the nuker classes instead the `Attack` action
+
+You must perform these actions before run the fishing bot:
+1. Place your character near the water where you can use `Fishing` skill. Character and camera must be faced to the water i.e. the character will move to the water if you will press the `Up` arrow keyboard button.
+2. Wear the fishrod and bait on your character.
+
+You can run and stop fishing bot with the same buttons as the others bots.
+
+6. CHAT BOT
 -----------
 
-Fishing bot is implemented in fishing.au3 script file from 'run' directory.
+Chat bot is implemented in the runnable `chat.au3` script file from the `run` directory.
 
-You must use the configurator_fishing_en.au3 script from 'run' directory to setup the fishing bot interface file
-(interface_fishing.au3).
+You can open the `chat.au3` file from the `run` directory and specify variables described below to configure bot:
+	kMessageTextRus - this is message text to print in Russian language.
+	kMessageTextEn - this is message text to print in English language.
+	kDelayMinutes - this is delay betweeen the message outputs in minutes.
 
-These parameters are specified in the interface.au3 file:
-kFishingWindowLeft - this is left-up point of the "Fishing" window
-kFishingWindowRight - this is right-bottom point of the "Fishing" window
-kFishingColor1, kFishingColor2 - these are colors of the two random pixels in the "Fishing" window
-kFishHealthLeft - this is left-up point of the fish's HP bar
-kFishHealthRight - this is right-bottom point of the fish's HP bar
-kFishHealthColor - color of the fish's full HP bar (by default blue)
+You can run and stop chat bot with the same buttons as the others bots.
 
-These hotkeys are specified in the fishing.au3 file in the 'run' directory:
-kFishingKey - hotkey of the "Fishing" skill (by default F1)
-kSkillPumpKey - hotkey of the "Pumping" skill (by default F2)
-kSkillReelKey - hotkey of the "Reeling" skill (by default F3)
-kFishShotKey - hotkey for fish shot usage (by default F12)
+7. CONTACTS
+-----------
 
-More information about this parameters is available in fishing_conf.jpg illustration in the 'images' directory.
+You can ask any questions about usage L2Bot, report about bugs, send your suggestions and patches in the L2Bot project's groups and the developer's email.
 
-Perform next actions before start fishing:
-1. Place you character near the water where you can use "Fishing" skill
-2. Wear the fishing rod and any bait
-
-You can launch and stop bot as any others L2Bot scripts:
-Alt+F2 - start bot
-Alt+F1 - interrupt bot work
-
-CHAT BOT
---------
-
-Chat bot is implemented in chat.au3 script file from 'run' directory.
-
-You can specify message text and delay betweeen message outputs for chat bot in the chat.au3 file:
-1. kMessageTextRus - message in Russian language (this must be written in English keyboard layout for Java servers)
-2. kMessageTextEn - message in English language
-3. kDelayMinutes - delay betweeen message outputs in minutes
-
-CONTACT INFORMATION
--------------------
-
-You can ask any questions about usage L2Bot, report about bugs, send your suggestions and patches to me:
+Developer:
 Ilya Shpigor <petrsum@gmail.com>
+
+Project's group in vk:
+https://vk.com/l2bot
+
+Project's group in facebook:
+https://www.facebook.com/L2Bot
