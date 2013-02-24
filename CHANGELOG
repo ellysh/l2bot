@@ -1,3 +1,7 @@
+* L2Bot 1.9.1
+	- Fix the English documentation in the README.txt file
+	- Fix the Russian documentation in the README_ru.txt file
+
 * L2Bot 1.9
 	- Implement the mana potions usage
 	- Add second nuke skill for the bot of sorcerer class
