@@ -3,6 +3,7 @@
 #include "../source/functions.au3"
 
 global const $kScriptFile = "script.au3"
+global $gCurrentTime = GetCurrentTime()
 
 ; This is needed for Windows Vista and above
 #requireadmin
@@ -35,8 +36,28 @@ func WriteFooter()
 	FileWrite($kScriptFile, chr(10) & "endfunc")
 endfunc
 
+func GetCurrentTime()
+	local $msec = @HOUR * 60 * 60 * 1000 + @MIN * 60 * 1000 + @SEC * 1000 + @MSEC
+	
+	return $msec
+endfunc
+
+func GetDelay()
+	local $delay = GetCurrentTime() - $gCurrentTime
+	$gCurrentTime = GetCurrentTime()
+	
+	return $delay
+endfunc
+
 func WriteSendClient($key)
-	FileWrite($kScriptFile, '	SendClient("' & $key & '", 200)' & chr(10))
+	FileWrite($kScriptFile, '	Sleep(' & GetDelay() & ')' & @CRLF)
+	
+	LogWrite("asc = " & asc($key) & " key = " & $key & @CRLF);
+	if asc($key) == 13 then
+		$key = "{ENTER}"
+	endif
+
+	FileWrite($kScriptFile, '	SendClient("' & $key & '", 200)' & @CRLF)
 endfunc
 
 FileDelete($kScriptFile)
