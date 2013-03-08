@@ -1,8 +1,8 @@
-global const $kScriptFile = "script.au3"
-
 #include "../source/debug.au3"
 #include "../source/hooks.au3"
 #include "../source/functions.au3"
+
+global const $kScriptFile = "script.au3"
 
 ; This is needed for Windows Vista and above
 #requireadmin
@@ -36,7 +36,7 @@ func WriteFooter()
 endfunc
 
 func WriteSendClient($key)
-	FileWrite($kScriptFile, "	SendClient(" & $key & ", 500)" & chr(10))
+	FileWrite($kScriptFile, '	SendClient("' & $key & '", 200)' & chr(10))
 endfunc
 
 FileDelete($kScriptFile)
