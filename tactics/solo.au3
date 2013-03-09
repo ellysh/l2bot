@@ -7,7 +7,7 @@
 #include "../source/search.au3"
 #include "../source/attack.au3"
 #include "../source/items.au3"
-#include "../source/buff.au3"
+#include "../source/timeout.au3"
 
 ; Main Loop
 while true
@@ -22,4 +22,6 @@ while true
 	Attack()
 	
 	Buff($kBuffTimeout * $kMinute)
+	
+	Script($kScriptTimeout * $kMinute)
 wend

@@ -2,7 +2,7 @@
 #include "../source/hooks.au3"
 #include "../source/debug.au3"
 #include "../source/functions.au3"
-#include "../source/buff.au3"
+#include "../source/timeout.au3"
 
 ; This is needed for Windows Vista and above
 #requireadmin
