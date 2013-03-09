@@ -55,16 +55,6 @@ func SendTextClient($text)
 	SendClient($kEnterKey, 500)
 endfunc
 
-func SendTextClientWin($text)
-	LogWrite("SendTextClient() - " & $text)
-
-	SendClient($kEnterKey, 1000)
-	
-	SendClient($text, 1000)
-	
-	SendClient($kEnterKey, 1000)
-endfunc
-
 func IsPixelExistClient($window_left, $window_right, $color)
 	;local $coord = PixelSearch($window_pos[0], $window_pos[1], $window_pos[2], $window_pos[3], $color, 0, 1, $kWindowHandle)
 	local $coord = PixelSearch($window_right[0], $window_right[1], $window_left[0], $window_left[1], $color, 1)
