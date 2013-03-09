@@ -3,6 +3,7 @@ global const $kAttackSkillTimeout = 6
 global const $kAttackTimeout = 20
 global const $kMoveTimeout = 40
 global const $kBuffTimeout = 1
+global const $kScriptTimeout = 20
 global const $kIsCancelTargetMove = true
 global const $kIsRestEnable = true
 

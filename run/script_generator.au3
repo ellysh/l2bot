@@ -58,6 +58,7 @@ func WriteHeader()
 endfunc
 
 func WriteFooter()
+	FileWrite($kScriptFile, '	Sleep(' & GetDelay() & ')' & @CRLF)
 	FileWrite($kScriptFile, chr(10) & "endfunc")
 endfunc
 

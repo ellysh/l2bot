@@ -21,12 +21,13 @@ endfunc
 func Script($timeout)
 	LogWrite("Script()")
 
-	local $time_diff = TimerDiff($gLastScriptfTime)
+	local $time_diff = TimerDiff($gLastScriptTime)
 	
 	LogWrite("	- time_diff = " & $time_diff & " timeout = " & $timeout)
 	
 	if $time_diff >= $timeout then
-		CustomScript()()
+		LogWrite("	- call CustomScript()")
+		CustomScript()
 		$gLastScriptTime = TimerInit()
 	endif
 endfunc
