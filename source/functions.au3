@@ -4,7 +4,7 @@ global const $kWindowHandle = WinGetHandle("")
 
 LogWrite("Window handle = " & $kWindowHandle)
 
-Sleep(1000)
+Sleep(200)
 
 global const $kErrorCoord = -1
 
@@ -92,7 +92,7 @@ func GetPixelColorClient($point)
 endfunc
 
 func MouseClickClient($botton, $x, $y)
-	LogWrite("MouseClickClient() - " & $botton & $x & $y)
+	LogWrite("MouseClickClient() - " & $botton & " x = " & $x & " y = " & $y)
 	MouseClick($botton, $x, $y, 1, 1)
 	;ControlClick($kWindowHandle, "", "", $botton, 1, $x, $y)
 endfunc

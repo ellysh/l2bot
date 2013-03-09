@@ -7,4 +7,8 @@
 ; This is needed for Windows Vista and above
 #requireadmin
 
-CustomScript()
+global const $kIsLoop = false
+
+do
+	CustomScript()
+until $kIsLoop == false

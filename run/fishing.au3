@@ -8,6 +8,9 @@
 #include "../source/move.au3"
 #include "../source/functions.au3"
 
+; This is needed for Windows Vista and above
+#requireadmin
+
 global const $kFishingKey = "{F5}"
 global const $kSkillPumpKey = "{F6}"
 global const $kSkillReelKey = "{F7}"
@@ -18,8 +21,6 @@ global const $kBaitKey = "{F4}"
 
 global $gPrevHealth = 0
 
-; This is needed for Windows Vista and above
-#requireadmin
 
 func IsFishBiting()
 	if IsPixelExistClient($kFishHealthLeft, $kFishHealthRight, $kFishHealthColor) then
