@@ -11,7 +11,7 @@ global const $WM_LBUTTONDOWN = 0x0201
 global const $MSLLHOOKSTRUCT = $tagPOINT & ";dword mouseData;dword flags;dword time;ulong_ptr dwExtraInfo"
 
 global const $kScriptFile = "script.au3"
-global $gCurrentTime = GetCurrentTime()
+global $gLastTime = TimerInit()
 
 func _KeyLogger()
 	WriteSend(@HotKeyPressed)
@@ -61,17 +61,11 @@ func WriteFooter()
 	FileWrite($kScriptFile, chr(10) & "endfunc")
 endfunc
 
-func GetCurrentTime()
-	local $msec = @HOUR * 60 * 60 * 1000 + @MIN * 60 * 1000 + @SEC * 1000 + @MSEC
-	
-	return $msec
-endfunc
-
 func GetDelay()
-	local $delay = GetCurrentTime() - $gCurrentTime
-	$gCurrentTime = GetCurrentTime()
+	local $delay = TimerDiff($gLastTime)
+	$gLastTime = TimerInit()
 	
-	return $delay
+	return ceiling($delay)
 endfunc
 
 func WriteMouseClick($x, $y)
