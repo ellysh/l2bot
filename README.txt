@@ -118,7 +118,32 @@ You can open the `chat.au3` file from the `run` directory and specify variables 
 
 You can run and stop chat bot with the same buttons as the others bots.
 
-7. CONTACTS
+7. CUSTOM SCRIPT
+----------------
+
+The custom script mechanism allow you to extend the functionality of existing farm bots. Also you can create custom script that will be launched separately from the other L2Bot scripts.
+
+There are steps to perform the custom script generation:
+1. Run `script_generator.au3` file from the `run` directory.
+2. Press Alt+F2 to start generator script.
+3. Perform the keys pressing and mouse clicks that will be saved.
+4. Press Alt+F1 to complete the generator script
+
+NB: The generator script is able to save letters, numbers, F1-F12 buttons and left button mouse clicks. The buttons Alt, Ctrl, Shift and Win will not be saved.
+
+The generated custom script has been saved in the `script.au3` file in the `run` directory.
+
+There are steps to launch custom script:
+1. Run `script_run.au3` file from the `run` directory.
+2. Press Alt+F2 to start custom script.
+3. You can interrupt the custom script's work bu Alt+F1 pressing
+
+NB: You can launch custom script in the loop. Change the `kIsLoop` variable to `true` in the `script_run.au3` file:
+global const $kIsLoop = true
+
+All farm bots will launch custom script by timeout. You can change timeout value with the `kScriptTimeout` variable in the running farm bot script.
+
+8. CONTACTS
 -----------
 
 You can ask any questions about usage L2Bot, report about bugs, send your suggestions and patches in the L2Bot project's groups and the developer's email.
