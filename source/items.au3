@@ -4,12 +4,6 @@ func PickDrop($count)
 	next
 endfunc
 
-func PickDropWin($count)
-	for $i = 0 to $count step 1
-		SendClient($kPickDropKey, 1000)
-	next
-endfunc
-
 func HealthPotion()
 	LogWrite("HealthPotion()")
 	SendClient($kHeathPoitionKey, 500)
