@@ -1,4 +1,4 @@
-L2Bot 2.0 version
+L2Bot 2.1 version
 =================
 
 1. INTRODUCTION
@@ -47,6 +47,11 @@ There are steps to perform the interface configuration:
 This is illustartion of all configuration points in the `interface_conf.jpg` file from the `images` directory.
 
 You can use the `configurator_fishing_en.au3` script from the `run` directory to configure fishing bot. This script works like the described above `configurator_en.au3` one. This is illustration of all configuration points for fishing bot in the `fishing_conf.jpg` file from the `images` directory.
+
+NB: You must insert title of your Lineage window to the `source/functions.au3` file:
+	global const $kWindows = WinList("II")
+	
+The `II` in this string is title of the Lineage window. 
 
 3.2 MOB'S NAMES CONFIGURATION
 -----------------------------
