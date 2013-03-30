@@ -1,8 +1,8 @@
+#include <SendMessage.au3>
+
 WaitGrabCommand()
 
-global const $kWindowHandle = WinGetHandle("")
-
-LogWrite("Window handle = " & $kWindowHandle)
+global const $kWindows = WinList("II")
 
 Sleep(200)
 
@@ -14,22 +14,34 @@ func WaitGrabCommand()
 	wend
 endfunc
 
-if not WinExists($kWindowHandle) then
-	LogWrite("Window not exist")
-	exit
-endif
+func SendMultiClient($key, $delay)
+	for $i = 1 to $kWindows[0][0] step 1
+		_SendMessage($kWindows[$i][1], 0x6, 1)	
+		ControlSend("", "", $kWindows[$i][1], $key)
+		Sleep($delay)
+	next
+endfunc
+
+func SendSymbolMultiClient($key, $delay)
+	for $i = 1 to $kWindows[0][0] step 1
+		_SendMessage($kWindows[$i][1], 0x6, 1)
+		ControlSend("", "", $kWindows[$i][1], $key, 1)
+		Sleep($delay)
+	next
+endfunc
 
 func SendClient($key, $delay)
 	LogWrite("SendClient() - " & $key)
-	;ControlSend($kWindowHandle, "", "", $key)
-	Send($key)
-	Sleep($delay)
+	SendMultiClient($key, $delay)
+	;Send($key)
+	;Sleep($delay)
 endfunc
 
 func SendSymbolClient($key, $delay)
 	LogWrite("SendSymbolClient() - " & $key)
-	Send($key, 1)
-	Sleep($delay)
+	SendSymbolMultiClient($key, $delay)
+	;Send($key, 1)
+	;Sleep($delay)
 endfunc
 
 func SendSplitText($text)
