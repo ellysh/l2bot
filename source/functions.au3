@@ -14,34 +14,26 @@ func WaitGrabCommand()
 	wend
 endfunc
 
-func SendMultiClient($key, $delay)
+func SendMultiClient($key, $flag)
 	for $i = 1 to $kWindows[0][0] step 1
 		_SendMessage($kWindows[$i][1], 0x6, 1)	
-		ControlSend("", "", $kWindows[$i][1], $key)
-		Sleep($delay)
-	next
-endfunc
-
-func SendSymbolMultiClient($key, $delay)
-	for $i = 1 to $kWindows[0][0] step 1
-		_SendMessage($kWindows[$i][1], 0x6, 1)
-		ControlSend("", "", $kWindows[$i][1], $key, 1)
-		Sleep($delay)
+		Sleep(50)
+		ControlSend("", "", $kWindows[$i][1], $key, $flag)
 	next
 endfunc
 
 func SendClient($key, $delay)
 	LogWrite("SendClient() - " & $key)
-	SendMultiClient($key, $delay)
-	;Send($key)
-	;Sleep($delay)
+	
+	SendMultiClient($key, 0)
+	Sleep($delay)
 endfunc
 
 func SendSymbolClient($key, $delay)
 	LogWrite("SendSymbolClient() - " & $key)
-	SendSymbolMultiClient($key, $delay)
-	;Send($key, 1)
-	;Sleep($delay)
+	
+	SendMultiClient($key, 1)
+	Sleep($delay)	
 endfunc
 
 func SendSplitText($text)
