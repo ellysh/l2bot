@@ -41,10 +41,11 @@ func SendSplitText($text)
 
 	for $i = 1 to $key_array[0] step 1
 		if $key_array[$i] == "!" or $key_array[$i] == "/" then
-			SendSymbolClient($key_array[$i], 20)
+			Send($key_array[$i], 1)
 		else
-			SendClient($key_array[$i], 20)
+			Send($key_array[$i])
 		endif
+		Sleep(20)
 	next
 	Sleep(200)
 endfunc
