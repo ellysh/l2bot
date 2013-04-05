@@ -2,7 +2,8 @@
 
 WaitGrabCommand()
 
-global const $kWindows = WinList("II")
+global const $kCurrentWin = WinGetHandle("")
+global const $kWindows = WinList( WinGetTitle($kCurrentWin))
 
 Sleep(200)
 
@@ -54,11 +55,13 @@ endfunc
 func SendTextClient($text)
 	LogWrite("SendTextClient() - " & $text)
 
-	SendClient($kEnterKey, 200)
+	Send($kEnterKey)
+	Sleep(200)
 
 	SendSplitText($text)
 	
-	SendClient($kEnterKey, 500)
+	Send($kEnterKey)
+	Sleep(500)
 endfunc
 
 func IsPixelExistClient($window_left, $window_right, $color)

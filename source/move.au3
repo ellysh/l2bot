@@ -11,7 +11,6 @@ func MoveToTarget()
 	SendClient($kAttackKey, 500)
 
 	if $kIsCancelTargetMove then
-		Sleep(2000)
 		SendClient($kCancelTarget, 500)	
 	endif
 	

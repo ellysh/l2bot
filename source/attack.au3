@@ -52,7 +52,7 @@ func Attack()
 		
 		OnCheckHealthAndMana()
 		
-		SendClient($kAttackKey, 1000)
+		SendClient($kAttackKey, 500)
 
 		if IsTargetDamaged() and not $is_attacked then
 			OnAttack()
