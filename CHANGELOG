@@ -1,3 +1,9 @@
+* L2Bot 2.2
+	- Send text commands to the active window only
+	- Make the multi window mode disabled by default
+	- Implement auto detecting of the L2 client windows
+	- Disable multi-window keys sending for the custom script
+
 * L2Bot 2.1
 	- Implement universal farm bot for the melee classes
 	- Implement keys pressing in the multiple L2 windows
