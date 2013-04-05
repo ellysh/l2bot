@@ -88,7 +88,7 @@ func WriteSend($key)
 		$key = "{ENTER}"
 	endif
 
-	FileWrite($kScriptFile, '	SendClient("' & $key & '", 10)' & @CRLF)
+	FileWrite($kScriptFile, '	Send("' & $key & '")' & @CRLF)
 endfunc
 
 FileDelete($kScriptFile)
