@@ -7,6 +7,7 @@
 ; This is needed for Windows Vista and above
 #requireadmin
 
+global const $kIsMultiWindow = false
 ; Проект бесплатного скриптового бота с открытыми исходниками
 global const $kMessageTextRus = "Ghjtrn ,tcgkfnyjuj ,jnf c jnrhsnsvb bc[jlybrfvb"
 global const $kMessageTextEn = " - http://vk.com/l2bot"

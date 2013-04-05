@@ -11,6 +11,7 @@
 ; This is needed for Windows Vista and above
 #requireadmin
 
+global const $kIsMultiWindow = false
 global const $kFishingKey = "{F5}"
 global const $kSkillPumpKey = "{F6}"
 global const $kSkillReelKey = "{F7}"
