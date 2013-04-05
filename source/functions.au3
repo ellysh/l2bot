@@ -27,14 +27,24 @@ endfunc
 func SendClient($key, $delay)
 	LogWrite("SendClient() - " & $key)
 	
-	SendMultiClient($key, 0)
+	if $kIsMultiWindow then
+		SendMultiClient($key, 0)
+	else
+		Send($key, 0)
+	endif
+	
 	Sleep($delay)
 endfunc
 
 func SendSymbolClient($key, $delay)
 	LogWrite("SendSymbolClient() - " & $key)
 	
-	SendMultiClient($key, 1)
+	if $kIsMultiWindow then	
+		SendMultiClient($key, 1)
+	else
+		Send($key, 1)
+	endif
+	
 	Sleep($delay)	
 endfunc
 

@@ -5,6 +5,7 @@ global const $kMoveTimeout = 40
 global const $kBuffTimeout = 1.5
 global const $kScriptTimeout = 20
 global const $kIsCancelTargetMove = true
+global const $kIsMultiWindow = false
 global const $kIsRestEnable = true
 
 ; Skills
