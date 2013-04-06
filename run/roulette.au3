@@ -7,19 +7,47 @@
 #requireadmin
 
 global const $kIsMultiWindow = false
-global const $kRate = "1000"
+global const $kStartRate = "1000"
+global const $kSuccessTextColor = 0x03E903
+
+global $gColorButton = $kRedButton
+global $gRate = $kStartRate
+
+func IsSuccess()
+	return IsPixelExistClient($kRouletteWindowLeft, $kRouletteWindowRight, $kSuccessTextColor)
+endfunc
+
+func IncreaseRate()
+	local $number = Number($gRate)
+	
+	$gRate = String($number * 2)
+endfunc
+
+func ChangeColor()
+	if $gColorButton[0] == $kRedButton[0] then
+		$gColorButton = $kBlackButton
+	else
+		$gColorButton = $kRedButton
+	endif
+endfunc
 
 ; Main Loop
 while true
 	MouseClickClient("left", $kInputField[0], $kInputField[1])
 	Sleep(1000)
 	
-	SendSplitText($kRate)
+	SendSplitText($gRate)
 	
-	MouseClickClient("left", $kRedButton[0], $kRedButton[1])
+	MouseClickClient("left", $gColorButton[0], $gColorButton[1])
 	Sleep(1000)
+	
+	if not IsSuccess() then
+		IncreaseRate()
+	else
+		$gRate = $kStartRate
+		ChangeColor()
+	endif
 	
 	MouseClickClient("left", $kBackButton[0], $kBackButton[1])
 	Sleep(1000)
-	exit
 wend
