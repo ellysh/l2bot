@@ -150,8 +150,9 @@ Repeater script translates player's key pressing to all Lineage 2 window. Additi
 
 There are steps to launch repeater script:
 1. Run `repeater.au3` file from the `run` directory.
-2. Press Alt+F2 to start repeater.
-3. You can interrupt the script's work by Alt+F1 pressing
+2. Switch to the Lineage client window.
+3. Press Alt+F2 to start repeater.
+4. You can interrupt the script's work by Alt+F1 pressing
 
 9. CONTACTS
 -----------
