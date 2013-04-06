@@ -7,7 +7,8 @@
 #requireadmin
 
 global const $kIsMultiWindow = false
-global const $kStartRate = "1000"
+global const $kStartRate = "2000"
+global const $kMaxRate = "200000"
 global const $kSuccessTextColor = 0x03E903
 
 global $gColorButton = $kRedButton
@@ -15,6 +16,14 @@ global $gRate = $kStartRate
 
 func IsSuccess()
 	return IsPixelExistClient($kRouletteWindowLeft, $kRouletteWindowRight, $kSuccessTextColor)
+endfunc
+
+func IsMaxRate()
+	if Number($gRate) >= Number($kMaxRate) then
+		return true
+	else
+		return false
+	endif
 endfunc
 
 func IncreaseRate()
@@ -41,7 +50,7 @@ while true
 	MouseClickClient("left", $gColorButton[0], $gColorButton[1])
 	Sleep(1000)
 	
-	if not IsSuccess() then
+	if not IsSuccess() and not IsMaxRate() then
 		IncreaseRate()
 	else
 		$gRate = $kStartRate
