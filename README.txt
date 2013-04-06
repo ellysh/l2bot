@@ -154,7 +154,29 @@ There are steps to launch repeater script:
 3. Press Alt+F2 to start repeater.
 4. You can interrupt the script's work by Alt+F1 pressing
 
-9. CONTACTS
+9. ROULETTE BOT
+---------------
+
+Roullete bot allow you to automate roulette play at the asterios.tm servers x3 and x7.
+
+There are steps to perform the bot's configuration:
+1. Run `configurator_roulette.au3` script from the `run` directory.
+2. Switch to the Lineage client window.
+3. Press Alt+F2 to start configuration script.
+4. Select the point in the Lineage window according the information in popup tip. You can select point at the current cursor's position by pressing Alt+F3.
+5. The popup tips will be disappeared after you has selected the last point. Configuration is complete.
+
+You can open the `roulette.au3` file from the `run` directory and specify variables described below for additional bot's configuration:
+	kStartRate - start rate.
+	kMaxRate - maximum allowable rate.
+
+There are steps to launch rullete bot:
+1. Run `roulette.au3` file from the `run` directory.
+2. Switch to the Lineage client window.
+3. Press Alt+F2 to start bot.
+4. You can interrupt the script's work by Alt+F1 pressing
+
+10. CONTACTS
 -----------
 
 You can ask any questions about usage L2Bot, report about bugs, send your suggestions and patches in the L2Bot project's groups and the developer's email.
