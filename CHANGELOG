@@ -1,3 +1,6 @@
+* L2Bot 2.3
+	- Implement the repeater script
+
 * L2Bot 2.2
 	- Send text commands to the active window only
 	- Make the multi window mode disabled by default
