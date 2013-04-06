@@ -11,9 +11,6 @@ global const $kIsMultiWindow = true
 
 func _KeyLogger()
 	Repeat(@HotKeyPressed)
-	HotKeySet(@HotKeyPressed)
-	Send(@HotKeyPressed)
-	HotKeySet(@HotKeyPressed, "_KeyLogger")
 endfunc
 
 func InitKeyHooks()
@@ -29,12 +26,12 @@ endfunc
 func Repeat($key)
 	LogWrite("Repeat() - asc = " & asc($key) & " key = " & $key & @CRLF);
 
-	SendClient($key, 50)
+	SendClient($key, 1)
 endfunc
 
 InitKeyHooks()
 
 ; Main Loop
 while true
-	Sleep(10)
+	Sleep(1)
 wend
