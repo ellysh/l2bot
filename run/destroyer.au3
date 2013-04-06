@@ -25,7 +25,7 @@ func OnFirstKill()
 endfunc
 
 func OnAllKill()
-	PickDrop(5)
+	PickDrop(4)
 endfunc
 
 func NextTarget()

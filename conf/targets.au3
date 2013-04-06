@@ -1,3 +1,3 @@
 ; Arrays with monsters names
-global const $kTargetCount = 4
-global const $kTargetNames[$kTargetCount] = [ "Ì", "Ë", "Ñ", "Ð" ]
+global const $kTargetCount = 2
+global const $kTargetNames[$kTargetCount] = [ "Lan", "Liza" ]
