@@ -136,14 +136,24 @@ The generated custom script has been saved in the `script.au3` file in the `run`
 There are steps to launch custom script:
 1. Run `script_run.au3` file from the `run` directory.
 2. Press Alt+F2 to start custom script.
-3. You can interrupt the custom script's work bu Alt+F1 pressing
+3. You can interrupt the custom script's work by Alt+F1 pressing
 
 NB: You can launch custom script in the loop. Change the `kIsLoop` variable to `true` in the `script_run.au3` file:
 global const $kIsLoop = true
 
 All farm bots will launch custom script by timeout. You can change timeout value with the `kScriptTimeout` variable in the running farm bot script.
 
-8. CONTACTS
+8. REPEATER SCRIPT
+------------------
+
+Repeater script translates player's key pressing to all Lineage 2 window. Additional configuration is not needed for this script.
+
+There are steps to launch repeater script:
+1. Run `repeater.au3` file from the `run` directory.
+2. Press Alt+F2 to start repeater.
+3. You can interrupt the script's work by Alt+F1 pressing
+
+9. CONTACTS
 -----------
 
 You can ask any questions about usage L2Bot, report about bugs, send your suggestions and patches in the L2Bot project's groups and the developer's email.
