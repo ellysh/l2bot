@@ -108,5 +108,8 @@ endfunc
 
 func GetBarValue($coord, $bar_left, $bar_right)
 	local $result = ($coord[0] - $bar_left[0]) / ($bar_right[0] - $bar_left[0]) * 100
+	
+	LogWrite("GetBarValue() - result = " & Round($result, 2) & "%")
+	
 	return $result
 endfunc

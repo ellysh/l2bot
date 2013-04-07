@@ -46,10 +46,10 @@ endfunc
 func IsHealthLess($value)
 	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
 	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < $value then
-		LogWrite("Health is half")
+		LogWrite("Health < " & $value & "%")
 		return true
 	else
-		LogWrite("Health is ok")
+		LogWrite("Health > " & $value & "%")
 		return false
 	endif
 endfunc
@@ -57,10 +57,10 @@ endfunc
 func IsManaLess($value)
 	local $coord = GetPixelCoordinateClient($kSelfManaLeft, $kSelfManaRight, $kSelfManaColor)
 	if GetBarValue($coord, $kSelfManaLeft, $kSelfManaRight) < $value then
-		LogWrite("Mana is critical")
+		LogWrite("Mana < " & $value & "%")
 		return true
 	else
-		LogWrite("Mana is ok")
+		LogWrite("Mana > " & $value & "%")
 		return false
 	endif
 endfunc
