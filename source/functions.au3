@@ -7,6 +7,8 @@ global const $kWindows = WinList( WinGetTitle($kCurrentWin))
 
 Sleep(200)
 
+Opt("SendKeyDownDelay", 10)
+
 global const $kErrorCoord = -1
 
 func WaitGrabCommand()
