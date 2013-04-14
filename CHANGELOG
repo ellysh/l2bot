@@ -1,3 +1,7 @@
+* L2Bot 2.5
+	- Fix bug with keys simulation for the Java servers
+	- Implement mechanism of the toggle skills usage 
+
 * L2Bot 2.4
 	- Implement the roulette bot
 
