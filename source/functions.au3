@@ -10,6 +10,8 @@ Sleep(200)
 Opt("SendKeyDownDelay", 10)
 
 global const $kErrorCoord = -1
+global const $kToggleCount = 12
+global $gToggleList[$kToggleCount]
 
 func WaitGrabCommand()
 	while not $gIsGrab
@@ -114,4 +116,19 @@ func GetBarValue($coord, $bar_left, $bar_right)
 	LogWrite("GetBarValue() - result = " & Round($result, 2) & "%")
 	
 	return $result
+endfunc
+
+func SwitchToggle($number, $key, $state)
+	LogWrite("SwitchToggle() - number = " & $number & " key = " & $key & " state = " & $state)
+	
+	if $kToggleCount < $number then
+		return
+	endif
+	
+	if $gToggleList[$number] == $state then
+		return
+	endif
+	
+	SendClient($key, 1000)
+	$gToggleList[$number] = $state
 endfunc
