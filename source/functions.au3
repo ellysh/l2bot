@@ -121,7 +121,7 @@ endfunc
 func SwitchToggle($number, $key, $state)
 	LogWrite("SwitchToggle() - number = " & $number & " key = " & $key & " state = " & $state)
 	
-	if $kToggleCount < $number then
+	if $kToggleCount <= $number then
 		return
 	endif
 	

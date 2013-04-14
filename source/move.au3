@@ -70,7 +70,7 @@ func ChangePosition()
 endfunc
 
 func SitLoop()
-	SendTextClient("/sit")
+	SwitchToggle(11, $kSitKey, true)
 	Sleep(500)
 	
 	while not IsTargetForAttack() 
@@ -81,7 +81,7 @@ func SitLoop()
 		Sleep(500)
 	wend
 	
-	SendTextClient("/stand")
+	SwitchToggle(11, $kSitKey, false)
 	Sleep(500)
 endfunc
 
