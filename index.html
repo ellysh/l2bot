@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="L2bot : Simple and easy configurable Lineage 2 bot on AutoIt scripting language" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>L2bot</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ellysh/l2bot">View on GitHub</a>
+
+          <h1 id="project_title">L2bot</h1>
+          <h2 id="project_tagline">Simple and easy configurable Lineage 2 bot on AutoIt scripting language</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ellysh/l2bot/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ellysh/l2bot/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>L2Bot 2.5 version</h1>
+
+<h2>1. INTRODUCTION</h2>
+
+<p>L2Bot is toolkit of AutoIt scripts to implement Lineage 2 bot.</p>
+
+<h2>2. INSTALLATION</h2>
+
+<p>To launch L2Bot you need to download AutoIt interpreter from official website:
+<a href="http://www.autoitscript.com/site/autoit/downloads">http://www.autoitscript.com/site/autoit/downloads</a></p>
+
+<p>The x64 interpreter version must be selected in installation dialog for users with x64 Windows version.</p>
+
+<p>Then download archive with L2Bot scripts and extract it:
+<a href="https://github.com/ellysh/l2bot/archive/master.zip">https://github.com/ellysh/l2bot/archive/master.zip</a></p>
+
+<h2>3. CONFIGURATION</h2>
+
+<p>NB: You must set the <code>chat with Enter</code> checkbox in your Lineage client application for the correct bot's working.</p>
+
+<p>Configuration of the L2Bot consist of the three stages:
+1. Configuration of the bot according to your Lineage client's interface.
+2. Configuration of the mob's names to attack them by bot.
+3. Configuration of the hotbar keys according your character's class.</p>
+
+<p>All these stages will be described below.</p>
+
+<h2>3.1 INTERFACE CONFIGURATION</h2>
+
+<p>You can use the <code>configurator_en.au3</code> script from the <code>run</code> directory to configure farm bot according your Lineage client's interface. All interface's parameters will be saved in <code>interface.au3</code> file from the <code>conf</code> directory.</p>
+
+<p>There are steps to perform the interface configuration:
+1. Run your Lineage client in the window mode. You can press Alt+Enter for switching to the window mode.
+2. Resize the Lineage client window to full screen with mouse.
+3. Get into the game with your character.
+4. Run <code>configurator_en.au3</code> script from the <code>run</code> directory.
+5. Switch to the Lineage client window.
+6. Press Alt+F2 to start configuration script.
+7. Select the point in the Lineage window according the information in popup tip. You can select point at the current cursor's position by pressing Alt+F3.
+8. The popup tips will be disappeared after you has selected the last point. Configuration is complete.</p>
+
+<p>This is illustartion of all configuration points in the <code>interface_conf.jpg</code> file from the <code>images</code> directory.</p>
+
+<p>You can use the <code>configurator_fishing_en.au3</code> script from the <code>run</code> directory to configure fishing bot. This script works like the described above <code>configurator_en.au3</code> one. This is illustration of all configuration points for fishing bot in the <code>fishing_conf.jpg</code> file from the <code>images</code> directory.</p>
+
+<h2>3.2 MOB'S NAMES CONFIGURATION</h2>
+
+<p>There are steps to perform the mob's names configuration:
+1. Open the <code>targets.au3</code> fle from the <code>conf</code> directory with any text editor.
+2. Write mob's names into <code>$kTargetNames</code> list.
+3. Change value of the <code>$kTargetCount</code> variable according count of elements in the <code>$kTargetNames</code> list.</p>
+
+<p>NB: You can specify one or two letters of the mob's names for the Gracia Final and above Lineage chronicles. This is example:
+    global const $kTargetCount = 2
+    global const $kTargetNames[$kTargetCount] = [ "G", "Wo" ]</p>
+
+<p>You must specify full mob's names for Lineage chronicles below the Gracia Final one:
+    global const $kTargetCount = 2
+    global const $kTargetNames[$kTargetCount] = [ "Gremlin", "Wolf" ]</p>
+
+<h2>3.3 HOTBAR KEYS CONFIGURATION</h2>
+
+<p>The L2Bot scripts implement the farm bots for several character's classes. All these scripts are placed to the <code>run</code> directory. Script's name is the same as relevant class's name.</p>
+
+<p>The hotbar configuration is depended on the running script. You can use hotbar illustrations from the <code>images</code> directory. Name of the illustration file contains the character's class name and the <code>hotbar</code> word. For example, <code>bladedancer_hotbar.jpg</code> file is the illustration for <code>bladedancer.au3</code> script.</p>
+
+<p>The <code>fishing_hotbar.jpg</code> file from the <code>images</code> directory is a hotbar illustration for the fishing bot.</p>
+
+<h2>4. LAUNCHING</h2>
+
+<p>NB: Bots of L2Bot project is not executable <code>exe</code> files! All bots are implemented as AutoIt scripts with <code>au3</code> extention and them are placed to the <code>run</code> directory. You can run these scripts like the <code>exe</code> files.</p>
+
+<p>There are steps to run L2Bot:
+1. Run your Lineage client in the window mode. You can press Alt+Enter for switching to the window mode.
+2. Resize the Lineage client window to full screen with mouse.
+3. Get into the game with your character.
+4. Run one of the farm-bot script from the <code>run</code> directory.
+5. Switch to the Lineage client window.
+6. Press Alt+F2 to start bot.
+7. You can stop bot by Alt+F1 pressing.</p>
+
+<p>NB: The Lineage client window must have the same size and position as you have configured (see the 3.1 section).</p>
+
+<h2>5. FISHING BOT</h2>
+
+<p>Fishing bot is implemented in the runnable <code>fishing.au3</code> script file from <code>run</code> directory.</p>
+
+<p>Configuration of the fishing bot consist of the two stages:
+1. Configuration of the bot according to your Lineage client's interface (see the 3.1 section).
+2. Configuration of the hotbar keys (see the 3.3 section).</p>
+
+<p>NB: You must set the attack skill to F1 key for the nuker classes instead the <code>Attack</code> action</p>
+
+<p>You must perform these actions before run the fishing bot:
+1. Place your character near the water where you can use <code>Fishing</code> skill. Character and camera must be faced to the water i.e. the character will move to the water if you will press the <code>Up</code> arrow keyboard button.
+2. Wear the fishrod and bait on your character.</p>
+
+<p>You can run and stop fishing bot with the same buttons as the others bots.</p>
+
+<h2>6. CHAT BOT</h2>
+
+<p>Chat bot is implemented in the runnable <code>chat.au3</code> script file from the <code>run</code> directory.</p>
+
+<p>You can open the <code>chat.au3</code> file from the <code>run</code> directory and specify variables described below to configure bot:
+    kMessageTextRus - this is message text to print in Russian language.
+    kMessageTextEn - this is message text to print in English language.
+    kDelayMinutes - this is delay betweeen the message outputs in minutes.</p>
+
+<p>You can run and stop chat bot with the same buttons as the others bots.</p>
+
+<h2>7. CUSTOM SCRIPT</h2>
+
+<p>The custom script mechanism allow you to extend the functionality of existing farm bots. Also you can create custom script that will be launched separately from the other L2Bot scripts.</p>
+
+<p>There are steps to perform the custom script generation:
+1. Run <code>script_generator.au3</code> file from the <code>run</code> directory.
+2. Press Alt+F2 to start generator script.
+3. Perform the keys pressing and mouse clicks that will be saved.
+4. Press Alt+F1 to complete the generator script</p>
+
+<p>NB: The generator script is able to save letters, numbers, F1-F12 buttons and left button mouse clicks. The buttons Alt, Ctrl, Shift and Win will not be saved.</p>
+
+<p>The generated custom script has been saved in the <code>script.au3</code> file in the <code>run</code> directory.</p>
+
+<p>There are steps to launch custom script:
+1. Run <code>script_run.au3</code> file from the <code>run</code> directory.
+2. Press Alt+F2 to start custom script.
+3. You can interrupt the custom script's work by Alt+F1 pressing</p>
+
+<p>NB: You can launch custom script in the loop. Change the <code>kIsLoop</code> variable to <code>true</code> in the <code>script_run.au3</code> file:
+global const $kIsLoop = true</p>
+
+<p>All farm bots will launch custom script by timeout. You can change timeout value with the <code>kScriptTimeout</code> variable in the running farm bot script.</p>
+
+<h2>8. REPEATER SCRIPT</h2>
+
+<p>Repeater script translates player's key pressing to all Lineage 2 window. Additional configuration is not needed for this script.</p>
+
+<p>There are steps to launch repeater script:
+1. Run <code>repeater.au3</code> file from the <code>run</code> directory.
+2. Switch to the Lineage client window.
+3. Press Alt+F2 to start repeater.
+4. You can interrupt the script's work by Alt+F1 pressing</p>
+
+<h2>9. ROULETTE BOT</h2>
+
+<p>Roullete bot allow you to automate roulette play at the asterios.tm servers x3 and x7.</p>
+
+<p>There are steps to perform the bot's configuration:
+1. Run <code>configurator_roulette.au3</code> script from the <code>run</code> directory.
+2. Switch to the Lineage client window.
+3. Press Alt+F2 to start configuration script.
+4. Select the point in the Lineage window according the information in popup tip. You can select point at the current cursor's position by pressing Alt+F3.
+5. The popup tips will be disappeared after you has selected the last point. Configuration is complete.</p>
+
+<p>You can open the <code>roulette.au3</code> file from the <code>run</code> directory and specify variables described below for additional bot's configuration:
+    kStartRate - start rate.
+    kMaxRate - maximum allowable rate.</p>
+
+<p>There are steps to launch rullete bot:
+1. Run <code>roulette.au3</code> file from the <code>run</code> directory.
+2. Switch to the Lineage client window.
+3. Press Alt+F2 to start bot.
+4. You can interrupt the script's work by Alt+F1 pressing</p>
+
+<h2>10. CONTACTS</h2>
+
+<p>You can ask any questions about usage L2Bot, report about bugs, send your suggestions and patches in the L2Bot project's groups and the developer's email.</p>
+
+<p>Developer:
+Ilya Shpigor <a href="mailto:petrsum@gmail.com">petrsum@gmail.com</a></p>
+
+<p>Project's group in vk:
+<a href="https://vk.com/l2bot">https://vk.com/l2bot</a></p>
+
+<p>Project's group in facebook:
+<a href="https://www.facebook.com/L2Bot">https://www.facebook.com/L2Bot</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">L2bot maintained by <a href="https://github.com/ellysh">ellysh</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
