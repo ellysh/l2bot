@@ -44,7 +44,7 @@ There are steps to perform the interface configuration:
 7. Select the point in the Lineage window according the information in popup tip. You can select point at the current cursor's position by pressing Alt+F3.
 8. The popup tips will be disappeared after you has selected the last point. Configuration is complete.
 
-This is illustartion of all configuration points in the `interface_conf.jpg` file from the `images` directory.
+This is illustration of all configuration points in the `interface_conf.jpg` file from the `images` directory.
 
 You can use the `configurator_fishing_en.au3` script from the `run` directory to configure fishing bot. This script works like the described above `configurator_en.au3` one. This is illustration of all configuration points for fishing bot in the `fishing_conf.jpg` file from the `images` directory.
 
