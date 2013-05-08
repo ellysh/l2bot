@@ -87,9 +87,9 @@ func Fishing()
 		SendClient($kFishShotKey, 0)	
 
 		if IsHealthGrow() then
-			SendClient($kSkillReelKey, 600)
+			SendClient($kSkillReelKey, 1200)
 		else
-			SendClient($kSkillPumpKey, 600)		
+			SendClient($kSkillPumpKey, 1200)
 		endif
 
 		UpdatePrevHealth()		
