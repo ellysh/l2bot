@@ -1,4 +1,4 @@
-global const $kParamCount = 17
+global const $kParamCount = 20
 global const $kTipText[$kParamCount] = [ _
 	"1. Укажите левую-верхнюю точку окна цели", _
 	"2. Укажите правую-нижнюю точку окна цели", _	
@@ -16,7 +16,10 @@ global const $kTipText[$kParamCount] = [ _
 	"14. Укажите точку на полной полоске HP игрока с характерным цветом", _	
 	"15. Укажите левую-верхнюю точку на полоске MP игрока", _
 	"16. Укажите правую-нижнюю точку на полоске MP игрока", _
-	"17. Укажите точку на полной полоске MP игрока с характерным цветом" _	
+	"17. Укажите точку на полной полоске MP игрока с характерным цветом", _	
+	"18. Укажите первую произвольную точку на мини-карте", _
+	"19. Укажите вторую произвольную точку на мини-карте", _
+	"20. Укажите третью произвольную точку на мини-карте" _
 ]
 
 global const $kParamNames[$kParamCount] = [ _
@@ -36,10 +39,12 @@ global const $kParamNames[$kParamCount] = [ _
  	"kSelfHealthColor", _
  	"kSelfManaLeft", _	
  	"kSelfManaRight", _	
- 	"kSelfManaColor" _	
+ 	"kSelfManaColor", _
+	"kMoveControlPos1", _
+	"kMoveControlPos2", _
+	"kMoveControlPos3" _
 ]
 
 global const $kConfigFile = "../conf/interface.au3"
-global const $kIsMoveControlPos = true
 
 #include "../source/configurator.au3"

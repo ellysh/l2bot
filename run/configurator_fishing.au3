@@ -20,6 +20,5 @@ global const $kParamNames[$kParamCount] = [ _
 ]
 
 global const $kConfigFile = "../conf/interface_fishing.au3"
-global const $kIsMoveControlPos = false
 
 #include "../source/configurator.au3"
