@@ -1,3 +1,8 @@
+* L2Bot 2.6
+	* Implement controlling of position with points in the mini-map
+	* Increase delays after the reel and pump actions in the fishing bot
+	* Update illustration of the interface configuration 
+	
 * L2Bot 2.5
 	- Fix bug with keys simulation for the Java servers
 	- Implement mechanism of the toggle skills usage 
