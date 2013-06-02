@@ -28,6 +28,8 @@ func SearchTarget()
 			exitloop
 		endif
 		
-		Buff($kBuffTimeout * $kMinute)
+		for $i = 0 to ubound($kTimeouts) - 1
+			ProcessTimeout($i, $kTimeouts[$i] * $kMinute)
+		next
 	wend
 endfunc

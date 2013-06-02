@@ -2,10 +2,9 @@
 global const $kAttackSkillTimeout = 6
 global const $kAttackTimeout = 20
 global const $kMoveTimeout = 40
-global const $kScriptTimeout = 20
-global const $kBuffCount = 1
-global const $kBuffTimeouts[$kBuffCount] = [ 1.5 ]
-global const $kBuffHandlers[$kBuffCount] = [ "OnBuffTimeout" ]
+global const $kTimeoutCount = 2
+global const $kTimeouts[$kTimeoutCount] = [ 1.5, 20 ]
+global const $kTimeoutHandlers[$kTimeoutCount] = [ "OnBuffTimeout", "CustomScript" ]
 global const $kIsCancelTargetMove = true
 global const $kIsMultiWindow = false
 global const $kIsRestEnable = true

@@ -21,9 +21,7 @@ while true
 	
 	Attack()
 	
-	for $i = 0 to ubound($kBuffTimeouts) - 1
-		Buff($i, $kBuffTimeouts[$i] * $kMinute)
+	for $i = 0 to ubound($kTimeouts) - 1
+		ProcessTimeout($i, $kTimeouts[$i] * $kMinute)
 	next
-	
-	Script($kScriptTimeout * $kMinute)
 wend
