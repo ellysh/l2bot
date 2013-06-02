@@ -2,19 +2,24 @@
 
 global const $kMinute = 60 * 1000
 
-global $gLastBuffTime = TimerInit()
+global $gLastBuffTimes[$kBuffCount]
 global $gLastScriptTime = TimerInit()
 
-func Buff($timeout)
+
+for $i = 0 to UBound($gLastBuffTimes) - 1
+	$gLastBuffTimes[$i] = TimerInit()
+next
+
+func Buff($index, $timeout)
 	LogWrite("Buff()")
 
-	local $time_diff = TimerDiff($gLastBuffTime)
+	local $time_diff = TimerDiff($gLastBuffTimes[$index])
 	
 	LogWrite("	- time_diff = " & $time_diff & " timeout = " & $timeout)
 	
 	if $time_diff >= $timeout then
-		OnBuffTimeout()
-		$gLastBuffTime = TimerInit()
+		Call($kBuffHandlers[$index])
+		$gLastBuffTimes[$index] = TimerInit()
 	endif
 endfunc
 
