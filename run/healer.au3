@@ -24,7 +24,7 @@ global const $kSixthHealKey = "{F8}"
 global const $kSeventhHealKey = "{F9}"
 global const $kEighthHealKey = "{F10}"
 global const $kSelfBuff = "{F11}"
-global const $kSelfBuffLong = "{F11}"
+global const $kSelfBuffLong = "{F12}"
 
 
 func OnBuffTimeout()
