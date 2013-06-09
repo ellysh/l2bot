@@ -51,48 +51,28 @@ func IsPartyDamaged($left, $right)
 	return IsBarLess($left, $right, $kPartyHealthColor, $kBarHalf)
 endfunc
 
+func HealParty($number)
+	$left = Eval("k" & $number & "HealthLeft")
+	$right = Eval("k" & $number & "HealthRight")
+	
+	if IsPartyDamaged($left, $right) then
+		LogWrite("	- heal " & $number)
+		$key = Eval("k" & $number & "HealthKey")
+		SendClient($key, 500)
+	endif
+endfunc
+
 func OnPartyHeal()
 	LogWrite("OnPartyHeal()")
 
-	if IsPartyDamaged($kFirstHealthLeft, $kFirstHealthRight) then
-		LogWrite("	- heal 1")
-		SendClient($kFirstHealKey, 500)
-	endif
-	
-	if IsPartyDamaged($kSecondHealthLeft, $kSecondHealthRight) then
-		LogWrite("	- heal 2")
-		SendClient($kSecondHealKey, 500)
-	endif
-	
-	if IsPartyDamaged($kThirdHealthLeft, $kThirdHealthRight) then
-		LogWrite("	- heal 3")
-		SendClient($kThirdHealKey, 500)
-	endif
-
-	if IsPartyDamaged($kFourthHealthLeft, $kFourthHealthRight) then
-		LogWrite("	- heal 4")
-		SendClient($kFourthHealKey, 500)
-	endif
-	
-	if IsPartyDamaged($kFifthHealthLeft, $kFifthHealthRight) then
-		LogWrite("	- heal 5")
-		SendClient($kFifthHealKey, 500)
-	endif
-	
-	if IsPartyDamaged($kSixthHealthLeft, $kSixthHealthRight) then
-		LogWrite("	- heal 6")
-		SendClient($kSixthHealKey, 500)
-	endif
-	
-	if IsPartyDamaged($kSeventhHealthLeft, $kSeventhHealthRight) then
-		LogWrite("	- heal 7")
-		SendClient($kSeventhHealKey, 500)
-	endif
-
-	if IsPartyDamaged($kEighthHealthLeft, $kEighthHealthRight) then
-		LogWrite("	- heal 8")
-		SendClient($kEighthHealKey, 500)
-	endif
+	HealParty("First")
+	HealParty("Second")
+	HealParty("Third")
+	HealParty("Fourth")
+	HealParty("Fifth")
+	HealParty("Sixth")
+	HealParty("Seventh")
+	HealParty("Eighth")
 endfunc
 
 ; Main Loop
