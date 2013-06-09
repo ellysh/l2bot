@@ -18,6 +18,5 @@ global const $kParamNames[$kParamCount] = [ _
 ]
 
 global const $kConfigFile = "../conf/interface_roulette.au3"
-global const $kIsMoveControlPos = false
 
 #include "../source/configurator.au3"
