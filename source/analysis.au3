@@ -45,7 +45,14 @@ endfunc
 
 func IsBarLess($left, $right, $color, $value)
 	local $coord = GetPixelCoordinateClient($left, $right, $color)
-	if GetBarValue($coord, $left, $right) < $value then
+	local $bar_value = GetBarValue($coord, $left, $right)
+	
+	if $bar_value < -10 or $bar_value > 110 then
+		LogWrite("bar undefined!")
+		return false
+	endif
+	
+	if $bar_value < $value then
 		LogWrite("bar < " & $value & "%")
 		return true
 	else
