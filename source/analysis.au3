@@ -43,26 +43,25 @@ func IsTargetPet()
 	endif
 endfunc
 
-func IsHealthLess($value)
-	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
-	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < $value then
-		LogWrite("Health < " & $value & "%")
+func IsBarLess($left, $right, $color, $value)
+	local $coord = GetPixelCoordinateClient($left, $right, $color)
+	if GetBarValue($coord, $left, $right) < $value then
+		LogWrite("bar < " & $value & "%")
 		return true
 	else
-		LogWrite("Health > " & $value & "%")
+		LogWrite("bar > " & $value & "%")
 		return false
 	endif
 endfunc
 
+func IsHealthLess($value)
+	LogWrite("IsHealthLess()")
+	return IsBarLess($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor, $value) then
+endfunc
+
 func IsManaLess($value)
-	local $coord = GetPixelCoordinateClient($kSelfManaLeft, $kSelfManaRight, $kSelfManaColor)
-	if GetBarValue($coord, $kSelfManaLeft, $kSelfManaRight) < $value then
-		LogWrite("Mana < " & $value & "%")
-		return true
-	else
-		LogWrite("Mana > " & $value & "%")
-		return false
-	endif
+	LogWrite("IsManaLess()")
+	return IsBarLess($kSelfManaLeft, $kSelfManaRight, $kSelfManaColor, $value)
 endfunc
 
 func IsTargetForAttack()
@@ -78,14 +77,8 @@ func IsTargetDamaged()
 		return false
 	endif
 
-	local $coord = GetPixelCoordinateClient($kTargetHealthLeft, $kTargetHealthRight, $kTargetHealthColor)
-	if GetBarValue($coord, $kTargetHealthLeft, $kTargetHealthRight) < $kBarFull then
-		LogWrite("Target damaged")
-		return true
-	else
-		LogWrite("Target not damaged")
-		return false
-	endif
+	LogWrite("IsTargetDamaged()")
+	return IsBarLess($kTargetHealthLeft, $kTargetHealthRight, $kTargetHealthColor, $kBarFull)
 endfunc
 
 func SetControlColors($color1, $color2, $color3)
