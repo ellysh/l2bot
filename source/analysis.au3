@@ -56,7 +56,7 @@ endfunc
 
 func IsHealthLess($value)
 	LogWrite("IsHealthLess()")
-	return IsBarLess($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor, $value) then
+	return IsBarLess($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor, $value)
 endfunc
 
 func IsManaLess($value)
@@ -88,34 +88,35 @@ func SetControlColors($color1, $color2, $color3)
 endfunc
 
 func IsPositionChanged()
+	LogWrite("IsPositionChanged()")
 	local $color1 = GetPixelColorClient($kMoveControlPos1)
 	local $color2 = GetPixelColorClient($kMoveControlPos2)
 	local $color3 = GetPixelColorClient($kMoveControlPos3)
 
 	if $gMoveControlColor1 == $kEmptyColor or $gMoveControlColor2 == $kEmptyColor or $gMoveControlColor3 == $kEmptyColor then
 		SetControlColors($color1, $color2, $color3)
-		LogWrite("Player moving #1")
+		LogWrite("	- player moving #1")
 		return true
 	endif
 	
 	if $gMoveControlColor1 == $color1 and $gMoveControlColor2 == $color2 and $gMoveControlColor3 == $color3 then
 		SetControlColors($color1, $color2, $color3)	
-		LogWrite("Player not moving")
+		LogWrite("	- player not moving")
 		return false
 	endif
 
 	SetControlColors($color1, $color2, $color3)
-	LogWrite("Player moving #2")
+	LogWrite("	- player moving #2")
 	return true
 endfunc
 
 func ExitOnDeath()
+	LogWrite("ExitOnDeath()")
 	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
 	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < 1 then
-		LogWrite("Player died")
+		LogWrite("	- player died")
 		;exit
 	else
-		LogWrite("Player alive")
-		return false
+		LogWrite("	- player alive")
 	endif
 endfunc
