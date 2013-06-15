@@ -57,7 +57,7 @@ func HealParty($number)
 	
 	if IsPartyDamaged($left, $right) then
 		LogWrite("	- heal " & $number)
-		local $key = Eval("k" & $number & "HealthKey")
+		local $key = Eval("k" & $number & "HealKey")
 		SendClient($key, 500)
 	endif
 endfunc
