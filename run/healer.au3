@@ -15,17 +15,7 @@ global const $kTimeoutHandlers[$kTimeoutCount] = [ "OnBuffTimeout", "OnBuffTimeo
 ; This is needed for Windows Vista and above
 #requireadmin
 
-global const $kFirstHealKey = "{F1}"
-global const $kSecondHealKey = "{F2}"
-global const $kThirdHealKey = "{F3}"
-global const $kFourthHealKey = "{F4}"
-global const $kFifthHealKey = "{F7}"
-global const $kSixthHealKey = "{F8}"
-global const $kSeventhHealKey = "{F9}"
-global const $kEighthHealKey = "{F10}"
-global const $kSelfBuff = "{F11}"
-global const $kSelfBuffLong = "{F12}"
-
+global const $kHealKey = "{F2}"
 
 func OnBuffTimeout()
 	LogWrite("OnBuffTimeout()")
@@ -57,8 +47,9 @@ func HealParty($number)
 	
 	if IsPartyDamaged($left, $right) then
 		LogWrite("	- heal " & $number)
-		local $key = Eval("k" & $number & "HealKey")
-		SendClient($key, 500)
+		MouseClickClient("left", $left[0], $left[1])
+		Sleep(500)
+		SendClient($kHealKey, 500)
 	endif
 endfunc
 
