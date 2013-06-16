@@ -38,7 +38,7 @@ func OnCheckHealthAndMana()
 endfunc
 
 func IsPartyDamaged($left, $right)
-	return IsBarLess($left, $right, $kPartyHealthColor, $kBarHalf)
+	return IsBarLess($left, $right, $kPartyHealthColor, $kBarTwoThirds)
 endfunc
 
 func HealParty($number)
