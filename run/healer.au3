@@ -37,13 +37,21 @@ func OnCheckHealthAndMana()
 	endif
 endfunc
 
+func NumberToLeft($number)
+	return Eval("k" & $number & "HealthLeft")
+endfunc
+
+func NumberToRight($number)
+	return Eval("k" & $number & "HealthRight")
+endfunc
+
 func IsPartyDamaged($left, $right)
 	return IsBarLess($left, $right, $kPartyHealthColor, $kBarTwoThirds)
 endfunc
 
 func HealParty($number)
-	local $left = Eval("k" & $number & "HealthLeft")
-	local $right = Eval("k" & $number & "HealthRight")
+	local $left = NumberToLeft($number)
+	local $right = NumberToRight($number)
 	
 	if IsPartyDamaged($left, $right) then
 		LogWrite("	- heal " & $number)
