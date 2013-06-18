@@ -16,25 +16,41 @@ global const $kTimeoutHandlers[$kTimeoutCount] = [ "OnBuffTimeout", "OnBuffTimeo
 #requireadmin
 
 global const $kHealKey = "{F2}"
+global const $kSelfBuff = "{F11}"
+global const $kSelfBuffLong = "{F12}" 
 
 func OnBuffTimeout()
 	LogWrite("OnBuffTimeout()")
 	SendClient($kSelfBuff, 10 * 1000)
+	FollowParty("First")
 endfunc
 
 func OnBuffTimeoutLong()
 	LogWrite("OnBuffTimeout()")
 	SendClient($kSelfBuffLong, 20 * 1000)
+	FollowParty("First")
 endfunc
 
 func OnCheckHealthAndMana()
 	if IsHealthLess($kBarHalf) then
 		HealthPotion()
+		FollowParty("First")
 	endif
 	
 	if IsManaLess($kBarThird) then
 		ManaPotion()
+		FollowParty("First")
 	endif
+endfunc
+
+func FollowParty($number)
+	local $left = NumberToLeft($number)
+	local $right = NumberToRight($number)
+
+	MouseClickClient("left", $left[0], $left[1])
+	Sleep(500)
+	MouseClickClient("left", $left[0], $left[1])
+	Sleep(500)
 endfunc
 
 func NumberToLeft($number)
@@ -73,6 +89,9 @@ func OnPartyHeal()
 	HealParty("Seventh")
 	HealParty("Eighth")
 endfunc
+
+
+FollowParty("First")
 
 ; Main Loop
 while true
