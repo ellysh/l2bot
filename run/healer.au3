@@ -19,6 +19,8 @@ global const $kHealKey = "{F2}"
 global const $kSelfBuff = "{F11}"
 global const $kSelfBuffLong = "{F12}" 
 
+global $gLastHealed = ""
+
 func OnBuffTimeout()
 	LogWrite("OnBuffTimeout()")
 	SendClient($kSelfBuff, 10 * 1000)
@@ -32,6 +34,7 @@ func OnBuffTimeoutLong()
 endfunc
 
 func OnCheckHealthAndMana()
+	LogWrite("OnCheckHealthAndMana()")
 	if IsHealthLess($kBarHalf) then
 		HealthPotion()
 		FollowParty("First")
@@ -74,11 +77,14 @@ func HealParty($number)
 		MouseClickClient("left", $left[0], $left[1])
 		Sleep(500)
 		SendClient($kHealKey, 500)
+		$gLastHealed = $number
 	endif
 endfunc
 
 func OnPartyHeal()
 	LogWrite("OnPartyHeal()")
+	
+	$gLastHealed = ""
 
 	HealParty("First")
 	HealParty("Second")
@@ -88,6 +94,10 @@ func OnPartyHeal()
 	HealParty("Sixth")
 	HealParty("Seventh")
 	HealParty("Eighth")
+	
+	if $gLastHealed <> "" then
+		FollowParty($gLastHealed)
+	endif
 endfunc
 
 
