@@ -1,4 +1,4 @@
-global const $kParamCount = 20
+global const $kParamCount = 19
 global const $kTipText[$kParamCount] = [ _
 	"1. Specify left-up point of the target window", _
 	"2. Specify right-bottom point of the target window", _
@@ -17,9 +17,8 @@ global const $kTipText[$kParamCount] = [ _
 	"15. Specify left-up point of player's MP bar", _
 	"16. Specify right-bottom point of player's MP bar", _
 	"17. Specify point with color of the player's full MP", _
-	"18. Specify first random point in the mini-map", _
-	"19. Specify second random point in the mini-map", _
-	"20. Specify third random point in the mini-map" _
+	"18. Specify left-up point of the map window", _
+	"19. Specify right-bottom point of the map window" _
 ]
 
 global const $kParamNames[$kParamCount] = [ _
@@ -40,9 +39,8 @@ global const $kParamNames[$kParamCount] = [ _
  	"kSelfManaLeft", _	
  	"kSelfManaRight", _	
  	"kSelfManaColor", _	
-	"kMoveControlPos1", _
-	"kMoveControlPos2", _
-	"kMoveControlPos3" _
+	"kMapWindowLeft", _
+	"kMapWindowRight" _
 ]
 
 global const $kConfigFile = "../conf/interface.au3"

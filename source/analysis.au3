@@ -4,9 +4,7 @@ global const $kBarHalf = 50
 global const $kBarThird = 30
 global const $kBarCritical = 20
 
-global $gMoveControlColor1 = $kEmptyColor
-global $gMoveControlColor2 = $kEmptyColor
-global $gMoveControlColor3 = $kEmptyColor
+global $gMapChecksum = 0
 
 func IsTargetExist()
 	; Check target info window existance
@@ -96,25 +94,17 @@ endfunc
 
 func IsPositionChanged()
 	LogWrite("IsPositionChanged()")
-	local $color1 = GetPixelColorClient($kMoveControlPos1)
-	local $color2 = GetPixelColorClient($kMoveControlPos2)
-	local $color3 = GetPixelColorClient($kMoveControlPos3)
 
-	if $gMoveControlColor1 == $kEmptyColor or $gMoveControlColor2 == $kEmptyColor or $gMoveControlColor3 == $kEmptyColor then
-		SetControlColors($color1, $color2, $color3)
-		LogWrite("	- player moving #1")
+	local $checksum = PixelChecksum($kMapWindowLeft[0], $kMapWindowLeft[1], $kMapWindowRight[0], $kMapWindowRight[1])
+
+	if $checksum <> $gMapChecksum then
+		$gMapChecksum = $checksum
+		LogWrite("	- player moving, checksum = " & $checksum)
 		return true
-	endif
-	
-	if $gMoveControlColor1 == $color1 and $gMoveControlColor2 == $color2 and $gMoveControlColor3 == $color3 then
-		SetControlColors($color1, $color2, $color3)	
-		LogWrite("	- player not moving")
+	else
+		LogWrite("	- player not moving, checksum = " & $checksum)
 		return false
 	endif
-
-	SetControlColors($color1, $color2, $color3)
-	LogWrite("	- player moving #2")
-	return true
 endfunc
 
 func ExitOnDeath()
