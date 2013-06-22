@@ -19,6 +19,9 @@ global const $kHealKey = "{F2}"
 global const $kSelfBuff = "{F11}"
 global const $kSelfBuffLong = "{F12}" 
 
+global const $kPartyHealthMin = 80
+global const $kHealSkillDelay = 1000
+
 global $gLastHealed = ""
 
 func OnBuffTimeout()
@@ -65,7 +68,7 @@ func NumberToRight($number)
 endfunc
 
 func IsPartyDamaged($left, $right)
-	return IsBarLess($left, $right, $kPartyHealthColor, $kBarTwoThirds)
+	return IsBarLess($left, $right, $kPartyHealthColor, $kPartyHealthMin)
 endfunc
 
 func HealParty($number)
@@ -76,7 +79,7 @@ func HealParty($number)
 		LogWrite("	- heal " & $number)
 		MouseClickClient("left", $left[0], $left[1])
 		Sleep(500)
-		SendClient($kHealKey, 500)
+		SendClient($kHealKey, $kHealSkillDelay)
 		$gLastHealed = $number
 	endif
 endfunc
