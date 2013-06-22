@@ -107,6 +107,8 @@ endfunc
 func Attack()
 	LogWrite("Attack()")
 	
+	SendClient($kNextTargetKey, 500)
+	
 	if not IsTargetForAttack() then
 		return
 	endif
