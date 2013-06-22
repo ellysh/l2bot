@@ -31,6 +31,8 @@ func MoveToTarget()
 			OnAttackTimeout()
 			return
 		endif
+		
+		NextTarget()
 	wend
 endfunc
 
