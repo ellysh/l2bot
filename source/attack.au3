@@ -31,8 +31,8 @@ endfunc
 
 func Retarget($is_attacked)
 	if not $kIsCancelTargetMove and not $is_attacked and IsHealthDecrease() then
-		SendClient($kCancelTarget, 500)
-		Sleep(1000)
+		SendClient($kCancelTarget, 200)
+		NextTarget()
 	endif
 endfunc
 
