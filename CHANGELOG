@@ -1,3 +1,10 @@
+* L2Bot 2.9
+	- move: Implement switching to the next target while moving to target
+	- analysis: Check bot's stucking by the map window
+	- analysis: Use IsPixelsChanged function in the IsTargetDamaged one
+	- fishing: Implement switching to mob with the "/nexttarget" command
+	- healer: Follow the last healed party member
+
 * L2Bot 2.8
 	- Implement the healer bot
 
