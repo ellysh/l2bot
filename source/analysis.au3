@@ -5,6 +5,7 @@ global const $kBarThird = 30
 global const $kBarCritical = 20
 
 global $gMapChecksum = 0
+global $gTargetChecksum = 0
 
 func IsTargetExist()
 	; Check target info window existance
@@ -83,7 +84,7 @@ func IsTargetDamaged()
 	endif
 
 	LogWrite("IsTargetDamaged()")
-	return IsBarLess($kTargetHealthLeft, $kTargetHealthRight, $kTargetHealthColor, $kBarFull)
+	return IsPixelsChanged($kTargetHealthLeft, $kTargetHealthRight, $gTargetChecksum)
 endfunc
 
 func SetControlColors($color1, $color2, $color3)
