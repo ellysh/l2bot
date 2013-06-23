@@ -88,6 +88,21 @@ func IsPixelExistClient($window_left, $window_right, $color)
 	endif
 endfunc
 
+func IsPixelsChanged($left, $right, byref $checksum)
+	LogWrite("IsPixelsChanged()")
+
+	local $newsum = PixelChecksum($left[0], $left[1], $right[0], $right[1])
+
+	if $newsum <> $checksum then
+		$checksum = $newsum
+		LogWrite("	- changed checksum = " & $newsum)
+		return true
+	else
+		LogWrite("	- same checksum = " & $newsum)
+		return false
+	endif
+endfunc
+
 func GetPixelCoordinateClient($window_left, $window_right, $color)
 	local $coord = PixelSearch($window_right[0], $window_right[1], $window_left[0], $window_left[1], $color, 1)
 	

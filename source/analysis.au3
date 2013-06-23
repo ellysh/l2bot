@@ -95,16 +95,7 @@ endfunc
 func IsPositionChanged()
 	LogWrite("IsPositionChanged()")
 
-	local $checksum = PixelChecksum($kMapWindowLeft[0], $kMapWindowLeft[1], $kMapWindowRight[0], $kMapWindowRight[1])
-
-	if $checksum <> $gMapChecksum then
-		$gMapChecksum = $checksum
-		LogWrite("	- player moving, checksum = " & $checksum)
-		return true
-	else
-		LogWrite("	- player not moving, checksum = " & $checksum)
-		return false
-	endif
+	return IsPixelsChanged($kMapWindowLeft, $kMapWindowRight, $gMapChecksum)
 endfunc
 
 func ExitOnDeath()
