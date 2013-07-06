@@ -88,13 +88,12 @@ func SitLoop()
 endfunc
 
 func Rest()
-	LogWrite("Rest")
-
 	if IsTargetForAttack() or not $kIsRestEnable then
 		return
 	endif
 
 	if IsHealthLess($kBarCritical) or IsManaLess($kBarCritical) then
+		LogWrite("Rest")
 		SitLoop()
 	endif
 endfunc
