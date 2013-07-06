@@ -101,8 +101,7 @@ endfunc
 
 func ExitOnDeath()
 	LogWrite("ExitOnDeath()")
-	local $coord = GetPixelCoordinateClient($kSelfHealthLeft, $kSelfHealthRight, $kSelfHealthColor)
-	if GetBarValue($coord, $kSelfHealthLeft, $kSelfHealthRight) < 1 then
+	if IsHealthLess(3) then
 		LogWrite("	- player died")
 		;exit
 	else
