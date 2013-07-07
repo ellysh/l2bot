@@ -1,3 +1,8 @@
+* L2Bot 3.0
+	- Implement mechanism for searching targets by macros
+	- attack: Fix bug with delay of the attack's key pressing and multi window mode
+	- functions: Fix bug with the colors mismatch in the GetPixelCoordinateClient function
+
 * L2Bot 2.9
 	- move: Implement switching to the next target while moving to target
 	- analysis: Check bot's stucking by the map window
