@@ -8,6 +8,7 @@ global const $kTimeoutHandlers[$kTimeoutCount] = [ "OnBuffTimeout", "CustomScrip
 global const $kIsCancelTargetMove = false
 global const $kIsMultiWindow = false
 global const $kIsRestEnable = true
+global const $kIsMacroSearch = false
 
 ; Skills
 global const $kBuffKey = "{F7}"

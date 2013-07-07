@@ -13,7 +13,11 @@ func SearchTarget()
 		
 		OnCheckHealthAndMana()
 
-		SendTextClient("/target " & $kTargetNames[$gTargetIndex])
+		if $kIsMacroSearch then
+			Send($kTargetNames[$gTargetIndex])
+		else
+			SendTextClient("/target " & $kTargetNames[$gTargetIndex])
+		endif
 		Sleep(500)
 
 		if $gTargetIndex == ($kTargetCount - 1) then

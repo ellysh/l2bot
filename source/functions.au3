@@ -104,7 +104,7 @@ func IsPixelsChanged($left, $right, byref $checksum)
 endfunc
 
 func GetPixelCoordinateClient($window_left, $window_right, $color)
-	local $coord = PixelSearch($window_right[0], $window_right[1], $window_left[0], $window_left[1], $color, 3)
+	local $coord = PixelSearch($window_right[0], $window_right[1], $window_left[0], $window_left[1], $color, 4)
 	
 	if not @error then
 		return $coord
