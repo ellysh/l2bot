@@ -9,6 +9,7 @@ Sleep(200)
 
 Opt("SendKeyDownDelay", 10)
 
+global const $kMinute = 60 * 1000
 global const $kErrorCoord = -1
 global const $kToggleCount = 12
 global $gToggleList[$kToggleCount]

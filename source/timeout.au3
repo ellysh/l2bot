@@ -1,7 +1,5 @@
 #include "../run/script.au3"
 
-global const $kMinute = 60 * 1000
-
 global $gPrevTimes[$kTimeoutCount]
 
 for $i = 0 to UBound($gPrevTimes) - 1
