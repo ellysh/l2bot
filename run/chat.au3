@@ -11,9 +11,10 @@ global const $kIsMultiWindow = false
 ; Проект бесплатного скриптового бота с открытыми исходниками
 global const $kMessageTextRus = "Ghjtrn ,tcgkfnyjuj ,jnf c jnrhsnsvb bc[jlybrfvb"
 global const $kMessageTextEn = "Бесплатный бот с открытым исходным кодом - http://vk.com/l2bot"
-global const $kDelayMinutes = 2
+global const $kDelaySecond = 5
 
 global $gTextChecksum = 0
+global $gCurrentNick = 1
 
 func SwitchLanguage()
 	Send ("{ALTDOWN}{LSHIFT}")
@@ -37,15 +38,15 @@ func SendMessage()
 	
 	SendClient($kEnterKey, 500)
 	
-	Sleep($kDelayMinutes * $kMinute)
+	Sleep($kDelaySecond * 1000)
 endfunc
 
 func IsNickSelected($number)
-	local $nickname = Eval("k" & $number & "Nickname")
+	local $nickname = Eval("kNickname" & $number)
 
 	MouseClickClient("left", $nickname[0], $nickname[1])
 	
-	Sleep(100)
+	Sleep(500)
 	
 	return IsPixelsChanged($kTextLeft, $kTextRight, $gTextChecksum)
 endfunc
@@ -54,9 +55,13 @@ func SelectTarget()
 	IsPixelsChanged($kTextLeft, $kTextRight, $gTextChecksum)
 	
 	while true
-		MouseClickClient("left", $kFirstNickname[0], $kFirstNickname[1])
-	
-		if IsNickSelected("First") or IsNickSelected("Second") or IsNickSelected("Third") then
+		if $gCurrentNick == 3 then
+			$gCurrentNick = 1
+		else
+			$gCurrentNick = $gCurrentNick + 1
+		endif
+
+		if IsNickSelected($gCurrentNick) then
 			exitloop
 		endif
 	wend

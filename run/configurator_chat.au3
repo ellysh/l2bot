@@ -8,9 +8,9 @@ global const $kTipText[$kParamCount] = [ _
 ]
 
 global const $kParamNames[$kParamCount] = [ _
-	"kFirstNickname", _
-	"kSecondNickname", _
-	"kThirdNickname", _
+	"kNickname1", _
+	"kNickname2", _
+	"kNickname3", _
 	"kTextLeft", _
 	"kTextRight" _	
 ]
