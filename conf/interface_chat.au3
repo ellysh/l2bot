@@ -1,0 +1,5 @@
+global const $kFirstNickname[2] = [56,480]
+global const $kSecondNickname[2] = [66,554]
+global const $kThirdNickname[2] = [43,644]
+global const $kTextLeft[2] = [44,719]
+global const $kTextRight[2] = [193,729]
