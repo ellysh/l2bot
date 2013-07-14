@@ -8,6 +8,7 @@
 #requireadmin
 
 global const $kIsMultiWindow = false
+global const $kIsPrivateChat = true
 ; Проект бесплатного скриптового бота с открытыми исходниками
 global const $kMessageTextRus = "Ghjtrn ,tcgkfnyjuj ,jnf c jnrhsnsvb bc[jlybrfvb"
 global const $kMessageTextEn = "Бесплатный бот с открытым исходным кодом - http://vk.com/l2bot"
@@ -52,6 +53,10 @@ func IsNickSelected($number)
 endfunc
 
 func SelectTarget()
+	if not $kIsPrivateChat then
+		return
+	endif
+
 	IsPixelsChanged($kTextLeft, $kTextRight, $gTextChecksum)
 	
 	while true
