@@ -1,3 +1,9 @@
+* L2Bot 3.1
+	- chat bot: Fix bug with script launching
+	- chat bot: Implement mechanism for the private messages sending
+	- Add a configurator script for the chat bot
+	- farm bot: Fix bug with long delay after the attacking action
+
 * L2Bot 3.0
 	- Implement mechanism for searching targets by macros
 	- attack: Fix bug with delay of the attack's key pressing and multi window mode
