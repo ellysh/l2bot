@@ -1,4 +1,4 @@
-global const $kXCenter = 650
+﻿global const $kXCenter = 650
 global const $kYCenter = 450
 
 func MoveToTarget()
@@ -57,13 +57,15 @@ func TurnLeft($offset)
 endfunc
 
 func MoveFront($delay)
-	SendClient("{" & $kWalkFrontKey & " down}", $delay)
-	SendClient("{" & $kWalkFrontKey & " up}", 0)
+	Send("{" & $kWalkFrontKey & " down}")
+	Sleep($delay)
+	Send("{" & $kWalkFrontKey & " up}")
 endfunc
 
 func MoveBack($delay)
-	SendClient("{" & $kWalkBackKey & " down}", $delay)
-	SendClient("{" & $kWalkBackKey & " up}", 0)
+	Send("{" & $kWalkBackKey & " down}")
+	Sleep($delay)
+	Send("{" & $kWalkBackKey & " up}")
 endfunc
 
 func ChangePosition()
