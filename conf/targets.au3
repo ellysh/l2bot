@@ -1,3 +1,3 @@
 ; Arrays with monsters names
 global const $kTargetCount = 2
-global const $kTargetNames[$kTargetCount] = [ "С", "М" ]
+global const $kTargetNames[$kTargetCount] = [ "Л", "Я" ]

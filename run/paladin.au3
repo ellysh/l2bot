@@ -37,7 +37,7 @@ endfunc
 
 func NextTarget()
 	LogWrite("NextTarget()")
-	SendClient($kNextTargetKey, 800)
+	SendCurrentClient($kNextTargetKey, 800)
 endfunc
 
 func OnAttackTimeout()

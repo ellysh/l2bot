@@ -41,6 +41,12 @@ func SendClient($key, $delay)
 	Sleep($delay)
 endfunc
 
+func SendCurrentClient($key, $delay)
+	LogWrite("SendCurrentClient() - " & $key)
+	Send($key, 0)
+	Sleep($delay)
+endfunc
+
 func SendSymbolClient($key, $delay)
 	LogWrite("SendSymbolClient() - " & $key)
 	
