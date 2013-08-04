@@ -9,7 +9,7 @@ L2Bot is toolkit of AutoIt scripts to implement Lineage 2 bot.
 2. INSTALLATION
 ---------------
 
-To launch L2Bot you need to download AutoIt interpreter from official website:
+You need to download AutoIt interpreter from official website for launching L2Bot :
 http://www.autoitscript.com/site/autoit/downloads
 
 The x64 interpreter version must be selected in installation dialog for users with x64 Windows version.
