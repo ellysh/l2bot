@@ -1,4 +1,4 @@
-L2Bot 3.1 version
+L2Bot 3.2 version
 =================
 
 1. INTRODUCTION
@@ -146,13 +146,8 @@ All farm bots will launch custom script by timeout. You can change timeout value
 8. REPEATER SCRIPT
 ------------------
 
-Repeater script translates player's key pressing to all Lineage 2 window. Additional configuration is not needed for this script.
-
-There are steps to launch repeater script:
-1. Run `repeater.au3` file from the `run` directory.
-2. Switch to the Lineage client window.
-3. Press Alt+F2 to start repeater.
-4. You can interrupt the script's work by Alt+F1 pressing
+The repeater script have been moved to separate project:
+https://github.com/ellysh/repeater
 
 9. ROULETTE BOT
 ---------------
