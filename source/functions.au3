@@ -2,9 +2,6 @@
 
 WaitGrabCommand()
 
-global const $kCurrentWin = WinGetHandle("")
-global const $kWindows = WinList( WinGetTitle($kCurrentWin))
-
 Sleep(200)
 
 Opt("SendKeyDownDelay", 10)
@@ -20,42 +17,15 @@ func WaitGrabCommand()
 	wend
 endfunc
 
-func SendMultiClient($key, $flag)
-	for $i = 1 to $kWindows[0][0] step 1
-		_SendMessage($kWindows[$i][1], 0x6, 1)	
-		Sleep(50)
-		LogWrite("ControlSend() - win = " & $kWindows[$i][1])
-		ControlSend("", "", $kWindows[$i][1], $key, $flag)
-	next
-endfunc
-
 func SendClient($key, $delay)
 	LogWrite("SendClient() - " & $key)
-	
-	if $kIsMultiWindow then
-		SendMultiClient($key, 0)
-	else
-		Send($key, 0)
-	endif
-	
-	Sleep($delay)
-endfunc
-
-func SendCurrentClient($key, $delay)
-	LogWrite("SendCurrentClient() - " & $key)
 	Send($key, 0)
 	Sleep($delay)
 endfunc
 
 func SendSymbolClient($key, $delay)
 	LogWrite("SendSymbolClient() - " & $key)
-	
-	if $kIsMultiWindow then	
-		SendMultiClient($key, 1)
-	else
-		Send($key, 1)
-	endif
-	
+	Send($key, 1)
 	Sleep($delay)	
 endfunc
 
