@@ -87,12 +87,6 @@ func IsTargetDamaged()
 	return IsPixelsChanged($kTargetHealthLeft, $kTargetHealthRight, $gTargetChecksum)
 endfunc
 
-func SetControlColors($color1, $color2, $color3)
-	$gMoveControlColor1 = $color1
-	$gMoveControlColor2 = $color2
-	$gMoveControlColor3 = $color3
-endfunc
-
 func IsPositionChanged()
 	LogWrite("IsPositionChanged()")
 
