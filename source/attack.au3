@@ -52,11 +52,7 @@ func Attack()
 		
 		OnCheckHealthAndMana()
 		
-		if $kIsMultiWindow then
-			SendClient($kAttackKey, 2000)
-		else
-			SendClient($kAttackKey, 500)
-		endif
+		SendClient($kAttackKey, 500 * $kDelayRate)
 
 		if IsTargetDamaged() and not $is_attacked then
 			OnAttack()

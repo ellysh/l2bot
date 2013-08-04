@@ -8,11 +8,7 @@ func MoveToTarget()
 		return
 	endif
 
-	if $kIsMultiWindow then
-		SendClient($kAttackKey, 2000)
-	else
-		SendClient($kAttackKey, 500)
-	endif
+	SendClient($kAttackKey, 500 * $kDelayRate)
 
 	if $kIsCancelTargetMove then
 		SendClient($kCancelTarget, 500)	
