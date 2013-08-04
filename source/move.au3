@@ -62,12 +62,17 @@ func MoveBack($delay)
 	SendClient("{" & $kWalkBackKey & " up}", 0)
 endfunc
 
+func RandomMove()
+	MouseClickClient("left", Random(200, 700), Random(300, 700))
+	Sleep(4000)
+endfunc
+
 func ChangePosition()
 	LogWrite("ChangePosition()")
 
 	do 
 		TurnRight(5)
-		MoveBack(4000)
+		RandomMove()
 	until IsPositionChanged()
 endfunc
 
