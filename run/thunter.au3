@@ -6,8 +6,8 @@ global const $kTimeoutCount = 2
 global const $kTimeouts[$kTimeoutCount] = [ 16, 20 ]
 global const $kTimeoutHandlers[$kTimeoutCount] = [ "OnBuffTimeout", "CustomScript" ]
 global const $kIsCancelTargetMove = true
-global const $kIsMultiWindow = false
-global const $kIsRestEnable = true
+global const $kDelayRate = 1
+global const $kIsRestEnable = false
 global const $kIsMacroSearch = false
 
 ; Skills

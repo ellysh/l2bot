@@ -1,4 +1,3 @@
-global const $kIsMultiWindow = false
 global const $kTimeoutCount = 2
 global const $kTimeouts[$kTimeoutCount] = [ 10, 20 ]
 global const $kTimeoutHandlers[$kTimeoutCount] = [ "OnBuffTimeout", "OnBuffTimeoutLong" ]

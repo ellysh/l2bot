@@ -6,7 +6,6 @@
 ; This is needed for Windows Vista and above
 #requireadmin
 
-global const $kIsMultiWindow = false
 global const $kStartRate = "2000"
 global const $kMaxRate = "200000"
 global const $kSuccessTextColor = 0x03E903
