@@ -5,6 +5,8 @@ WaitGrabCommand()
 Sleep(200)
 
 Opt("SendKeyDownDelay", 10)
+Opt("PixelCoordMode", 2)
+Opt("MouseCoordMode", 2)
 
 global const $kMinute = 60 * 1000
 global const $kErrorCoord = -1
@@ -70,8 +72,8 @@ func IsPixelsChanged($left, $right, byref $checksum)
 	local $newsum = PixelChecksum($left[0], $left[1], $right[0], $right[1])
 
 	if $newsum <> $checksum then
+		LogWrite("	- changed new checksum = " & $newsum & " old checksum = " & $checksum)	
 		$checksum = $newsum
-		LogWrite("	- changed checksum = " & $newsum)
 		return true
 	else
 		LogWrite("	- same checksum = " & $newsum)
