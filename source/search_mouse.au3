@@ -1,19 +1,19 @@
 #include <ImageSearch.au3>
 #include "analysis.au3"
 
-global $gXMin = 200
-global $gXMax = 800
-global $gYMin = 200
-global $gYMax = 300
+global $kPointLeft[2] = [200, 100]
+global $kPointRight[2] = [800, 500]
 
-func SearchInLine($y)
+global $gSearchChecksum
+
+func SearchInRow($y, $left, $right)
 	local $window_left[2]
 	local $window_right[2]
 	local $x1 = 0, $y1 = 0
 
-	for $x = $gXMin to $gXMax step 30
+	for $x = $left[0] to $right[0] step 20
 		MouseMove($x, $y)
-		Sleep(10)
+		Sleep(100)
 		
 		$window_left[0] = $x-60
 		$window_left[1] = $y-60
@@ -33,6 +33,20 @@ func SearchInLine($y)
 	return false
 endfunc
 
+func SearchInRegion($left, $right)
+	for $y = $left[1] to $right[1] step 30
+		NextTarget()
+		
+		if IsTargetForAttack() then
+			return
+		endif
+	
+		if SearchInRow($y, $left, $right) then
+			return
+		endif
+	next
+endfunc
+
 func SearchTarget()
 	FileChangeDir("..\source")
 
@@ -41,20 +55,18 @@ func SearchTarget()
 	AttackNextTarget()
 	
 	while true
-		for $y = $gYMax to $gYMin step -30
-			NextTarget()
+		IsPixelsChanged($kPointLeft, $kPointRight, $gSearchChecksum)
+		Sleep(1000)
 		
-			if IsTargetForAttack() then
-				return
-			endif
+		if IsPixelsChanged($kPointLeft, $kPointRight, $gSearchChecksum) then
+			SearchInRegion($kPointLeft, $kPointRight)
+		else
+			TurnRight(7)
+			continueloop
+		endif
 		
-			OnCheckHealthAndMana()
-			
-			if SearchInLine($y) then
-				return
-			endif
-		next
-		
-		TurnRight(7)
+		if IsTargetForAttack() then
+			return
+		endif
 	wend
 endfunc
