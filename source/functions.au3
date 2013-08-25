@@ -98,7 +98,7 @@ endfunc
 
 func MouseClickClient($botton, $x, $y)
 	LogWrite("MouseClickClient() - " & $botton & " x = " & $x & " y = " & $y)
-	MouseClick($botton, $x, $y, 1, 1)
+	MouseClick($botton, $x, $y)
 endfunc
 
 func GetBarValue($coord, $bar_left, $bar_right)

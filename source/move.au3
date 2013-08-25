@@ -63,7 +63,7 @@ func MoveBack($delay)
 endfunc
 
 func RandomMove()
-	MouseClickClient("left", Random(200, 700), Random(300, 700))
+	MouseClickClient("left", Random(200, 600, 1), Random(300, 500, 1))
 	Sleep(4000)
 endfunc
 
@@ -71,7 +71,7 @@ func ChangePosition()
 	LogWrite("ChangePosition()")
 
 	do 
-		TurnRight(5)
+		TurnLeft(5)
 		RandomMove()
 	until IsPositionChanged()
 endfunc
