@@ -1,3 +1,8 @@
+* L2Bot 3.3
+	- functions: Use relative coordinates instead the absolute ones
+	- move: Fix bug with random movement to go around the barriers
+	- Base implementation of the mouse searching algorithm
+
 * L2Bot 3.2
 	- The repeater script have been moved to separate project
 	- Remove code to support the multi-window mode
