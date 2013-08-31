@@ -3,9 +3,11 @@
 
 global $kPointLeft[2] = [200, 0]
 global $kPointRight[2] = [800, 300]
-global $kDelta = 100
+global $kDeltaX = 150
+global $kDeltaY = 70
 
 global $gSearchChecksum
+global $gFailedTurns = 0
 
 func SearchInRow($y, $left, $right)
 	local $window_left[2]
@@ -48,6 +50,16 @@ func SearchInRegion($left, $right)
 	next
 endfunc
 
+func CameraMove()
+	if $gFailedTurns < 6 then
+		TurnRight(7)
+		$gFailedTurns = $gFailedTurns + 1
+	else
+		RandomMove()
+		$gFailedTurns = 0
+	endif
+endfunc
+
 func SearchTarget()
 	FileChangeDir("..\source")
 
@@ -59,20 +71,18 @@ func SearchTarget()
 	local $right[2]
 
 	while true
-		NextTarget()
-
 		$left = GetPixelCoordinateClient($kPointRight, $kPointLeft, 0xFBFBFB)
 
 		if $left[0] == $kErrorCoord or $left[1] == $kErrorCoord then
-			TurnRight(7)
+			CameraMove()
 			continueloop
 		endif
 
 		$left[0] = $left[0] - 20
 		$left[1] = $left[1] + 20
 
-		$right[0] = $left[0] + $kDelta
-		$right[1] = $left[1] + $kDelta
+		$right[0] = $left[0] + $kDeltaX
+		$right[1] = $left[1] + $kDeltaY
 
 		LogWrite("	- coord x = " & $left[0] & " coord y = " & $left[1])
 
@@ -82,6 +92,6 @@ func SearchTarget()
 			return
 		endif
 
-		TurnRight(7)
+		CameraMove()
 	wend
 endfunc
