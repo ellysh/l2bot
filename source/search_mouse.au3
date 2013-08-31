@@ -4,7 +4,8 @@
 global $kPointLeft[2] = [200, 0]
 global $kPointRight[2] = [800, 300]
 global $kDeltaX = 150
-global $kDeltaY = 70
+global $kDeltaY = 60
+global $kTargetColor = 0xFBFBFB
 
 global $gSearchChecksum
 global $gFailedTurns = 0
@@ -14,7 +15,7 @@ func SearchInRow($y, $left, $right)
 	local $window_right[2]
 	local $x1 = 0, $y1 = 0
 
-	for $x = $left[0] to $right[0] step 15
+	for $x = $left[0] to $right[0] step 10
 		MouseMove($x, $y)
 		Sleep(100)
 
@@ -71,7 +72,7 @@ func SearchTarget()
 	local $right[2]
 
 	while true
-		$left = GetPixelCoordinateClient($kPointRight, $kPointLeft, 0xFBFBFB)
+		$left = GetPixelCoordinateClient($kPointRight, $kPointLeft, $kTargetColor)
 
 		if $left[0] == $kErrorCoord or $left[1] == $kErrorCoord then
 			CameraMove()
