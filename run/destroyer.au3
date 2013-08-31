@@ -24,6 +24,7 @@ func OnAttackSkill()
 endfunc
 
 func OnFirstKill()
+	SendClient($kCancelTarget, 50)
 endfunc
 
 func OnAllKill()
@@ -37,7 +38,7 @@ endfunc
 
 func OnAttackTimeout()
 	SendClient($kCancelTarget, 50)
-	ChangePosition()	
+	ChangePosition()
 endfunc
 
 func OnBuffTimeout()

@@ -10,7 +10,7 @@ func SearchTarget()
 
 	while true
 		NextTarget()
-		
+
 		OnCheckHealthAndMana()
 
 		if $kIsMacroSearch then
