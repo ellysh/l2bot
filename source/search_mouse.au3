@@ -1,11 +1,11 @@
 #include <ImageSearch.au3>
 #include "analysis.au3"
 
-global $kPointLeft[2] = [200, 0]
-global $kPointRight[2] = [800, 300]
-global $kDeltaX = 150
-global $kDeltaY = 60
-global $kTargetColor = 0xFBFBFB
+global const $kPointLeft[2] = [200, 0]
+global const $kPointRight[2] = [800, 300]
+global const $kDeltaX = 150
+global const $kDeltaY = 60
+global const $kTargetColor = 0xFBFBFB
 
 global $gSearchChecksum
 global $gFailedTurns = 0

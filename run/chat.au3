@@ -12,8 +12,8 @@ global const $kIsPrivateChat = true
 global const $kMessageTextRus = "Ghjtrn ,tcgkfnyjuj ,jnf c jnrhsnsvb bc[jlybrfvb"
 global const $kMessageTextEn = "Бесплатный бот с открытым исходным кодом - http://vk.com/l2bot"
 global const $kDelaySecond = 5
+global const $kTextColor = 0xDADAD9
 
-global $gTextChecksum = 0
 global $gCurrentNick = 1
 
 func SwitchLanguage()
@@ -41,14 +41,22 @@ func SendMessage()
 	Sleep($kDelaySecond * 1000)
 endfunc
 
-func IsNickSelected($number)
+func SelectNick($number)
 	local $nickname = Eval("kNickname" & $number)
 
 	MouseClickClient("left", $nickname[0], $nickname[1])
-	
+
 	Sleep(500)
-	
-	return IsPixelsChanged($kTextLeft, $kTextRight, $gTextChecksum)
+endfunc
+
+func IsNickSelected()
+	local $left = GetPixelCoordinateClient($kTextLeft, $kTextRight, $kTextColor)
+
+	if $left[0] <> $kErrorCoord and $left[1] <> $kErrorCoord then
+		return true
+	else
+		return false
+	endif
 endfunc
 
 func SelectTarget()
@@ -56,8 +64,6 @@ func SelectTarget()
 		return
 	endif
 
-	IsPixelsChanged($kTextLeft, $kTextRight, $gTextChecksum)
-	
 	while true
 		if $gCurrentNick == 3 then
 			$gCurrentNick = 1
@@ -65,7 +71,9 @@ func SelectTarget()
 			$gCurrentNick = $gCurrentNick + 1
 		endif
 
-		if IsNickSelected($gCurrentNick) then
+		SelectNick($gCurrentNick)
+
+		if IsNickSelected() then
 			exitloop
 		endif
 	wend
