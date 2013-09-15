@@ -12,7 +12,6 @@ global const $kIsPrivateChat = true
 global const $kMessageTextRus = "Ghjtrn ,tcgkfnyjuj ,jnf c jnrhsnsvb bc[jlybrfvb"
 global const $kMessageTextEn = "Бесплатный бот с открытым исходным кодом - http://vk.com/l2bot"
 global const $kDelaySecond = 5
-global const $kTextColor = 0xDADAD9
 
 global $gCurrentNick = 1
 
