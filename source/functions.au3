@@ -1,6 +1,9 @@
 #include <SendMessage.au3>
+#include <UnixTime.au3>
 
 WaitGrabCommand()
+
+CheckLicense()
 
 Sleep(200)
 
@@ -17,6 +20,17 @@ func WaitGrabCommand()
 	while not $gIsGrab
 		Sleep(1)
 	wend
+endfunc
+
+func CheckLicense()
+	local $day = 30
+	local $month = 10
+	local $year = 2013
+
+	if _TimeMakeStamp(60, 60, 24, $day, $month, $year) <= _TimeGetStamp() then
+		MsgBox(0x30, "", "Срок действия лицензии истек!")
+		exit
+	endif
 endfunc
 
 func SendClient($key, $delay)
