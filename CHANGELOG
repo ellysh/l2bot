@@ -1,3 +1,8 @@
+* L2Bot 3.4
+	- chat: Check the selected nickname by color
+	- Add the `fishing_beginner.au3` script
+	- Add mouse search support for Interlude chronicles
+
 * L2Bot 3.3
 	- functions: Use relative coordinates instead the absolute ones
 	- move: Fix bug with random movement to go around the barriers
