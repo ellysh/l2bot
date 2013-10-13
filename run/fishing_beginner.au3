@@ -1,14 +1,15 @@
-#include "conf/control.au3"
-#include "source/hooks.au3"
-#include "source/debug.au3"
-#include "source/functions.au3"
-#include "source/buff.au3"
+#include "../conf/control.au3"
+#include "../source/hooks.au3"
+#include "../source/debug.au3"
+#include "../source/functions.au3"
 
-global const $kFishingWindowPos[4] = [373, 106, 490, 150]
+global const $kFishingWindowLeft[2] = [373, 106]
+global const $kFishingWindowRight[2] = [490, 150]
 global const $kFishingColor1 = 0x181810	; dark brown
 global const $kFishingColor2 = 0x73797B	; grey
 
-global const $kSkillWindowPos[4] = [319, 166, 350, 200]
+global const $kSkillWindowLeft[2] = [319, 166]
+global const $kSkillWindowRight[2] = [350, 200]
 global const $kSkillReelColor = 0x310C39	; dark purple
 global const $kSkillPumpColor = 0x183452	; dark blue
 
@@ -20,8 +21,8 @@ global const $kSkillReelKey = "{F3}"
 #requireadmin
 
 func IsFishBiting()
-	if IsPixelExistClient($kSkillWindowPos, $kSkillReelColor) _ 
-	or IsPixelExistClient($kSkillWindowPos, $kSkillPumpColor) then
+	if IsPixelExistClient($kSkillWindowLeft, $kSkillWindowRight, $kSkillReelColor) _ 
+	or IsPixelExistClient($kSkillWindowLeft, $kSkillWindowRight, $kSkillPumpColor) then
 		LogWrite("Fish is bitting!")
 		return true
 	else	
@@ -31,8 +32,8 @@ func IsFishBiting()
 endfunc
 
 func IsFishingFinish()
-	if IsPixelExistClient($kFishingWindowPos, $kFishingColor1) _
-	and IsPixelExistClient($kFishingWindowPos, $kFishingColor2) then
+	if IsPixelExistClient($kFishingWindowLeft, $kFishingWindoRight, $kFishingColor1) _
+	and IsPixelExistClient($kFishingWindowLeft, $kFishingWindoRight, $kFishingColor2) then
 		LogWrite("Fishing is not finish")
 		return false
 	else
@@ -63,7 +64,7 @@ while true
 		if IsSkillReel() then
 			SendClient($kSkillReelKey, 500)
 		else
-			SendClient($kSkillPumpKey, 500)		
+			SendClient($kSkillPumpKey, 500)
 		endif
 		
 		Sleep(500)
