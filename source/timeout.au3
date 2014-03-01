@@ -1,8 +1,11 @@
 #include "../run/script.au3"
 
-global $gPrevTimes[$kTimeoutCount]
+global const $kTimeoutsArray = StringSplit($kTimeouts, ",")
+global const $kHandlersArray = StringSplit($kTimeoutHandlers, ",")
+global const $kTimeoutCount = $kTimeoutsArray[0]
+global $gPrevTimes[$kTimeoutCount + 1]
 
-for $i = 0 to UBound($gPrevTimes) - 1
+for $i = 1 to $kTimeoutCount
 	$gPrevTimes[$i] = TimerInit()
 next
 
@@ -14,8 +17,8 @@ func ProcessTimeout($index, $timeout)
 	LogWrite("	- time_diff = " & $time_diff & " timeout = " & $timeout)
 	
 	if $time_diff >= $timeout then
-		LogWrite("	- call " & $kTimeoutHandlers[$index])
-		Call($kTimeoutHandlers[$index])
+		LogWrite("	- call " & $kHandlersArray[$index])
+		Call($kHandlersArray[$index])
 		$gPrevTimes[$index] = TimerInit()
 	endif
 endfunc

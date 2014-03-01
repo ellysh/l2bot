@@ -21,7 +21,7 @@ while true
 	
 	Attack()
 	
-	for $i = 0 to ubound($kTimeouts) - 1
-		ProcessTimeout($i, $kTimeouts[$i] * $kMinute)
+	for $i = 1 to $kTimeoutCount
+		ProcessTimeout($i, $kTimeoutsArray[$i] * $kMinute)
 	next
 wend
