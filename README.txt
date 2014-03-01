@@ -1,4 +1,4 @@
-L2Bot 3.4 version
+L2Bot 3.5 version
 =================
 
 1. INTRODUCTION
@@ -57,12 +57,10 @@ There are steps to perform the mob's names configuration:
 3. Change value of the `$kTargetCount` variable according count of elements in the `$kTargetNames` list.
 
 NB: You can specify one or two letters of the mob's names for the Gracia Final and above Lineage chronicles. This is example:
-	global const $kTargetCount = 2
-	global const $kTargetNames[$kTargetCount] = [ "G", "Wo" ]
+	global const $kTargetNames = "G,Wo"
 
 You must specify full mob's names for Lineage chronicles below the Gracia Final one:
-	global const $kTargetCount = 2
-	global const $kTargetNames[$kTargetCount] = [ "Gremlin", "Wolf" ]
+	global const $kTargetNames = "Gremlin,Wolf"
 
 3.3 HOTBAR KEYS CONFIGURATION
 -----------------------------
@@ -141,7 +139,7 @@ There are steps to launch custom script:
 NB: You can launch custom script in the loop. Change the `kIsLoop` variable to `true` in the `script_run.au3` file:
 global const $kIsLoop = true
 
-All farm bots will launch custom script by timeout. You can change timeout value with the `kScriptTimeout` variable in the running farm bot script.
+All farm bots will launch custom script by timeout. You can change timeout value with the `kTimeouts` variable in the running farm bot script.
 
 8. REPEATER SCRIPT
 ------------------

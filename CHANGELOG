@@ -1,3 +1,8 @@
+* L2Bot 3.5
+	- Add the `autohp.au3` script for auto using HP and MP potions
+	- Change format of the mob names list
+	- Change format of the timeouts and timeout handlers lists
+
 * L2Bot 3.4
 	- chat: Check the selected nickname by color
 	- Add the `fishing_beginner.au3` script
