@@ -2,9 +2,8 @@
 global const $kAttackSkillTimeout = 15
 global const $kAttackTimeout = 20
 global const $kMoveTimeout = 40
-global const $kTimeoutCount = 2
-global const $kTimeouts[$kTimeoutCount] = [ 16, 20 ]
-global const $kTimeoutHandlers[$kTimeoutCount] = [ "OnBuffTimeout", "CustomScript" ]
+global const $kTimeouts = "16,20"
+global const $kTimeoutHandlers = "OnBuffTimeout,CustomScript"
 global const $kIsCancelTargetMove = true
 global const $kDelayRate = 1
 global const $kIsRestEnable = false

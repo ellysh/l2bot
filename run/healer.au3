@@ -1,6 +1,5 @@
-global const $kTimeoutCount = 2
-global const $kTimeouts[$kTimeoutCount] = [ 10, 20 ]
-global const $kTimeoutHandlers[$kTimeoutCount] = [ "OnBuffTimeout", "OnBuffTimeoutLong" ]
+global const $kTimeouts = "10,20"
+global const $kTimeoutHandlers = "OnBuffTimeout,OnBuffTimeoutLong"
 
 #include "../conf/control.au3"
 #include "../conf/interface_healer.au3"

@@ -2,52 +2,60 @@
 global const $kAttackSkillTimeout = 6
 global const $kAttackTimeout = 20
 global const $kMoveTimeout = 40
-global const $kTimeouts = "1,20"
-global const $kTimeoutHandlers = "OnBuffTimeout,CustomScript"
+global const $kTimeouts = "1,20,16,4"
+global const $kTimeoutHandlers = "OnBDBuff,CustomScript,OnWarcBuff,OnWarcBuffShort"
 global const $kIsCancelTargetMove = true
-global const $kDelayRate = 1
+global const $kIsMultiWindow = true
 global const $kIsRestEnable = false
 global const $kIsMacroSearch = false
 
 ; Skills
-global const $kAttackSkill = "{F3}"
-global const $kSonicSkill = "{F2}"
-global const $kSelfBuff = "{F7}"
-global const $kFocusSkill = "{F11}"
+global const $kAttackSkill = "{F2}"
+global const $kDefenseSkill = "{F4}"
 
 func OnAttack()
-	SendClient($kSonicSkill, 1000)
 endfunc
 
 func OnAttackSkill()
-	SendClient($kAttackSkill, 1000)
+	if not IsManaLess($kBarCritical) then
+		SendClient($kAttackSkill, 1000)
+	endif
 endfunc
 
 func OnFirstKill()
 endfunc
 
 func OnAllKill()
-	PickDrop(5)
-	
-	SendClient($kFocusSkill, 1000)
-	SendClient($kFocusSkill, 1000)	
+	PickDrop(3)
 endfunc
 
 func NextTarget()
 	LogWrite("NextTarget()")
-	SendClient($kNextTargetKey, 800)
+	SendCurrentClient($kNextTargetKey, 800)
 endfunc
 
 func OnAttackTimeout()
 	SendClient($kCancelTarget, 50)
-	ChangePosition()	
+	ChangePosition()
 endfunc
 
-func OnBuffTimeout()
-	SendClient($kSelfBuff, 1000)
+func OnBDBuff()
+	SendClient(1, 8000)
+endfunc
+
+func OnWarcBuff()
+	SendClient(2, 20000)
+endfunc
+
+func OnWarcBuffShort()
+	SendClient(3, 4000)
 endfunc
 
 func OnCheckHealthAndMana()
+	if IsHealthLess($kBarCritical) then
+		SendClient($kDefenseSkill, 1000)
+	endif
+	
 	if IsHealthLess($kBarHalf) then
 		HealthPotion()
 	endif
