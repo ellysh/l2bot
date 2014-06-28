@@ -4,14 +4,16 @@
 func SearchTarget()
 	LogWrite("SearchTarget() - command")
 
-	AttackNextTarget()
-
 	local $target_names = StringSplit($kTargetNames, ",")
 	local $names_count = $target_names[0]
 	local $target_index = 1
 
 	while true
 		NextTarget()
+
+		if IsTargetForAttack() then
+			exitloop
+		endif
 
 		OnCheckHealthAndMana()
 

@@ -36,22 +36,35 @@ func Retarget($is_attacked)
 	endif
 endfunc
 
+
+func AttackLoop()
+	LogWrite("AttackLoop()")
+
+	while IsTargetForAttack()
+		Attack()
+
+		OnFirstKill()
+
+		NextTarget()
+	wend
+
+	OnAllKill()
+endfunc
+
 func Attack()
-	LogWrite("Attack()")
-	
 	if not IsTargetForAttack() then
 		return
 	endif
 
 	UpdatePrevHealth()
-					
+
 	local $timeout = 0
 	local $is_attacked = false
 	while IsTargetAlive()
 		$timeout = $timeout + 1
-		
+
 		OnCheckHealthAndMana()
-		
+
 		SendClient($kAttackKey, 500 * $kDelayRate)
 
 		if IsTargetDamaged() and not $is_attacked then
@@ -71,22 +84,7 @@ func Attack()
 		endif
 
 		UpdatePrevHealth()
-					
+
 		ExitOnDeath()
 	wend
-	
-	OnFirstKill()
-
-	AttackNextTarget()
-	
-	OnAllKill()
-endfunc
-
-func AttackNextTarget()
-	LogWrite("AttackNextTarget()")
-	NextTarget()
-
-	if IsTargetForAttack() then
-		Attack()
-	endif
 endfunc

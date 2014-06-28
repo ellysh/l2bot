@@ -19,7 +19,7 @@ while true
 
 	MoveToTarget()
 	
-	Attack()
+	AttackLoop()
 	
 	for $i = 1 to $kTimeoutCount
 		ProcessTimeout($i, $kTimeoutsArray[$i] * $kMinute)

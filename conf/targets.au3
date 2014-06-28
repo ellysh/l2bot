@@ -1,2 +1,2 @@
 ; Arrays with monsters names
-global const $kTargetNames = "Л,Я"
+global const $kTargetNames = "С,Л,Я"
