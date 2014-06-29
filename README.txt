@@ -1,4 +1,4 @@
-L2Bot 3.5 version
+L2Bot 3.6 version
 =================
 
 1. INTRODUCTION
@@ -144,8 +144,21 @@ All farm bots will launch custom script by timeout. You can change timeout value
 8. REPEATER SCRIPT
 ------------------
 
-The repeater script have been moved to separate project:
+Two kind of repeater script are available:
+
+1) Repeater script for farm bot that will control several Lineage windows.
+
+This kind of repeater script have been moved to separate project:
 https://github.com/ellysh/repeater
+
+2) Repeater script for manually controlling several Lineage windows.
+
+There are steps to run repeater script:
+1. Launch file `repeater.au3` in `run` directory.
+2. Open all Lineage windows that will be controlled by script.
+3. Switch to any Lineage client window.
+4. Press Alt+F2 to start script.
+5. You can stop script by Alt+F1 pressing.
 
 9. ROULETTE BOT
 ---------------

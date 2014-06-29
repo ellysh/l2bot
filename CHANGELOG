@@ -1,3 +1,7 @@
+* L2Bot 3.6
+	- Add the `repeater.au3` script for manually controlling several Lineage windows
+	- attack: Fix bug with infinite recursion in the `Attack` function
+
 * L2Bot 3.5
 	- Add the `autohp.au3` script for auto using HP and MP potions
 	- Change format of the mob names list
