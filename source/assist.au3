@@ -10,15 +10,18 @@ endfunc
 func SearchTarget()
 	LogWrite("SearchTarget() - assist")
 
-	AttackNextTarget()
-
 	local $timeout = 0
 	while true
+
+		NextTarget()
+
+		if IsTargetForAttack() then
+			exitloop
+		endif
+
 		$timeout = $timeout + 1
 
 		OnCheckHealthAndMana()
-
-		AttackNextTarget()
 
 		if mod($timeout, $kAttackTimeout) == 0 and IsTargetForAttack() and not IsTargetDamaged() then		
 			exitloop

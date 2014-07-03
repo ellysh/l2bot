@@ -66,12 +66,16 @@ func SearchTarget()
 
 	LogWrite("SearchTarget() - mouse")
 
-	AttackNextTarget()
-
 	local $left[2]
 	local $right[2]
 
 	while true
+		NextTarget()
+
+		if IsTargetForAttack() then
+			exitloop
+		endif
+
 		$left = GetPixelCoordinateClient($kPointRight, $kPointLeft, $kTargetColor)
 
 		if $left[0] == $kErrorCoord or $left[1] == $kErrorCoord then
@@ -90,7 +94,7 @@ func SearchTarget()
 		SearchInRegion($left, $right)
 
 		if IsTargetForAttack() then
-			return
+			exitloop
 		endif
 
 		CameraMove()

@@ -19,6 +19,6 @@ while true
 	FollowLider()
 
 	SearchTarget()
-	
-	Attack()	
+
+	Attack()
 wend
