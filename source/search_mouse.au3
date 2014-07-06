@@ -74,6 +74,8 @@ func SearchTarget()
 
 		if IsTargetForAttack() then
 			exitloop
+		else
+			SendClient($kCancelTarget, 500)
 		endif
 
 		$left = GetPixelCoordinateClient($kPointRight, $kPointLeft, $kTargetColor)
@@ -95,6 +97,8 @@ func SearchTarget()
 
 		if IsTargetForAttack() then
 			exitloop
+		else
+			SendClient($kCancelTarget, 500)
 		endif
 
 		CameraMove()

@@ -13,6 +13,8 @@ func SearchTarget()
 
 		if IsTargetForAttack() then
 			exitloop
+		else
+			SendClient($kCancelTarget, 500)
 		endif
 
 		OnCheckHealthAndMana()
@@ -32,6 +34,8 @@ func SearchTarget()
 
 		if IsTargetForAttack() then
 			exitloop
+		else
+			SendClient($kCancelTarget, 500)
 		endif
 	wend
 endfunc
