@@ -1,12 +1,13 @@
 #include "analysis.au3"
 #include "../conf/targets.au3"
 
+global $gTargetIndex = 1
+
 func SearchTarget()
 	LogWrite("SearchTarget() - command")
 
 	local $target_names = StringSplit($kTargetNames, ",")
 	local $names_count = $target_names[0]
-	local $target_index = 1
 
 	while true
 		NextTarget()
@@ -20,16 +21,16 @@ func SearchTarget()
 		OnCheckHealthAndMana()
 
 		if $kIsMacroSearch then
-			Send($target_names[$target_index])
+			Send($target_names[$gTargetIndex])
 		else
-			SendTextClient("/target " & $target_names[$target_index])
+			SendTextClient("/target " & $target_names[$gTargetIndex])
 		endif
 		Sleep(500)
 
-		if $target_index == $names_count then
-			$target_index = 1
+		if $gTargetIndex == $names_count then
+			$gTargetIndex = 1
 		else
-			$target_index = $target_index + 1
+			$gTargetIndex = $gTargetIndex + 1
 		endif
 
 		if IsTargetForAttack() then
