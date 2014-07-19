@@ -26,13 +26,12 @@ func _MouseLogger($nCode, $wParam, $lParam)
                 "int", $nCode, "ptr", $wParam, "ptr", $lParam)
         return $ret[0]
     endif
-    
-    $info = DllStructCreate($MSLLHOOKSTRUCT, $lParam)
-    $ptx = DllStructGetData($info, 1)
-    $pty = DllStructGetData($info, 2)
+
+	; The AutoIt function is used to get coordinates because of PixelCoordMode = 2 in functions.au3 file
+	local $point = MouseGetPos()
 
 	if $wParam = $WM_LBUTTONDOWN then
-		WriteMouseClick($ptx, $pty)
+		WriteMouseClick($point[0], $point[1])
 	endif
 endfunc
 
