@@ -1,3 +1,6 @@
+* L2Bot 3.8
+	- Implemet search by target color algorithm 
+
 * L2Bot 3.7
 	- script_generator: Record mouse clicks in relative coordinates
 	- search: Switch to the next target after timeout
