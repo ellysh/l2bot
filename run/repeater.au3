@@ -4,9 +4,6 @@
 #include "../source/hooks.au3"
 #include "../source/functions.au3"
 
-; This is needed for Windows Vista and above
-#requireadmin
-
 global const $kHandler = "_KeyLogger"
 global const $kCurrentWindow = WinGetHandle("")
 global const $kWinClass = _WinAPI_GetClassName($kCurrentWindow)

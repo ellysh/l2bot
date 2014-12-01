@@ -4,9 +4,6 @@
 #include "../source/debug.au3"
 #include "../source/functions.au3"
 
-; This is needed for Windows Vista and above
-#requireadmin
-
 global const $kIsPrivateChat = true
 ; Проект бесплатного скриптового бота с открытыми исходниками
 global const $kMessageTextRus = "Ghjtrn ,tcgkfnyjuj ,jnf c jnrhsnsvb bc[jlybrfvb"

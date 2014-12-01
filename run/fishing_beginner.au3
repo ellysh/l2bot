@@ -17,9 +17,6 @@ global const $kFishingKey = "{F1}"
 global const $kSkillPumpKey = "{F2}"
 global const $kSkillReelKey = "{F3}"
 
-; This is needed for Windows Vista and above
-#requireadmin
-
 func IsFishBiting()
 	if IsPixelExistClient($kSkillWindowLeft, $kSkillWindowRight, $kSkillReelColor) _ 
 	or IsPixelExistClient($kSkillWindowLeft, $kSkillWindowRight, $kSkillPumpColor) then

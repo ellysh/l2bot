@@ -2,7 +2,7 @@
 #include "analysis.au3"
 
 global const $kPointLeft[2] = [200, 0]
-global const $kPointRight[2] = [800, 300]
+global const $kPointRight[2] = [1000, 300]
 global const $kTargetColor = 0xFBFBFB
 global const $kTextColor = 0x000000
 

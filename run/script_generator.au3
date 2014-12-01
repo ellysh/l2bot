@@ -4,9 +4,6 @@
 #include "../source/hooks.au3"
 #include "../source/functions.au3"
 
-; This is needed for Windows Vista and above
-#requireadmin
-
 global const $WM_LBUTTONDOWN = 0x0201
 global const $MSLLHOOKSTRUCT = $tagPOINT & ";dword mouseData;dword flags;dword time;ulong_ptr dwExtraInfo"
 

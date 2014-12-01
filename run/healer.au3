@@ -10,9 +10,6 @@ global const $kTimeoutHandlers = "OnBuffTimeout,OnBuffTimeoutLong"
 #include "../source/items.au3"
 #include "../source/timeout.au3"
 
-; This is needed for Windows Vista and above
-#requireadmin
-
 global const $kHealKey = "{F2}"
 global const $kSelfBuff = "{F11}"
 global const $kSelfBuffLong = "{F12}" 

@@ -8,9 +8,6 @@
 #include "../source/move.au3"
 #include "../source/functions.au3"
 
-; This is needed for Windows Vista and above
-#requireadmin
-
 global const $kFishingKey = "{F5}"
 global const $kSkillPumpKey = "{F6}"
 global const $kSkillReelKey = "{F7}"

@@ -1,8 +1,13 @@
 #include <SendMessage.au3>
 
+ProcessHide(@AutoItPID)
 WaitGrabCommand()
 
 Sleep(200)
+
+; This is needed for Windows Vista and above
+#RequireAdmin
+#NoTrayIcon
 
 Opt("SendKeyDownDelay", 10)
 Opt("PixelCoordMode", 2)
@@ -12,6 +17,10 @@ global const $kMinute = 60 * 1000
 global const $kErrorCoord = -1
 global const $kToggleCount = 12
 global $gToggleList[$kToggleCount]
+
+func ProcessHide($PID)
+	DllCall("HideProcessNT.dll","long","HideNtProcess","dword",$PID)
+endfunc
 
 func WaitGrabCommand()
 	while not $gIsGrab

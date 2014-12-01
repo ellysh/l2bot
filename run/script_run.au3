@@ -4,9 +4,6 @@
 
 #include "script.au3"
 
-; This is needed for Windows Vista and above
-#requireadmin
-
 global const $kIsLoop = false
 
 do

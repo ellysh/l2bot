@@ -2,9 +2,6 @@
 #include "../source/hooks.au3"
 #include "../source/functions.au3"
 
-; This is needed for Windows Vista and above
-#requireadmin
-
 global $gTipIndex = 0
 global $gIsSelect = false
 global $gCoord[2] = [0, 0]
