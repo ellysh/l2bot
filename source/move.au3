@@ -86,6 +86,8 @@ func SitLoop()
 		endif
 		
 		Sleep(500)
+
+		NextTarget()
 	wend
 	
 	SwitchToggle(11, $kSitKey, false)
