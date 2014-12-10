@@ -79,7 +79,7 @@ func SitLoop()
 			exitloop
 		endif
 		
-		Sleep(500)
+		Sleep(250)
 
 		NextTarget()
 	wend
