@@ -47,22 +47,28 @@ func PS2_Command($command, $value)
     endif
 endfunc
 
+func PS2_ExtraKey($scan_code)
+	; extra command for Up/Down/Right/Left arrow keys
+	if $scan_code =	0x48 or $scan_code = 0x50 or $scan_code = 0x4D or $scan_code = 0x4B or _
+	   $scan_code = 0xC8 or $scan_code = 0xD0 or $scan_code = 0xCD or $scan_code = 0xCB then
+		$result = PS2_Command(0xD2, 0xE0);
+		LogWrite("PS2_ExtraKey = " & $result)
+	endif
+endfunc
+
 func PS2_PressKey($scan_code, $release = false, $delay = 0)
 	$result = false
 	
 	LogWrite("scan_code = " & $scan_code)
 
-	; extra command for Up/Down/Right/Left arrow keys
-	if $scan_code =	0x48 or $scan_code = 0x4B or $scan_code = 0x4D or $scan_code = 0x50 then
-		$result = PS2_Command(0xD2, 0xE0);
-		LogWrite("result #0 = " & $result)
-	endif
+	PS2_ExtraKey($scan_code)
 	
 	;0xD2 - Write keyboard output buffer
 	$result = PS2_Command(0xD2, $scan_code)
 	LogWrite("result #1 = " & $result)
 
 	if $release then
+		PS2_ExtraKey($scan_code)
 		$scan_code = BitOR($scan_code, 0x80)
 		$result = PS2_Command(0xD2, $scan_code)
 		LogWrite("result #2 = " & $result)
@@ -125,15 +131,17 @@ func ConvertKey($key)
 		case "0"
 			$result[0] = 0x0B
 		case "{DOWN down}"
-			$result[0] = 0x4B
+			$result[0] = 0x50
 			$result[1] = false
 		case "{DOWN up}"
-			$result = 0x4B
+			$result[0] = 0xD0
+			$result[1] = false
 		case "{UP down}"
 			$result[0] = 0x48
 			$result[1] = false
 		case "{UP up}"
-			$result[0] = 0x48
+			$result[0] = 0xC8
+			$result[1] = false
 		case "{ESC}"
 			$result[0] = 0x01
 	endswitch

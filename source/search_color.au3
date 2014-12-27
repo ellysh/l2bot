@@ -55,8 +55,6 @@ func MoveFromWall()
 	endif
 endfunc
 
-
-
 func SearchTarget()
 	LogWrite("SearchTarget() - color")
 

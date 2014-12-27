@@ -1,5 +1,5 @@
 #include <SendMessage.au3>
-#include <input.au3>
+#include "input.au3"
 
 ProcessHide(@AutoItPID)
 WaitGrabCommand()
@@ -8,7 +8,7 @@ Sleep(200)
 
 ; This is needed for Windows Vista and above
 #RequireAdmin
-#NoTrayIcon
+;#NoTrayIcon
 
 Opt("SendKeyDownDelay", 10)
 Opt("PixelCoordMode", 2)
