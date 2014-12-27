@@ -21,7 +21,7 @@ func SearchTarget()
 		OnCheckHealthAndMana()
 
 		if $kIsMacroSearch then
-			Send($target_names[$gTargetIndex])
+			SendClient($target_names[$gTargetIndex], 0)
 		else
 			SendTextClient("/target " & $target_names[$gTargetIndex])
 		endif

@@ -1,4 +1,5 @@
 #include <SendMessage.au3>
+#include <input.au3>
 
 ProcessHide(@AutoItPID)
 WaitGrabCommand()
@@ -30,13 +31,13 @@ endfunc
 
 func SendClient($key, $delay)
 	LogWrite("SendClient() - " & $key)
-	Send($key, 0)
+	_Send($key, 0)
 	Sleep($delay)
 endfunc
 
 func SendSymbolClient($key, $delay)
 	LogWrite("SendSymbolClient() - " & $key)
-	Send($key, 1)
+	_Send($key, 1)
 	Sleep($delay)	
 endfunc
 
@@ -45,9 +46,9 @@ func SendSplitText($text)
 
 	for $i = 1 to $key_array[0] step 1
 		if $key_array[$i] == "!" or $key_array[$i] == "/" then
-			Send($key_array[$i], 1)
+			_Send($key_array[$i], 1)
 		else
-			Send($key_array[$i])
+			_Send($key_array[$i])
 		endif
 		Sleep(20)
 	next
@@ -57,12 +58,12 @@ endfunc
 func SendTextClient($text)
 	LogWrite("SendTextClient() - " & $text)
 
-	Send($kEnterKey)
+	_Send($kEnterKey)
 	Sleep(200)
 
 	SendSplitText($text)
 	
-	Send($kEnterKey)
+	_Send($kEnterKey)
 	Sleep(500)
 endfunc
 
