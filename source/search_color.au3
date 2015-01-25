@@ -50,7 +50,7 @@ func MoveFromWall()
 	if not IsSelfExist() then
 		LogWrite("	- moving...")
 		MouseClickClient("left", $kSelfLeft[0], $kSelfLeft[1])
-		Sleep(1000)
+		_Sleep(1000)
 	endif
 endfunc
 

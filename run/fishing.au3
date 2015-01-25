@@ -73,11 +73,11 @@ func Fishing()
 	SendClient($kFishingKey, 3000)
 	
 	while not IsFishBiting() and not IsFishingFinish()
-		Sleep(500)
+		_Sleep(500)
 	wend
 	
 	UpdatePrevHealth()
-	Sleep(1100)
+	_Sleep(1100)
 	
 	while not IsFishingFinish()
 		SendClient($kFishShotKey, 0)	
@@ -90,7 +90,7 @@ func Fishing()
 
 		UpdatePrevHealth()		
 		
-		Sleep(1100)
+		_Sleep(1100)
 	wend
 endfunc
 

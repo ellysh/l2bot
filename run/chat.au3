@@ -34,7 +34,7 @@ func SendMessage()
 	
 	SendClient($kEnterKey, 500)
 	
-	Sleep($kDelaySecond * 1000)
+	_Sleep($kDelaySecond * 1000)
 endfunc
 
 func SelectNick($number)
@@ -42,7 +42,7 @@ func SelectNick($number)
 
 	MouseClickClient("left", $nickname[0], $nickname[1])
 
-	Sleep(500)
+	_Sleep(500)
 endfunc
 
 func IsNickSelected()

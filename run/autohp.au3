@@ -20,5 +20,5 @@ endfunc
 while true
 	OnCheckHealthAndMana()
 	
-	Sleep(500)
+	_Sleep(500)
 wend

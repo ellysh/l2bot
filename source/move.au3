@@ -18,7 +18,7 @@ func MoveToTarget()
 	while not IsTargetForAttack()
 		$timeout = $timeout + 1
 		
-		Sleep(500)
+		_Sleep(500)
 		
 		if mod($timeout, 5) == 0 and not IsPositionChanged() then
 			LogWrite("Move timeout #1")
@@ -40,7 +40,7 @@ func TurnRight($offset)
 	MouseMove($kXCenter, $kYCenter)
 	MouseDown("right")
 	MouseMove($kXCenter + $offset, $kYCenter)
-	Sleep(400)
+	_Sleep(400)
 	MouseUp("right")
 endfunc
 
@@ -48,7 +48,7 @@ func TurnLeft($offset)
 	MouseMove($kXCenter, $kYCenter)
 	MouseDown("right")
 	MouseMove($kXCenter - $offset, $kYCenter)
-	Sleep(400)
+	_Sleep(400)
 	MouseUp("right")
 endfunc
 
@@ -64,7 +64,7 @@ endfunc
 
 func RandomMove()
 	MouseClickClient("left", Random(200, 600, 1), Random(300, 500, 1))
-	Sleep(4000)
+	_Sleep(4000)
 endfunc
 
 func ChangePosition()
@@ -78,20 +78,20 @@ endfunc
 
 func SitLoop()
 	SwitchToggle(11, $kSitKey, true)
-	Sleep(500)
+	_Sleep(500)
 	
 	while not IsTargetForAttack() 
 		if not IsHealthLess($kBarFull) and not IsManaLess($kBarFull) then
 			exitloop
 		endif
 		
-		Sleep(500)
+		_Sleep(500)
 
 		NextTarget()
 	wend
 	
 	SwitchToggle(11, $kSitKey, false)
-	Sleep(500)
+	_Sleep(500)
 endfunc
 
 func Rest()

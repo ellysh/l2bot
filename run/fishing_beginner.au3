@@ -54,7 +54,7 @@ while true
 	SendClient($kFishingKey, 500)
 	
 	while not IsFishBiting()
-		Sleep(100)
+		_Sleep(100)
 	wend
 	
 	while not IsFishingFinish()
@@ -64,6 +64,6 @@ while true
 			SendClient($kSkillPumpKey, 500)
 		endif
 		
-		Sleep(500)
+		_Sleep(500)
 	wend
 wend

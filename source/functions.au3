@@ -32,13 +32,13 @@ endfunc
 func SendClient($key, $delay)
 	LogWrite("SendClient() - " & $key)
 	_Send($key, 0)
-	Sleep($delay)
+	_Sleep($delay)
 endfunc
 
 func SendSymbolClient($key, $delay)
 	LogWrite("SendSymbolClient() - " & $key)
 	_Send($key, 1)
-	Sleep($delay)	
+	_Sleep($delay)
 endfunc
 
 func SendSplitText($text)
@@ -50,21 +50,21 @@ func SendSplitText($text)
 		else
 			_Send($key_array[$i])
 		endif
-		Sleep(20)
+		_Sleep(20)
 	next
-	Sleep(200)
+	_Sleep(200)
 endfunc
 
 func SendTextClient($text)
 	LogWrite("SendTextClient() - " & $text)
 
 	_Send($kEnterKey)
-	Sleep(200)
+	_Sleep(200)
 
 	SendSplitText($text)
 	
 	_Send($kEnterKey)
-	Sleep(500)
+	_Sleep(500)
 endfunc
 
 func IsPixelExistClient($window_left, $window_right, $color)
@@ -140,4 +140,16 @@ func IsCoordinateCorrect($coordinate)
 	else
 		return false
 	endif
+endfunc
+
+func _Sleep($delay)
+	SRandom(@MSEC)
+	local $gap = $delay * 0.1
+	$delay = $delay - $gap + Random(0, $gap, 1) + Random(0, $gap, 1)
+	
+	if $delay < 10 then
+		$delay = 10
+	endif
+	
+	Sleep($delay)
 endfunc

@@ -25,7 +25,7 @@ func SearchTarget()
 		else
 			SendTextClient("/target " & $target_names[$gTargetIndex])
 		endif
-		Sleep(500)
+		_Sleep(500)
 
 		if $gTargetIndex == $names_count then
 			$gTargetIndex = 1

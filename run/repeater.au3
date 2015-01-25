@@ -36,7 +36,7 @@ endfunc
 func SendMultiClient($key)
 	for $i = 1 to $kWinList[0][0] step 1
 		_SendMessage($kWinList[$i][1], 0x6, 0x1)
-		Sleep(50)
+		_Sleep(50)
 		LogWrite("ControlSend() - win = " & $kWinList[$i][1])
 		ControlSend($kWinList[$i][1], "", "", $key)
 	next

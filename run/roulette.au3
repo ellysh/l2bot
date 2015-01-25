@@ -39,12 +39,12 @@ endfunc
 ; Main Loop
 while true
 	MouseClickClient("left", $kInputField[0], $kInputField[1])
-	Sleep(1000)
+	_Sleep(1000)
 	
 	SendSplitText($gRate)
 	
 	MouseClickClient("left", $gColorButton[0], $gColorButton[1])
-	Sleep(1000)
+	_Sleep(1000)
 	
 	if not IsSuccess() and not IsMaxRate() then
 		IncreaseRate()
@@ -54,5 +54,5 @@ while true
 	endif
 	
 	MouseClickClient("left", $kBackButton[0], $kBackButton[1])
-	Sleep(1000)
+	_Sleep(1000)
 wend
