@@ -1,4 +1,3 @@
-#include <ImageSearch.au3>
 #include "analysis.au3"
 
 global const $kSelfLeft[2] = [650, 250]
