@@ -1,3 +1,0 @@
-[submodule "tools/repeater"]
-	path = tools/repeater
-	url = git@github.com:ellysh/repeater.git
