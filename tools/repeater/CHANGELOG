@@ -1,0 +1,13 @@
+* Repeater 0.4
+	- Fixes according to new AutoHotKey version
+
+* Repeater 0.3
+	- Fix bug with the debug.ahk file including
+	- Disable groups of processing keys by variables
+
+* Repeater 0.2
+	- Add README files with instructions
+	- Add the LICENSE file
+
+* Repeater 0.1
+	- Implement sending keystrokes to all windows with the same title or class
