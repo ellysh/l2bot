@@ -4,16 +4,10 @@ global const $kYCenter = 450
 func MoveToTarget()
 	LogWrite("MoveToTarget()")
 	
-	if not IsTargetForAttack() then
+	if IsTargetForAttack() then
 		return
 	endif
 
-	SendClient($kAttackKey, 500 * $kDelayRate)
-
-	if $kIsCancelTargetMove then
-		SendClient($kCancelTarget, 500)	
-	endif
-	
 	local $timeout = 0
 	while not IsTargetForAttack()
 		$timeout = $timeout + 1
@@ -85,7 +79,7 @@ func SitLoop()
 			exitloop
 		endif
 		
-		_Sleep(500)
+		_Sleep(250)
 
 		NextTarget()
 	wend

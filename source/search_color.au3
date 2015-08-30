@@ -4,7 +4,7 @@
 global const $kSearchRadius = 400
 global const $kSearchRegionSize = 100
 global const $kSearchSource[2] = [623, 371]
-global const $kTargetColors[3] = [0xA9E89C,0x010202,0xFFFBFF]
+global const $kTargetColors[3] = [0xA4E098,0x010202,0xFFFBFF]
 
 FFAddColor($kTargetColors)
 FFAddExcludedArea(570, 290, 690, 420)
@@ -40,7 +40,7 @@ func SearchTarget()
 			SendClient($kCancelTarget, 500)
 		endif
 
-		$coord = FFBestSpot($kSearchRegionSize, 500, 1000, $kSearchSource[0], $kSearchSource[1], -1, 2, true)
+		$coord = FFBestSpot($kSearchRegionSize, 500, 1000, $kSearchSource[0], $kSearchSource[1], -1, 4, true)
 		
 		if UBound($coord) <> 0 then
 			LogWrite("SearchTarget() - coord = " & $coord[0] & "x" & $coord[1])
