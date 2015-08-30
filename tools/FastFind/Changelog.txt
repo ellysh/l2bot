@@ -1,0 +1,15 @@
+ - [v1.4] : find the "best spot" - meaning the spot that has the best number of "right" colors.
+ - [v1.4] : now provided with a tool, FFShowPixels.exe, to find colors, manage color lists, show all occurences of them on the Captured Window, and... automatically generates AutoIt or C++ code.
+ - [v1.6] : Saves SnapShots on BitMaps (BMP and JPG supported)
+ - [v1.6] : Modifies SnapShots with "filters" (Keep only some colors or only pixels that have changes. All other pixels can be turned to black).
+ - [v1.7] : Can change pixels colors on SnapShots (SetPixel)
+ - [v1.7] : Can access the Raw pixel data of SnapShots (GetRawData)
+ - [v1.7] : Can draw back SnapShots on Screen.
+ - [v1.8] : Bug fixes. Deleted
+ - [v1.8.1] : Bug fixes (FastFind.au3).
+ - [v1.8.2] : Bug fixes (FastFind.au3).
+ - [v1.8.3] : Bug fixes (FastFind.au3). Deleted
+ - [v1.8.4] : Should now run on early XP and Windows 2000 OS.
+ - [v2.0] : Documentation file in english (FastFind.chm), several new functions and new feature on some old functions.
+ - [v2.1] : Bug fixes (errors in message boxes).
+ - [v2.2] : Crashes + error messages (not gone in 2.1 ?!).

@@ -1,0 +1,9 @@
+FastFrench (antispam@laposte.net): Author of FastFind
+
+Some parts and concept come from Chris Mallett (support@autohotkey.com), modified by kangkengkingkong@hotmail.com
+
+CeramicWeasel : Help file in English for version 1.8 (FastFind.chm)
+Frank10 : Update 1.8.4 => 2.0 Autoit Wrapper
+
+
+AutoIt forum : http://www.autoitscript.com/forum/topic/126430-advanced-pixel-search-library/

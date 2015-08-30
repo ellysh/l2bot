@@ -1,11 +1,17 @@
 #include "analysis.au3"
+#include "FastFind.au3"
+
+global const $kSearchRadius = 400
+global const $kSearchRegionSize = 100
+global const $kSearchSource[2] = [623, 371]
+global const $kTargetColors[3] = [0xA9E89C,0x010202,0xFFFBFF]
+
+FFAddColor($kTargetColors)
+FFAddExcludedArea(570, 290, 690, 420)
 
 global const $kSelfLeft[2] = [650, 250]
 global const $kSelfRight[2] = [750, 400]
 global const $kSelfColor = 0xFBFBFB
-global const $kTargetLeft[2] = [200, 0]
-global const $kTargetRight[2] = [1000, 500]
-global const $kTargetColors = "0xA1DA95,0xFF7779"
 global const $kTextColor = 0x000000
 
 global $gFailedTurns = 0
@@ -20,46 +26,11 @@ func CameraMove()
 	endif
 endfunc
 
-func IsText($left)
-	local $right[2]
-	
-	$right[0] = $left[0] + 30
-	$right[1] = $left[1] + 30
-	
-	return IsPixelExistClient($left, $right, $kTextColor)
-endfunc
-
-func IsSelfExist()
-	LogWrite("IsSelfExist()")
-	local $left[2]
-	$left = GetPixelCoordinateClient($kSelfLeft, $kSelfRight, $kSelfColor)
-
-	if not IsCoordinateCorrect($left) then
-		return false
-	endif
-
-	if IsText($left) then
-		return true
-	else
-		return false
-	endif
-endfunc
-
-func MoveFromWall()
-	LogWrite("MoveFromWall()")
-	if not IsSelfExist() then
-		LogWrite("	- moving...")
-		MouseClickClient("left", $kSelfLeft[0], $kSelfLeft[1])
-		_Sleep(1000)
-	endif
-endfunc
-
 func SearchTarget()
 	LogWrite("SearchTarget() - color")
 
-	local $left[2]
-	local $target_colors = StringSplit($kTargetColors, ",")
-
+	local $coord[3]
+	
 	while true
 		NextTarget()
 
@@ -69,25 +40,15 @@ func SearchTarget()
 			SendClient($kCancelTarget, 500)
 		endif
 
-		MoveFromWall()
-
-		for $i = 1 to $target_colors[0] step 1
-			$left = GetPixelCoordinateClient($kTargetRight, $kTargetLeft, $target_colors[$i])
-
-			if IsCoordinateCorrect($left) then
-				exitloop
-			endif
-		next
-
-		if not IsCoordinateCorrect($left) then
-			CameraMove()
-			continueloop
-		endif
-
-		if IsText($left) then
-			MouseClickClient("left", $left[0], $left[1])
-			exitloop
+		$coord = FFBestSpot($kSearchRegionSize, 500, 1000, $kSearchSource[0], $kSearchSource[1], -1, 2, true)
+		
+		if UBound($coord) <> 0 then
+			LogWrite("SearchTarget() - coord = " & $coord[0] & "x" & $coord[1])
+			MouseClickClient("left", $coord[0], $coord[1])
+			MoveToTarget()
+			return
 		else
+			LogWrite("SearchTarget() - coord = NOT FOUND")
 			CameraMove()
 		endif
 	wend
