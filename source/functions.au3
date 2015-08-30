@@ -134,14 +134,6 @@ func SwitchToggle($number, $key, $state)
 	$gToggleList[$number] = $state
 endfunc
 
-func IsCoordinateCorrect($coordinate)
-	if $coordinate[0] <> $kErrorCoord and $coordinate[1] <> $kErrorCoord then
-		return true
-	else
-		return false
-	endif
-endfunc
-
 func _Sleep($delay)
 	SRandom(@MSEC)
 	local $gap = $delay * 0.1

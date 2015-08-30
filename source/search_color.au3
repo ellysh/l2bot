@@ -4,15 +4,10 @@
 global const $kSearchRadius = 400
 global const $kSearchRegionSize = 100
 global const $kSearchSource[2] = [623, 371]
-global const $kTargetColors[3] = [0xA4E098,0x010202,0xFFFBFF]
+global const $kTargetColors[3] = [0xA4E098, 0x010202, 0xFFFBFF]
 
 FFAddColor($kTargetColors)
 FFAddExcludedArea(570, 290, 690, 420)
-
-global const $kSelfLeft[2] = [650, 250]
-global const $kSelfRight[2] = [750, 400]
-global const $kSelfColor = 0xFBFBFB
-global const $kTextColor = 0x000000
 
 global $gFailedTurns = 0
 
