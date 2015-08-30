@@ -1,13 +1,19 @@
 #include "analysis.au3"
 #include "FastFind.au3"
 
-global const $kSearchRadius = 400
+global const $kSearchRadius = 500
 global const $kSearchRegionSize = 100
 global const $kSearchSource[2] = [623, 371]
 global const $kTargetColors[3] = [0xA4E098, 0x010202, 0xFFFBFF]
 
 FFAddColor($kTargetColors)
+; Player Area
 FFAddExcludedArea(570, 290, 690, 420)
+; Windows Taskbar
+FFAddExcludedArea(0, 721, 1365, 767)
+; Ingame Windows
+FFAddExcludedArea(9, 393, 359, 709)
+FFAddExcludedArea(9, 37, 181, 122)
 
 global $gFailedTurns = 0
 
@@ -35,7 +41,7 @@ func SearchTarget()
 			SendClient($kCancelTarget, 500)
 		endif
 
-		$coord = FFBestSpot($kSearchRegionSize, 500, 1000, $kSearchSource[0], $kSearchSource[1], -1, 4, true)
+		$coord = FFBestSpot($kSearchRegionSize, 500, 1000, $kSearchSource[0], $kSearchSource[1], -1, 10, true)
 		
 		if UBound($coord) <> 0 then
 			LogWrite("SearchTarget() - coord = " & $coord[0] & "x" & $coord[1])
