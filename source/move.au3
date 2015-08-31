@@ -14,8 +14,9 @@ func MoveToTarget()
 		SendClient($kCancelTarget, 500)
 	endif
 
+	ResetTargetHealthValue()
 	local $timeout = 0
-	while not IsTargetForAttack()
+	while not IsTargetDamaged()
 		$timeout = $timeout + 1
 		
 		_Sleep(500)

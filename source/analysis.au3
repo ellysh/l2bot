@@ -5,7 +5,7 @@ global const $kBarThird = 30
 global const $kBarCritical = 20
 
 global $gMapChecksum = 0
-global $gTargetChecksum = 0
+global $gTargetHealthValue = 0
 
 func IsTargetExist()
 	; Check target info window existance
@@ -84,7 +84,26 @@ func IsTargetDamaged()
 	endif
 
 	LogWrite("IsTargetDamaged()")
-	return IsPixelsChanged($kTargetHealthLeft, $kTargetHealthRight, $gTargetChecksum)
+
+	local $coord = GetPixelCoordinateClient($kTargetHealthLeft, $kTargetHealthRight, $kTargetHealthColor)
+	local $bar_value = GetBarValue($coord, $kTargetHealthLeft, $kTargetHealthRight)
+	
+	if $gTargetHealthValue == 0 then
+		$gTargetHealthValue = $bar_value
+	endif
+	
+	if $gTargetHealthValue <> $bar_value then
+		LogWrite("	- target HP changed new = " & $bar_value & " old  = " & $gTargetHealthValue)	
+		$gTargetHealthValue = $bar_value
+		return true
+	else
+		LogWrite("	- same target HP = " & $bar_value)
+		return false
+	endif
+endfunc
+
+func ResetTargetHealthValue()
+	$gTargetHealthValue = 0
 endfunc
 
 func IsPositionChanged()

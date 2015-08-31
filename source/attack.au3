@@ -57,7 +57,8 @@ func Attack()
 	endif
 
 	UpdatePrevHealth()
-
+	ResetTargetHealthValue()
+	
 	local $timeout = 0
 	local $is_attacked = false
 	while IsTargetAlive()

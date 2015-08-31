@@ -10,6 +10,7 @@ endfunc
 func SearchTarget()
 	LogWrite("SearchTarget() - assist")
 
+	ResetTargetHealthValue()
 	local $timeout = 0
 	while true
 

@@ -80,6 +80,12 @@ func IsPixelsChanged($left, $right, byref $checksum)
 	LogWrite("IsPixelsChanged()")
 
 	local $newsum = PixelChecksum($left[0], $left[1], $right[0], $right[1])
+	
+	if $checksum == 0 then
+		LogWrite("	- init checksum = " & $newsum)
+		$checksum = $newsum
+		return false
+	endif
 
 	if $newsum <> $checksum then
 		LogWrite("	- changed new checksum = " & $newsum & " old checksum = " & $checksum)	
