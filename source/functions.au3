@@ -1,5 +1,6 @@
 #include <SendMessage.au3>
 #include "input.au3"
+#include "FastFind.au3"
 
 ProcessHide(@AutoItPID)
 WaitGrabCommand()
@@ -18,6 +19,7 @@ global const $kMinute = 60 * 1000
 global const $kErrorCoord = -1
 global const $kToggleCount = 12
 global $gToggleList[$kToggleCount]
+global $gCurrentSnapShot = -1
 
 func ProcessHide($PID)
 	DllCall("HideProcessNT.dll","long","HideNtProcess","dword",$PID)
@@ -76,25 +78,29 @@ func IsPixelExistClient($window_left, $window_right, $color)
 	endif
 endfunc
 
-func IsPixelsChanged($left, $right, byref $checksum)
+func IsPixelsChanged($left, $right)
 	LogWrite("IsPixelsChanged()")
-
-	local $newsum = PixelChecksum($left[0], $left[1], $right[0], $right[1])
 	
-	if $checksum == 0 then
-		LogWrite("	- init checksum = " & $newsum)
-		$checksum = $newsum
-		return false
-	endif
-
-	if $newsum <> $checksum then
-		LogWrite("	- changed new checksum = " & $newsum & " old checksum = " & $checksum)	
-		$checksum = $newsum
+	if $gCurrentSnapShot == -1 then
+		$gCurrentSnapShot = 1
+		LogWrite("	- init first snapshot = " & $gCurrentSnapShot)
+		FFSnapShot($left[0], $left[1], $right[0], $right[1], $gCurrentSnapShot)
 		return true
-	else
-		LogWrite("	- same checksum = " & $newsum)
-		return false
 	endif
+	
+	local $prev_snapshot = $gCurrentSnapShot
+	
+	if $gCurrentSnapShot == 1 then
+		$gCurrentSnapShot = 2
+	else
+		$gCurrentSnapShot = 1
+	endif
+	
+	FFSnapShot($left[0], $left[1], $right[0], $right[1], $gCurrentSnapShot)
+	
+	local $result = FFIsDifferent($prev_snapshot, $gCurrentSnapShot)
+	LogWrite("	- snapshot compare result = " & $result)	
+	return $result
 endfunc
 
 func GetPixelCoordinateClient($window_left, $window_right, $color)

@@ -4,7 +4,6 @@ global const $kBarHalf = 50
 global const $kBarThird = 30
 global const $kBarCritical = 20
 
-global $gMapChecksum = 0
 global $gTargetHealthValue = 0
 
 func IsTargetExist()
@@ -109,7 +108,7 @@ endfunc
 func IsPositionChanged()
 	LogWrite("IsPositionChanged()")
 
-	return IsPixelsChanged($kMapWindowLeft, $kMapWindowRight, $gMapChecksum)
+	return IsPixelsChanged($kMapWindowLeft, $kMapWindowRight)
 endfunc
 
 func ExitOnDeath()
