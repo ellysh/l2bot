@@ -19,7 +19,7 @@ func MoveToTarget()
 	while not IsTargetDamaged()
 		$timeout = $timeout + 1
 		
-		_Sleep(500)
+		_Sleep(1000)
 		
 		if mod($timeout, 5) == 0 and not IsPositionChanged() then
 			LogWrite("Move timeout #1")
@@ -34,6 +34,7 @@ func MoveToTarget()
 		endif
 		
 		NextTarget()
+		SendClient($kAttackKey, 500 * $kDelayRate)
 	wend
 endfunc
 
